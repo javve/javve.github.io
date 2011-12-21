@@ -8,9 +8,19 @@ body {
 
 h1,h2,h3,h4,h5 {
     font-family:$serif;
+    b {
+        font-weight:bold;
+    }
 }
 p {
     font-family:$sans;
+    margin-bottom:10px;
+    b {
+        font-weight:bold;
+    }
+}
+p:last-child {
+    margin-bottom:0;
 }
 p a {
     color:$dark;
@@ -33,10 +43,12 @@ a {
     width:200px;
 }
 
+.float-right {
+    float:right;
+}
+.float-left {
+    float:left;
+}
 
-.twitter-follow-button {
-    display:none;
-}
-.wrapper .twitter-follow-button {
-    display:inline;
-}
+.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}.clearfix{display:inline-block}* html .clearfix{height:1%}
+.clearfix{display:block}

@@ -1,0 +1,164 @@
+.project {
+    .tagline {
+        float:left;
+        text-shadow:$light-shadow;
+        margin-bottom:30px;
+        
+        max-width:$total-width - 230px;
+        
+        h1 {
+            font-size:40px;
+            font-weight:bold;
+        }
+        h2 {
+            font-size:27px;
+        }
+    }
+    
+    
+    .padder {
+        padding-right:230px;
+    }
+    
+    .short-about {
+        float:left;
+        margin-bottom:30px;
+        background-color:$lightest;
+        border:solid 1px darken($lightest, 10%);
+        padding:30px;
+        p {
+            font-family:$sans;
+            font-size:16px;
+        }
+    }
+    
+    .facts {
+        width:350px;
+        float:right;
+        h3 {
+            background:image-url('icons/dices.png') no-repeat right 4px;
+            padding-right:30px;
+            display:inline-block;
+            font-size:20px;
+            font-weight:bold;
+            margin-bottom:20px;
+        }
+        p {
+            font-size:14px;
+        }
+        .fact {
+            font-family:$sans;
+            margin-bottom:30px;
+            .firstweek {
+                padding-left:22px;
+                list-style-type:disc;
+                li {
+                    font-size:14px;
+                    margin-bottom:3px;
+                }
+            }
+        }
+        h4 {
+            font-size:18px;
+            margin-bottom:5px;
+        }
+    }
+    
+    blockquote {
+        .text {
+            font-family:$serif;
+            margin-bottom:6px;
+            &.big {
+                font-size:20px;
+                line-height:1.2;
+            }
+            &.medium {
+                font-size:18px;
+            }
+            &.small {
+                font-size:16px;
+            }
+        }
+        .cite {
+            font-family:$sans;
+            line-height:1.1;
+            font-size:12px;
+        }
+    }
+    
+    .slides {
+        float:left;
+        width:350px;
+        overflow:hidden;
+    }
+    
+    .circle {
+        background:image-url('icons/social.png') no-repeat;
+        display:inline-block;
+        width:82px;
+        height:82px;
+
+        @include transition-property(opacity);
+        @include transition-duration(.5s); 
+
+        &:hover {
+            @include opacity(0.6);
+        }
+        span {
+            display:none;
+        }
+        &.twitter {}
+        &.github {
+            background-position:-100px 0;
+        }
+        &.facebook {
+            background-position:-200px 0;
+        }
+        &.dribble {
+            background-position:-305px 0;
+        }
+        &.linkedin {
+            background-position:-405px 0;
+        }
+    }
+}
+
+.projects {
+    clear:left;
+    li {
+        display:inline-block;
+        width:45%;
+        margin-bottom:30px;
+        &:nth-child(odd) {
+            margin-right:9%;
+        }
+        a {
+            display:block;
+            @include clearfix();
+
+            @include transition-property(background-color);
+            @include transition-duration(.5s); 
+            &:hover {
+                background-color:rgba(255,255,255,.4);
+                border:solid 1px rgba(0,0,0,.05);
+                margin:-1px;
+            }
+        }
+        img {
+            border:solid 1px rgba(0,0,0,.07);
+            float:left;
+            margin-right:10px;
+        }
+        a h2 {
+            padding-top:3px;
+            color:$dark;
+            font-size:18px;
+            margin-bottom:3px;
+        }
+        a p {
+            font-size:14px;
+            color:$black;
+            line-height:1.3;
+        }
+    }
+}

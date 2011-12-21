@@ -1,1 +1,71 @@
-Din mamma är en pappa
+---
+layout: default
+---
+<div id="listjs" class="project">
+    
+    <div class="tagline">
+        <h1>SilarApp</h1>
+        <h2>Clean and ambient realtime data visualization</h2>
+    </div>
+
+    <div id="projectstream" class="tweetstream">
+        <h3>Said about <b>SilarApp</b></h3>
+        <ul class="list">
+            <li id="tmpl-item">
+                <p class="text"></p>
+                <p class="user"></p>
+            </li>
+        </ul>
+        <div id="stream-loading"></div>
+    </div>
+
+
+    <div class="padder">
+
+        <div class="short-about">
+            <a style="margin-left:10px;" href="http://twitter.com/silarapp" class="circle twitter float-right" title="Go to Twitter.com/silarapp"><span>Twitter: SilarApp</span></a>
+            <p>
+                Forget messy diagrams and numbers. SilarApp delivers a harmonic 
+                visualization of your data by combining sound, form and playfulness.
+            </p>
+            <p>
+                <a href="http://silarapp.com">Go to SilarApp.com »</a>
+            </p>
+            
+        </div>
+        
+        <div class="facts">
+            <h3>Fun facts & bragging</h3>
+            <ul>
+                <li class="fact">
+                    <h4>Winner jurys award at 24HBC</h4>
+                    <p>
+                        <a href="http://24hbc.se">24 Hour Business Camp</a> is swedish
+                        innovation contest and 2011 me, 
+                        <a href="http://twitter.com/himynameisjonas">Jonas Forsberg</a> and
+                        <a href="http://twitter.com/ingmr">Ingemar Edsborn</a> made the first 
+                        prototype of SilarApp and won the jurys award.
+                </li>
+            </ul>
+        </div>
+
+        <div class="slides">
+            <img src="{{ root_url }}/images/graphics/projects/silarapp/silarapp1.jpg" />
+        </div>
+    </div>
+    
+</div>
+
+
+<script type="text/javascript">
+$(function() {
+    var keyword = "silarapp";
+    window.silarappStream = new TweetStream(
+        'projectstream', 
+        {
+            streamName: "silarappStream",
+            twitterUrl: "http://search.twitter.com/search.json?q="+keyword+"&callback"
+        }
+    );
+});
+</script>
