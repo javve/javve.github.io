@@ -3,7 +3,7 @@
 # ----------------------- #
 
 url: http://jonnystromberg.com
-title: Thoughts
+title: Jonny Strömberg
 subtitle: The Fucking Designer
 author: Jonny Strömberg
 simple_search: http://google.com/search
@@ -94,7 +94,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-8204597-2
 
 # Facebook Like
 facebook_like: false

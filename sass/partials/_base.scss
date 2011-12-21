@@ -1,0 +1,42 @@
+body {
+    background:image-url('bg/body.png') repeat;
+    line-height:1.4;
+    color:$black;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom:100px;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family:$serif;
+}
+p {
+    font-family:$sans;
+}
+p a {
+    color:$dark;
+    @include transition-property(color);
+    @include transition-duration(.5s); 
+}
+p a:hover {
+    color:lighten($dark, 20%);
+}
+a {
+    text-decoration:none;
+}
+
+.wrapper {
+    margin:0 auto;
+    width:100%;
+    max-width:960px;
+}
+.sidebar {
+    width:200px;
+}
+
+
+.twitter-follow-button {
+    display:none;
+}
+.wrapper .twitter-follow-button {
+    display:inline;
+}

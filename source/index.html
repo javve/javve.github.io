@@ -1,29 +1,69 @@
 ---
 layout: default
 ---
+<div id="start">
+    
+    
+    <div class="tagline">
+        <h1>A State of the Art Buzz Driven Design.</h1>
+        <h2>No talent, just a decade of rock solid passion.</h2>
+        <h2>Foolish and hungry</h2>
+    </div>
 
-<div class="blog-index">
-  {% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
-    <article>
-      {% include article.html %}
-    </article>
-  {% endfor %}
-  <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
-    {% endif %}
-    <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page %}
-    <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
-    {% endif %}
-  </div>
+    {% include components/lifestream.html %}
+
+    <div class="padder">
+
+        <div class="short-about">
+            <p>
+                Hi, my name is Jonny and I'm a Photoshopping 
+                JavaScript Ninja from Stockholm, Sweden.
+                Design and programming have been my passion since 
+                2000 and during the last six years have I co-founded 
+                a couple of companies and projects while studying 
+                to become a master of interaction technology and 
+                design. <a href="#">More »</a>
+            </p>
+            <ul class="social">
+                <li><a href="http://twitter.com/javve" class="twitter"><span>Twitter: @javve</span></a></li>
+                <li><a href="http://github.com/javve" class="github"><span>Github: javve</span></a></li>
+                <li><a href="http://facebook.com/javve" class="facebook"><span>Facebook: javve</span></a></li>
+                <li><a href="http://dribbble.com/javve" class="dribble"><span>Dribble: javve</span></a></li>
+                <li><a href="http://www.linkedin.com/in/jonnystromberg" class="linkedin"><span>Linkedin: jonnystromberg</span></a></li>
+            </ul>
+        </div>
+
+        <ul class="projects">
+            <li>
+                <a href="#">
+                    <img src="{{ root_url }}/images/graphics/startpage/startuplocation.jpg" />
+                    <h2>StartupLocation</h2>
+                    <p>Gather and unite all startups, beginning in Norden</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="{{ root_url }}/images/graphics/startpage/listjs.jpg" />
+                    <h2>List.js</h2>
+                    <p>Gather and unite all startups, beginning in Norden</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="{{ root_url }}/images/graphics/startpage/silarapp.jpg" />
+                    <h2>SilarApp</h2>
+                    <p>Clean and ambient data visualization.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="{{ root_url }}/images/graphics/startpage/mynewsdesk.jpg" />
+                    <h2>Mynewsdesk</h2>
+                    <p>PR as it’s supposted to be.</p>
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+    
 </div>
-<aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-    {% include_array blog_index_asides %}
-  {% else %}
-    {% include_array default_asides %}
-  {% endif %}
-</aside>

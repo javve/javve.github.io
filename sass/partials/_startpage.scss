@@ -1,0 +1,135 @@
+#start {
+    .tagline {
+        float:left;
+        text-shadow:$light-shadow;
+        margin-bottom:30px;
+        
+        max-width:$total-width - 230px;
+        
+        h1,h2 {
+            font-size:27px;
+        }
+        h1 {
+            font-weight:bold;
+        }
+    }
+    
+    .padder {
+        padding-right:230px;
+    }
+    
+    .short-about {
+        float:left;
+        margin-bottom:30px;
+        background-color:$lightest;
+        border:solid 1px darken($lightest, 10%);
+        padding:30px;
+        p {
+            font-family:$sans;
+            font-size:16px;
+        }
+    }
+    .social {
+        padding-top:20px;
+        li {
+            display:inline-block;
+            margin-right:15px;
+            height:82px;
+        }
+        a {
+            background:image-url('icons/social.png') no-repeat;
+            display:inline-block;
+            width:82px;
+            height:82px;
+
+            @include transition-property(opacity);
+            @include transition-duration(.5s); 
+                
+            &:hover {
+                @include opacity(0.6);
+            }
+            span {
+                display:none;
+            }
+            &.twitter {}
+            &.github {
+                background-position:-100px 0;
+            }
+            &.facebook {
+                background-position:-200px 0;
+            }
+            &.dribble {
+                background-position:-305px 0;
+            }
+            &.linkedin {
+                background-position:-405px 0;
+            }
+        }
+    }
+    
+    .projects {
+        clear:left;
+        li {
+            display:inline-block;
+            width:45%;
+            margin-bottom:30px;
+            &:nth-child(odd) {
+                margin-right:9%;
+            }
+            a {
+                display:block;
+                @include clearfix();
+                
+                @include transition-property(background-color);
+                @include transition-duration(.5s); 
+                &:hover {
+                    background-color:rgba(255,255,255,.4);
+                }
+            }
+            img {
+                border:solid 1px rgba(0,0,0,.07);
+                float:left;
+                margin-right:10px;
+            }
+            a h2 {
+                padding-top:3px;
+                color:$dark;
+                font-size:18px;
+                margin-bottom:3px;
+            }
+            a p {
+                font-size:14px;
+                color:$black;
+                line-height:1.3;
+            }
+        }
+    }
+    
+    .lifestream {
+        h3 {
+            display:inline-block;
+            background:image-url('icons/lifestream.png') no-repeat right 2px;
+            padding-right:30px;
+            margin-bottom:12px;
+        }
+        #lifestream-item {
+            display:none;
+        }
+        #lifestream-loading {
+            padding:20px 0 0 30px;
+        }
+        
+        float:right;
+        width:200px;
+        li {
+            border-top:dotted 1px #cac6c0;
+            margin-bottom:12px;
+            padding-top:12px;
+        }
+        p {
+            color:$light;
+            font-size:12px;
+        }
+    }
+    
+}
