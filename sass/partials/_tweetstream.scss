@@ -23,10 +23,12 @@
     p.text {
         color:$light;
         font-size:12px;
+        margin-bottom:0;
     }
     p.user a {
         font-size:11px;
         .date {
+            font-style:italic;
             color:$black;
         }
         &:hover {

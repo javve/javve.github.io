@@ -15,23 +15,6 @@
         }
     }
     
-    
-    .padder {
-        padding-right:230px;
-    }
-    
-    .short-about {
-        float:left;
-        margin-bottom:30px;
-        background-color:$lightest;
-        border:solid 1px darken($lightest, 10%);
-        padding:30px;
-        p {
-            font-family:$sans;
-            font-size:16px;
-        }
-    }
-    
     .facts {
         width:350px;
         float:right;
@@ -92,35 +75,6 @@
         overflow:hidden;
     }
     
-    .circle {
-        background:image-url('icons/social.png') no-repeat;
-        display:inline-block;
-        width:82px;
-        height:82px;
-
-        @include transition-property(opacity);
-        @include transition-duration(.5s); 
-
-        &:hover {
-            @include opacity(0.6);
-        }
-        span {
-            display:none;
-        }
-        &.twitter {}
-        &.github {
-            background-position:-100px 0;
-        }
-        &.facebook {
-            background-position:-200px 0;
-        }
-        &.dribble {
-            background-position:-305px 0;
-        }
-        &.linkedin {
-            background-position:-405px 0;
-        }
-    }
 }
 
 .projects {

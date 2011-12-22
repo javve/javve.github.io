@@ -1,0 +1,38 @@
+.blog {
+    .entry-content {
+        margin-bottom:20px;
+    }
+    h1 {
+        font-size:40px;
+        font-weight:bold;
+    }
+    .meta-date {
+        font-size:27px;
+        margin-bottom:20px;
+    }
+    .code {
+        margin:30px -30px;
+    }
+    .author {
+        clear:left;
+    }
+    
+    .author {
+        text-shadow:$light-shadow;
+        h3 {
+            font-size:20px;
+            margin-bottom:10px;
+            font-weight:bold;
+        }
+        p.first {
+            font-size:16px;
+        }
+        p {
+            font-size:14px;
+        }
+        .profile-image {
+            float:left;
+            margin-right:15px;
+        }
+    }
+}

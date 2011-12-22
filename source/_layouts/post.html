@@ -3,7 +3,14 @@ layout: default
 single: true
 ---
 
-{% include article.html %}
+<div class="blog">
+    <div class="padder">
+        <div class="float-left">
+            {% include article.html %}
+        </div>
+    </div>
+    {% include components/lifestream.html %}
+</div>
 
 <!--
 <div>

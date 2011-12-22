@@ -14,21 +14,6 @@
         }
     }
     
-    .padder {
-        padding-right:230px;
-    }
-    
-    .short-about {
-        float:left;
-        margin-bottom:30px;
-        background-color:$lightest;
-        border:solid 1px darken($lightest, 10%);
-        padding:30px;
-        p {
-            font-family:$sans;
-            font-size:16px;
-        }
-    }
     .social {
         padding-top:20px;
         li {

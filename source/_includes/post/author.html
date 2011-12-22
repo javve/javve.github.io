@@ -1,8 +1,18 @@
-{% if post.author %}
-  {% assign author = post.author %}
-{% elsif page.author %}
-  {% assign author = page.author %}
-{% else %}
-  {% assign author = site.author %}
-{% endif %}
-{% if author %}<span class="byline author vcard">Posted by <span class="fn">{{ author }}</span></span>{% endif %}
+<div class="author">
+    <h3>About the author and discussions</h3>
+    
+    <img src="{{ root_url }}/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
+    <p class="first">
+        I'm Jonny. A Photoshopping JavaScript Ninja from Stockholm.
+        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
+        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
+        <a href="http://silarapp.com">SilarApp</a> and 
+        <a href="http://startuplocation.com">StartupLocation</a>.
+    </p>
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="#">Hacker News</a> is the place to be. 
+        <em>Follow me at Twitter, do it!</em>
+    </p>
+    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+</div>
