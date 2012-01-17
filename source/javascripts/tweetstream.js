@@ -11,6 +11,7 @@ var TweetStream = function(id, options) {
             this.list(id);
             this.loading();
             this.twitter(options.twitterUrl, options.streamName);
+            this.instagram();
         },
         list: function(id) {
             tweetList = new List(id, {
@@ -34,16 +35,18 @@ var TweetStream = function(id, options) {
             target.appendChild(spinner.el);
         },
         twitter: function(twitterUrl, streamName) {
-            
             var tweets = cache.get(streamName);
             if (tweets) {
-                self.show(jQuery.parseJSON(tweets));
+                self.show.tweets(jQuery.parseJSON(tweets));
                 return;
             }
             var s = document.createElement("script");
             s.type="text/javascript";
-            s.src= twitterUrl+"="+streamName+".show";
+            s.src= twitterUrl+"="+streamName+".show.tweets";
             document.getElementsByTagName("body")[0].appendChild(s);
+        },
+        instagram: function() {
+            $.get('http://instagram.heroku.com/users/9485463.atom', self.show.instagram); 
         }
     };
     
@@ -73,26 +76,32 @@ var TweetStream = function(id, options) {
         }
     }
     
-    this.show = function(tweets) {
-        var getTweet = tweetFrom.timeline;
-        if (tweets.results) {
-            tweets = tweets.results;
-            getTweet = tweetFrom.search;
-        } else {
-            if (tweets[0] && tweets[0].from_user) {
+    this.show = {
+        tweets: function(tweets) {
+            var getTweet = tweetFrom.timeline;
+            if (tweets.results) {
+                tweets = tweets.results;
                 getTweet = tweetFrom.search;
+            } else {
+                if (tweets[0] && tweets[0].from_user) {
+                    getTweet = tweetFrom.search;
+                }
             }
-        }
-        spinner.stop();
-        for (var i = 0, il = tweets.length; i < il && i < 7; i++) {
-            var tweet = getTweet(tweets[i]);
+            spinner.stop();
+            for (var i = 0, il = tweets.length; i < il && i < 7; i++) {
+                var tweet = getTweet(tweets[i]);
             
-            tweetList.add({
-                text: tweet.text,
-                user: tweet.user
-            });
+                tweetList.add({
+                    text: tweet.text,
+                    user: tweet.user
+                });
+            }
+            cache.set(options.streamName, JSON.stringify(tweets));
+        }, 
+        instagram: function(data) {
+            var jsonData = parseXML(data);
+            console.log(jsonData);
         }
-        cache.set(options.streamName, JSON.stringify(tweets));
     };
     
     var tweetFrom = {
