@@ -1,17 +1,11 @@
 ---
 layout: post
-title: "One site to rule 'em all I löv this"
-date: 2011-12-20 00:19
+title: "Hello world... blog"
+date: 2012-01-18 23:11
 comments: true
 categories: 
 ---
 
-This is the amazing content that I write all days
-
-``` javascript
-
-var hej = "ery";
-
-```
-
-This is freaking amaxing, im serious!
+I'll write a real blog post soon. This is just a test :) This will be awesome. Lorem ipsum.
+ Lorem ipsum.
+  Lorem ipsum. Lorem ipsum. Lorem ipsum.

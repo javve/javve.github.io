@@ -90,7 +90,27 @@
     }
 } 
 
-.sharing {
+.sharing { 
+    li {
+        height:20px;
+        list-style-type:none;
+        display:inline-block;
+        &.tweet {
+            width:85px;
+        }
+        &.facebook {
+            width:65px;
+            iframe {
+                padding-bottom:5px;
+            }
+        }
+        &.plusone {
+            width:70px;
+        }
+        &.linkedin {
+            
+        }
+    }
     .addthis_toolbox {
         float:left;
     }
@@ -103,8 +123,5 @@
     .addthis_button_google_plusone {
         iframe,
         div { width:70px !important;}
-    }
-    .linkedin {
-        float:left;
     }
 }

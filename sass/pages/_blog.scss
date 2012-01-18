@@ -36,3 +36,20 @@
         }
     }
 }
+
+.blog-archives {
+    .box {
+        float:none;
+    }
+    h2 {
+        font-size:28px;
+    }
+    h1 {
+        font-size:18px;
+        font-weight:bold;
+    }
+    time {
+        font-size:13px;
+        font-family:$sans;
+    }
+}
