@@ -1,57 +1,46 @@
 ---
 layout: default
+title: Projects
 ---
 <div id="projects" class="project">
     
     <div class="tagline">
-        <h1>Projects</h1>
-        <h2>Hackoholic since 2000.</h2>
+        <h1>Projects.</h1>
+        <h2>Creating Is As Vital As Breathing.</h2>
     </div>
-
-    {% include components/lifestream.html %}
-
-    <div class="padder">
-
-        <div class="short-about box">
+    
+    <ul class="projects">
+        <li class="startuplocation">
+            <a href="{{ root_url }}/projects/startuplocation">
+                <img src="{{ root_url }}/images/projects/startuplocation/startuplocation-logo-200x200.png" />
+            </a>
+            <h2>StartupLocation</h2>
+            <p>Gather and unite all startups, beginning in Norden</p>
+        </li>
+        <li class="silarapp">
+            <a href="{{ root_url }}/projects/silarapp">
+                <img src="{{ root_url }}/images/projects/silarapp/silarapp-logo-200x200.png" />
+            </a>
+            <h2>SilarApp</h2>
+            <p>Clean and ambient data visualization.</p>
+        </li>
+        <li class="listjs">
+            <a href="{{ root_url }}/projects/listjs">
+                <img src="{{ root_url }}/images/projects/listjs/listjs-logo-200x200.png" />
+            </a>
+            <h2>List.js</h2>
+            <p>Gather and unite all startups, beginning in Norden</p>
+        </li>
+    </ul>
+    
+        <div class="short-about box full">
             <p>
-                I hve alwasy beend doing stuff all thetime.
-                I promies all the time that im doin it.
-                Blba bllablabalb lbal bal alb al ab la.
+               I've started projects all the time since middle school. It began with the 
+               "magazine" Game Power in middle school and today I'm running 
+               five projects together with a bunch of awesome people.
             </p>
             
             {% include components/box_share.html %}
         </div>
-
-        <ul class="projects">
-            <li>
-                <a href="{{ root_url }}/projects/startuplocation">
-                    <img src="{{ root_url }}/images/graphics/startpage/startuplocation.jpg" />
-                    <h2>StartupLocation</h2>
-                    <p>Gather and unite all startups, beginning in Norden</p>
-                </a>
-            </li>
-            <li>
-                <a href="{{ root_url }}/projects/listjs">
-                    <img src="{{ root_url }}/images/graphics/startpage/listjs.jpg" />
-                    <h2>List.js</h2>
-                    <p>Gather and unite all startups, beginning in Norden</p>
-                </a>
-            </li>
-            <li>
-                <a href="{{ root_url }}/projects/silarapp">
-                    <img src="{{ root_url }}/images/graphics/startpage/silarapp.jpg" />
-                    <h2>SilarApp</h2>
-                    <p>Clean and ambient data visualization.</p>
-                </a>
-            </li>
-            <li>
-                <a href="{{ root_url }}/projects/mynewsdesk">
-                    <img src="{{ root_url }}/images/graphics/startpage/mynewsdesk.jpg" />
-                    <h2>Mynewsdesk</h2>
-                    <p>PR as it’s supposted to be.</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-    
+        
 </div>

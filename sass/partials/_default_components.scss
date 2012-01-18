@@ -1,3 +1,19 @@
+.tagline {
+    text-shadow:$light-shadow;
+    margin-bottom:30px;
+    text-align:center;
+
+    h1 {
+        font-size:45px;
+        text-align:center;
+        font-weight:bold;
+    }
+    h2 {
+        font-size:27px;
+        color:#656565;
+    }
+}
+
 .box {
     float:left;
     margin-bottom:30px;
@@ -8,7 +24,9 @@
         font-family:$sans;
         font-size:16px;
     }
-    
+    h4 {
+        font-weight:bold;
+    }
     .share {
         @extends .clearfix;
         background-color:darken($lightest, 2%);

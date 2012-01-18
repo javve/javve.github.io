@@ -1,11 +1,12 @@
 ---
 layout: default
+title: StartupLocation - Get to know the startups in your city!
 ---
 <div id="listjs" class="project">
-    
+
     <div class="tagline">
         <h1>StartupLocation</h1>
-        <h2>Clean and ambient realtime data visualization</h2>
+        <h2>Get to know the startups in your city!</h2>
     </div>
 
     <div id="projectstream" class="tweetstream">
@@ -46,31 +47,28 @@ layout: default
             <p>
                 <a href="http://startuplocation.com">Go to StartupLocation.com »</a>
             </p>
-            
+
             {% include components/box_share.html %}
-            
+
         </div>
-        
+
         <div class="facts">
             <h3>Fun facts & bragging</h3>
             <ul>
                 <li class="fact">
-                    <h4>Winner jurys award at 24HBC</h4>
+                    <h4>Published at ArcticStartup</h4>
                     <p>
-                        <a href="http://24hbc.se">24 Hour Business Camp</a> is swedish
-                        innovation contest and 2011 me, 
-                        <a href="http://twitter.com/himynameisjonas">Jonas Forsberg</a> and
-                        <a href="http://twitter.com/ingmr">Ingemar Edsborn</a> made the first 
-                        prototype of SilarApp and won the jurys award.
+                        Read the article <a href="http://www.arcticstartup.com/2012/01/10/startuplocation-puts-your-startup-on-the-map">here</a>.
+                    </p>
                 </li>
             </ul>
         </div>
 
         <div class="slides">
-            <img src="{{ root_url }}/images/graphics/projects/startuplocation/startuplocation1.jpg" />
+            <img src="{{ root_url }}/images/projects/startuplocation/startuplocation1.jpg" />
         </div>
     </div>
-    
+
 </div>
 
 
@@ -78,7 +76,7 @@ layout: default
 $(function() {
     var keyword = "startuplocation";
     window.startuplocationStream = new TweetStream(
-        'projectstream', 
+        'projectstream',
         {
             streamName: "startuplocationStream",
             twitterUrl: "http://search.twitter.com/search.json?q="+keyword+"&callback"
