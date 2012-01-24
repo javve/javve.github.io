@@ -4,7 +4,7 @@
   <title><![CDATA[Jonny Strömberg]]></title>
   <link href="http://jonnystromberg.com/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-01-18T23:56:22+01:00</updated>
+  <updated>2012-01-24T23:14:45+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -14,13 +14,288 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hello world... blog]]></title>
-    <link href="http://jonnystromberg.com/hello-blog/"/>
-    <updated>2012-01-18T23:11:00+01:00</updated>
-    <id>http://jonnystromberg.com/hello-blog</id>
-    <content type="html"><![CDATA[<p>I&#8217;ll write a real blog post soon. This is just a test :) This will be awesome. Lorem ipsum.
- Lorem ipsum.
-  Lorem ipsum. Lorem ipsum. Lorem ipsum.</p>
+    <title type="html"><![CDATA[List.js Plugins]]></title>
+    <link href="http://jonnystromberg.com/listjs-plugins-guide/"/>
+    <updated>2012-01-24T00:00:00+01:00</updated>
+    <id>http://jonnystromberg.com/listjs-plugins-guide</id>
+    <content type="html"><![CDATA[<p>Version 0.1.5 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
+
+<p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.plugins.pluginName</code>.</p>
+
+<p>There are one plugin bundled with List.js and it is found in <code>/plugins/paging/list.paging.js</code> (and <code>/plugins/paging/list.paging.min.js</code>). Here is some code that shows how to load it.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it). <strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">],</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;paging2&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;topPaging&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">right</span><span class="o">:</span> <span class="mi">2</span>
+</span><span class='line'>      <span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Read more about the <a href="#">paging plugin here</a>.</p>
+
+<h2>Make Your Own Plugin</h2>
+
+<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>list</code> is the actual list that uses the plugin, <code>options</code> contains the options shown in the example above.</p>
+
+<figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// Do stuff!</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The plugin is run after the list is initiated. See the source code of the <a href="#">paging plugin here</a>.</p>
+
+<h3>A Good Tip</h3>
+
+<p>Use <code>list.on('updated', yourFancyFunction);</code> to updated you plugin when the list have been updated.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[List.js Beta 0.1.4: Filter, search and sort!]]></title>
+    <link href="http://jonnystromberg.com/listjs-beta-0-1-4-filter-search-sort/"/>
+    <updated>2011-11-29T00:00:00+01:00</updated>
+    <id>http://jonnystromberg.com/listjs-beta-0-1-4-filter-search-sort</id>
+    <content type="html"><![CDATA[<p>Version 0.1.4 of List.js is now released and it contains one major update and one minor.</p>
+
+<p>The <strong>major</strong> one is that filters, search and sort now depend on each other. If you searches in a filtered list, the items hidden by the filter will stay hidden. The same goes if you have searched in a list and then filters the result.</p>
+
+<p>The minor update is that <code>.filter()</code> is now used to reset filters instead of <code>.filter(false)</code>.</p>
+
+<p>Grab the latest version at <a href="http://github.com/list/javve">Github.com/javve/list</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[List.js Beta 0.1.3 release!]]></title>
+    <link href="http://jonnystromberg.com/listjs-beta-0-1-3-release/"/>
+    <updated>2011-11-29T00:00:00+01:00</updated>
+    <id>http://jonnystromberg.com/listjs-beta-0-1-3-release</id>
+    <content type="html"><![CDATA[<p>Today a new version of List.js was released. There are <strong>one major change</strong> that you have to be aware of!</p>
+
+<p>The sort buttons now sorts values based on <code>data-sort=”valueName”</code> instead of <code>rel=”valueName”</code>. The resone for this is basically that rel=”” is not valid at most elements according to W3C.</p>
+
+<h2>Other changes in the 0.1.3 release (from the documentation):</h2>
+
+<ul>
+<li>Added function <code>.clear()</code> that removes all items from the list</li>
+<li>Changed the sort function to be based on <code>data-sort</code> instead of <code>rel</code></li>
+<li>When sorting one category, all sort-related classes will be removed from the other sort buttons</li>
+<li>Updated <code>.sort(valueName, sortFunction)</code> to <code>.sort(valueName, options)</code>, see more info in the documentation</li>
+</ul>
+
+
+<p>Go to <a href="http://github.com/javve/list">github.com/javve/list</a> to download the latest version (and remember to change your sort button)!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Performance, wroooooom! Index, search and sort thousands of items]]></title>
+    <link href="http://jonnystromberg.com/performance-wroooooom-index-search-and-sort/"/>
+    <updated>2011-10-28T00:00:00+02:00</updated>
+    <id>http://jonnystromberg.com/performance-wroooooom-index-search-and-sort</id>
+    <content type="html"><![CDATA[<p>There have been some questions about List.js performance.
+How many items can it handle? How fast is the indexing,
+sorting and searching in larger lists?</p>
+
+<p>Today I have an answer: Try it yourself at <a href="http://listjs.com/examples/performance-test.html">http://listjs.com/examples/performance-test.html</a></p>
+
+<p>But for you who just want some quick stats have I done
+some benchmarking myself.<br/>
+<strong>Important</strong>: All these stats are based on first runs
+(read more about first runs in the last paragraph of
+this blog post). And I have a new Macbook Pro and Chrome,
+so these stats are first run-<strong>best cases</strong>):</p>
+
+<h2>Indexing</h2>
+
+<ul>
+<li>Index 100 items á 3 value names ~ <strong>5 ms</strong></li>
+<li>Index 1000 items á 3 value names ~ <strong>50 ms</strong></li>
+<li>Index 10 000 items á 3 value names ~ <strong>360 ms</strong></li>
+</ul>
+
+
+<h2>Searching</h2>
+
+<ul>
+<li>Search for a 4 char string in all values in 100 items á 3 value names ~ <strong>7 ms</strong></li>
+<li>Search for a 4 char string in all values in 1000 items á 3 value names ~ <strong>90 ms</strong></li>
+<li>Search for a 4 char string in all values in 10 000 items á 3 value names ~ <strong>800 ms</strong></li>
+</ul>
+
+
+<h2>Sorting</h2>
+
+<ul>
+<li>Sort 100 items ~ <strong>9 ms</strong></li>
+<li>Sort 1000 items ~ <strong>90 ms</strong></li>
+<li>Sort 10 000 items ~ <strong>1 600 ms</strong></li>
+</ul>
+
+
+<h2>Adding</h2>
+
+<ul>
+<li>Add 100 items to list with 1 item ~ <strong>8 ms</strong></li>
+<li>Add 1000 items to list with 1 item ~ <strong>14 ms</strong></li>
+<li>Add 10 00 items to list with 1 item ~ <strong>30 ms</strong></li>
+</ul>
+
+
+<p>One thing worth mentioning when it comes to List.js and performance is that the default settings (changeable) only allows 200 items to be visible at the same time. This is to boost performance and helps A LOT for larger list.</p>
+
+<p>(Hint: In future releases the handling of larger lists will be much smoother, promis)</p>
+
+<p>One other thing worth mentioning is that modern browsers (like Chrome, Safari,
+Firefox) optimizes complex JavaScript at runtime which means that all scripts
+get MUCH faster the second time they are called. The data above are all based
+on first runs. <strong>Searching in 10 000 takes e.g 18 ms the second time compared
+to 800 the first.</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Listjs.com with examples is now available at GitHub]]></title>
+    <link href="http://jonnystromberg.com/listjs-com-with-examples-is-now-available-at-github/"/>
+    <updated>2011-10-25T00:00:00+02:00</updated>
+    <id>http://jonnystromberg.com/listjs-com-with-examples-is-now-available-at-github</id>
+    <content type="html"><![CDATA[<p>Tonight I added the <a href="Listjs.com%20website">http://listjs.com/</a> to List.js Github repository.
+The reason for this is simply that its a more convenient structure
+for myself and there will also be easier to download the List.js
+examples and try them out locally.</p>
+
+<p>My original plan for tonight was to release some examples showing of
+performance and benchmarking, but other work got in the way. But I
+promis you, its worth waiting for.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[6 days, 666 followers and 37 forks]]></title>
+    <link href="http://jonnystromberg.com/6-days-666-watchers-and-37-forks/"/>
+    <updated>2011-10-25T00:00:00+02:00</updated>
+    <id>http://jonnystromberg.com/6-days-666-watchers-and-37-forks</id>
+    <content type="html"><![CDATA[<p>It has been a amazing week. For a couple of hours today List.js was:</p>
+
+<ul>
+<li>The most watched JavaScript this week</li>
+<li>The most watched JavaScript this day</li>
+<li>The second most watched this month</li>
+<li>The second most forked this week</li>
+<li>It shares the same top 5 fork-list as Twitter-Bootstrap, jQuery-Mobile and Noje.js.</li>
+</ul>
+
+
+<p>No pressure, no pressure. ..</p>
+
+<p>It has also been published in some blogs etc. Really appreciate it! &lt;3</p>
+
+<ul>
+<li><a href="http://www.webresourcesdepot.com/list-js-a-javascript-library-for-flexible-lists/">http://www.webresourcesdepot.com/list-js-a-javascript-library-for-flexible-lists/</a></li>
+<li><a href="http://codevisually.com/list-js-a-cross-browser-native-javascript-that-makes-your-plain-html-lists-super-flexible/">http://codevisually.com/list-js-a-cross-browser-native-javascript</a></li>
+<li><a href="http://www.webappers.com/2011/10/24/make-your-lists-seachable-sortable-filterable-with-list-js/">http://www.webappers.com/2011/10/24/make-your-lists-seachable-sortable-filterable-with-list-js/</a></li>
+<li><a href="http://dailyjs.com/2011/10/21/x-wing-testrunner-list/">http://dailyjs.com/2011/10/21/x-wing-testrunner-list/</a></li>
+<li><a href="http://javascriptshow.com/episodes/20">http://javascriptshow.com/episodes/20</a> (11:00, very funny)</li>
+<li><a href="http://technoyouth.com/web-2-resources/17123-make-your-lists">http://technoyouth.com/web-2-resources/17123-make-your-lists</a></li>
+<li><a href="http://davidseah.com/code/archives/305/">http://davidseah.com/code/archives/305/</a></li>
+<li><a href="http://guiabreve.com/list-js-mejorando-las-listas-html.html">http://guiabreve.com/list-js-mejorando-las-listas-html.html</a></li>
+<li><a href="http://www.greepit.com/2011/10/search-sort-and-filter-html-list-element-list-js/">http://www.greepit.com/2011/10/search-sort-and-filter-html-list-element-list-js/</a></li>
+<li><a href="http://brettterpstra.com/web-excursions-october-22-2011-october-24-2011/">http://brettterpstra.com/web-excursions-october-22-2011-october-24-2011/</a></li>
+<li><a href="http://lubik.info/skrypty/list-js-kapitalna-biblioteka-do-wyszukiwania-sortowania-i-filtrowania-na-stronie,2662.html">http://lubik.info/skrypty/list-js-kapitalna-biblioteka-do-wyszukiwania-sortowania-i-filtrowania-na-stronie,2662.html</a></li>
+</ul>
+
+
+<p>Anyway, coming up next in List.js:</p>
+
+<ul>
+<li>Examples showing of the performance of List.js</li>
+<li><em>secret</em> but people with large lists will like it</li>
+</ul>
+
+
+<p>That its! Back to coding…</p>
+
+<p><img src="http://jonnystromberg.com/images/posts/2011/tumblr_ltn42qDS3H1qzsy82.jpg"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[List.js first 45 hours out in the wild]]></title>
+    <link href="http://jonnystromberg.com/listjs-first-45-hours-in-the-wild/"/>
+    <updated>2011-10-21T00:00:00+02:00</updated>
+    <id>http://jonnystromberg.com/listjs-first-45-hours-in-the-wild</id>
+    <content type="html"><![CDATA[<p>Woah! List.js first 45 hours out in the wild have been pretty crazy.</p>
+
+<p>I “released” the script around 22:00 CEST this Wednesday (when the swedish podcast Webbradion 55 aired).</p>
+
+<p>Yesterday around 17:00 the link was posted to Hacker News and within a hour it reached #1. It held that position for around five hours.</p>
+
+<p><img src="http://jonnystromberg.com/images/posts/2011/hackernews.jpg"></p>
+
+<p>Today, 24 hours after it was posted to Hacker News, Listjs.com have had  27 500 visitors, been tweeted 269 times, liked 57 times and +1’d 68 times.</p>
+
+<p><img src="http://jonnystromberg.com/images/posts/2011/likes.jpg"></p>
+
+<p>In addition to that github.com/javve/list got 439 watchers, 21 forks and one code contribution!</p>
+
+<p>Craaazy.</p>
+
+<p>Probably the best thing is the amazing response at Twitter, Im so freakin’ happy right now.</p>
 ]]></content>
   </entry>
   

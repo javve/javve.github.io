@@ -5,7 +5,7 @@
         <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
         {% unless page.meta == false %}
             <p class="meta-date">
-                {% include post/date.html %}{{ time }}
+                {% include post/date.html %}{{ time }} - Category: {% include post/categories.html %}
             </p>
         {% endunless %}
     {% endif %}

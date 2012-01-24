@@ -76,6 +76,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 }
 
+strong {
+  font-weight: bold;
+}
+
 blockquote {
   font-style: italic;
   position: relative;
@@ -154,9 +158,9 @@ h1 b, h2 b, h3 b, h4 b, h5 b {
 
 p {
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
-  margin-bottom: 13px;
+  margin-bottom: 17px;
 }
-p b {
+p b, p strong {
   font-weight: bold;
 }
 p em {
@@ -1158,7 +1162,19 @@ figure.code .highlight {
 }
 .blog h1 {
   font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 10px;
   font-weight: bold;
+}
+.blog h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.blog h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 .blog .meta-date {
   font-size: 27px;
@@ -1169,6 +1185,15 @@ figure.code .highlight {
 }
 .blog .author {
   clear: left;
+}
+.blog ul {
+  font-family: "PT Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+.blog ul li {
+  list-style-type: disc;
+  margin-bottom: 5px;
 }
 .blog .author {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);

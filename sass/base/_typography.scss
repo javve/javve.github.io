@@ -9,6 +9,9 @@ $mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace 
 .serif { font-family: $serif; }
 .mono { font-family: $mono; }
 
+strong {
+    font-weight:bold;
+}
 
 blockquote {
     $bq-margin: 1.2em;
