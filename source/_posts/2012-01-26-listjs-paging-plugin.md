@@ -2,8 +2,7 @@
 layout: post
 title: "The List.js Paging Plugin"
 date: 2012-01-26
-comments: true
-commentsUrl: "http://news.ycombinator.com/item?id=3511485"
+hackernews: "http://news.ycombinator.com/item?id=3515820"
 categories: listjs
 ---
 

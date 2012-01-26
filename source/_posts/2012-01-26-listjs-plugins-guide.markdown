@@ -2,7 +2,6 @@
 layout: post
 title: "The List.js Plugin Guide"
 date: 2012-01-26
-comments: false
 categories: listjs
 ---
 
