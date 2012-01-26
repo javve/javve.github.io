@@ -4,7 +4,7 @@
   <title><![CDATA[@javve]]></title>
   <link href="http://jonnystromberg.com/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-01-26T22:34:40+01:00</updated>
+  <updated>2012-01-26T23:30:52+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -126,7 +126,7 @@
     <link href="http://jonnystromberg.com/listjs-paging-plugin/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-paging-plugin</id>
-    <content type="html"><![CDATA[<p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/plugins/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
+    <content type="html"><![CDATA[<p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/examples/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

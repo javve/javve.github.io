@@ -6,7 +6,7 @@ hackernews: "http://news.ycombinator.com/item?id=3515855"
 categories: listjs
 ---
 
-The List.js paging plugin is bundled with the script and is located in `/plugins/paging/list.paging.js` and [click here](http://listjs.com/plugins/paging.html) if you want to see it in action. To use the plugin just include the .js file at your page and do like this:
+The List.js paging plugin is bundled with the script and is located in `/plugins/paging/list.paging.js` and [click here](http://listjs.com/examples/paging.html) if you want to see it in action. To use the plugin just include the .js file at your page and do like this:
 
 ``` html
 <div id="listId">
