@@ -7,7 +7,11 @@
             <a href="https://twitter.com/share" data-text="{{ page.shareText }}" class="twitter-share-button">Tweet</a>
         {% endif %}
     {% else %}
-        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+        {% if page.hackernews %}
+            <a href="https://twitter.com/share" data-text="{{ page.title }} (HN: {{ page.hackernews }})" class="twitter-share-button">Tweet</a>
+        {% else %}
+            <a href="https://twitter.com/share" data-text="{{ page.title }}" class="twitter-share-button">Tweet</a>
+        {% endif %}
     {% endif %}
     </li>
     <li class="facebook">

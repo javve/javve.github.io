@@ -2,6 +2,7 @@
 layout: post
 title: "The List.js Plugin Guide"
 date: 2012-01-26
+hackernews: "http://news.ycombinator.com/item?id=3515850"
 categories: listjs
 ---
 
