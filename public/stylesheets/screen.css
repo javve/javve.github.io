@@ -155,6 +155,9 @@ h1, h2, h3, h4, h5 {
 h1 b, h2 b, h3 b, h4 b, h5 b {
   font-weight: bold;
 }
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  color: #323232;
+}
 
 p {
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
@@ -185,6 +188,13 @@ p a {
 
 p a:hover {
   color: #566272;
+}
+
+li b, li strong {
+  font-weight: bold;
+}
+li em {
+  font-style: italic;
 }
 
 a {
@@ -339,7 +349,7 @@ a {
   width: 65px;
 }
 .sharing li.facebook iframe {
-  padding-bottom: 5px;
+  padding-bottom: 4px;
 }
 .sharing li.plusone {
   width: 70px;
@@ -1166,19 +1176,15 @@ figure.code .highlight {
   margin-bottom: 10px;
   font-weight: bold;
 }
-.blog h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.blog h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
 .blog .meta-date {
-  font-size: 27px;
+  font-size: 22px;
   margin-bottom: 20px;
+}
+.blog .meta-date .category {
+  color: #838383;
+}
+.blog .meta-date .category a {
+  color: #4a688e;
 }
 .blog .code {
   margin: 30px -30px;
@@ -1186,12 +1192,23 @@ figure.code .highlight {
 .blog .author {
   clear: left;
 }
-.blog ul {
+.blog .box h2 {
+  padding-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.blog .box h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.blog .box ul {
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
   margin-bottom: 15px;
   padding-left: 20px;
 }
-.blog ul li {
+.blog .box ul li {
   list-style-type: disc;
   margin-bottom: 5px;
 }

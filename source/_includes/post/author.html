@@ -9,10 +9,13 @@
         <a href="http://silarapp.com">SilarApp</a> and 
         <a href="http://startuplocation.com">StartupLocation</a>.
     </p>
-    <p style="display:none;">
+    {% if page.comments != false %}
+    <p>
         If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
+        post, <a href="{{ page.commentsUrl }}">Hacker News</a> is the place to be. 
     </p>
+    {% else %}
+    <p><em>Follow me at Twitter, do it!</em></p>
+    {% endif %}
     <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
 </div>

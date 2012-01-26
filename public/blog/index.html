@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Jonny Strömberg</title>
+    <title>Jonny Strömberg @javve</title>
     <meta name="author" content="Jonny Strömberg">
 
     
-    <meta name="description" content="List.js Plugins Version 0.1.5 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins. &hellip;">
+    <meta name="description" content="Plugins - List.js Jan 26th, 2012 Category listjs Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through &hellip;">
     
 
     <!-- http://t.co/dKP3o1e -->
@@ -25,7 +25,7 @@
     <script src="/javascripts/modernizr-2.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     
-    <link href="/atom.xml" rel="alternate" title="Jonny Strömberg" type="application/atom+xml">
+    <link href="/atom.xml" rel="alternate" title="Jonny Strömberg @javve" type="application/atom+xml">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans|Enriqueta' rel='stylesheet' type='text/css'>
 </head>
 
@@ -66,22 +66,54 @@
     <div id="main" class="clearfix">
         <div class="wrapper">
             <div id="content">
-                <div class="blog-index">
+                <div class="blog">
+    <div class="padder">
+        <div class="float-left">
+            
     
     
     
     <article>
         
     
-        <h1 class="entry-title"><a href="/listjs-plugins-guide/">List.js Plugins</a></h1>
+        <h1 class="entry-title"><a href="/listjs-plugins-guide/">Plugins - List.js</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
 
 <div class="entry-content box">
-    <p>Version 0.1.5 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
+    <p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
 
-<p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.plugins.pluginName</code>.</p>
+<p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.pluginName</code>.</p>
 
 <p>There are one plugin bundled with List.js and it is found in <code>/plugins/paging/list.paging.js</code> (and <code>/plugins/paging/list.paging.min.js</code>). Here is some code that shows how to load it.</p>
 
@@ -106,7 +138,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it). <strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example).</p>
+<p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it).</p>
+
+<p><strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example). This is useful when having multiple instances of the same plugin.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -160,12 +194,23 @@
 
 <p>The plugin is run after the list is initiated. See the source code of the <a href="#">paging plugin here</a>.</p>
 
+<h3>Naming</h3>
+
+<p>All List.js plugins should be named <code>list.pluginName.js</code> or <code>list.pluginName.min.js</code>.</p>
+
 <h3>A Good Tip</h3>
 
 <p>Use <code>list.on('updated', yourFancyFunction);</code> to updated you plugin when the list have been updated.</p>
 
+<p>One other really useful method is <code>.update()</code> that updates the list and then triggers the above metioned event (be careful, do not make an infinit loop here).</p>
 
+<p>Remeber that you find all List &amp; Item methods in the <a href="https://github.com/javve/list/blob/master/README.md">documentation at Github</a>.</p>
 
+<h3>Pull requests or links wanted</h3>
+
+<p>If you&#8217;ve made a nice, well written and useful plugin, I would be very happy if you <a href="http://github.com/javve/list">made a pull request</a> so I could bundle it with List.js, or sent me a link so I could add it to <a href="http://listjs.com">Listjs.com</a> and <a href="http://github.com/javve/list">Github</a>.</p>
+
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -183,27 +228,399 @@
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
+
+    </article>
     
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+    
+    <article>
+        
+    
+        <h1 class="entry-title"><a href="/listjs-paging-plugin/">Paging Plugin - List.js</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
+    
+
+
+
+<div class="entry-content box">
+    <p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/examples/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are som options available thought.</p>
+
+<ul>
+<li><p><strong>name</strong> <em>(String, default: &#8220;paging&#8221;)</em><br/>
+Default option for all plugins. Defines how to access the plugin from the list object <code>listObj.pluginName</code>.</p></li>
+<li><p><strong>pagingClass</strong> <em>(String, default: &#8220;paging&#8221;)</em><br/>
+The class that defines which <code>ul</code> that should contain the paging (must be inside the list container)</p></li>
+<li><p><strong>innerWindow</strong> <em>(Int, default: 2)</em><br/>
+How many pages should be visible on each side of the current page.<br/>
+<code>innerWindow: 2</code> &#8230; 3 4 <strong>5</strong> 6 7 &#8230;<br/>
+<code>innerWindow: 1</code> &#8230; 4 <strong>5</strong> 6 &#8230;</p></li>
+<li><p><strong>outerWindow</strong> <em>(Int, default: 0)</em><br/>
+How many pages should be visible on from the beginning and from the end of the paging.<br/>
+<code>outerWindow: 0</code> &#8230; 3 4 <strong>5</strong> 6 7&#8230;<br/>
+<code>outerWindow: 2</code> 1 2 &#8230; 4 5 <strong>6</strong> 7 8 &#8230; 11 12</p></li>
+<li><p><strong>left</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>outerWindow</code> but only from left.
+<code>outerWindow: 2</code> and <code>left: 1</code> 1 &#8230; 4 5 <strong>6</strong> 7 8 &#8230; 11 12</p></li>
+<li><p><strong>right</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>left</code> but from right.</p></li>
+</ul>
+
+
+<p><strong>Notice</strong>: The number of items at each page are decided by the List.js own property <code>page</code>. To set this just add <code>page: Number</code> to the option object sent into the List.js constructor (as been done in both of the examples at this page).</p>
+
+<h2>Two pagings</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingTop&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingBottom&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingTopOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">outerWindow</span><span class="o">:</span> <span class="mi">2</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingBottomOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">right</span><span class="o">:</span> <span class="mi">4</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingTopOptions</span><span class="p">],</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingBottomOptions</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">listOptions</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+    
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
 </div>
+</div>
+
+
+    </article>
+    
+    
+    <article>
+        
+    
+        <h1 class="entry-title"><a href="/listjs-0-2-0-plugins-paging/">Beta 0.2.0: Plugins and Paging - List.js</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
+    
+
+
+
+<div class="entry-content box">
+    <p>This is a release many have been waiting on! Beta 0.2.0 several large improvments and I will go through them one by one.</p>
+
+<h2>Plugins!</h2>
+
+<p>The biggest update in List.js 0.2.0 is the support for plugins. With plugin it gets much easier to make scripts that integrate with List.js. <a href="/listjs-plugins-guide/">Read more »</a></p>
+
+<h2>Paging Plugin</h2>
+
+<p>The first plugin includes the most wanted feature in List.js history (haha). Paging! <a href="/listjs-paging-plugin/">Read more about the paging plugin »</a></p>
+
+<h2>Better options for initization of empty lists</h2>
+
+<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;hacker-list&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="o">&gt;&lt;</span><span class="err">/ul&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">item</span><span class="o">:</span> <span class="s1">&#39;&lt;li&gt;&lt;h3 class=&quot;name&quot;&gt;&lt;/h3&gt;&lt;p class=&quot;city&quot;&gt;&lt;/p&gt;&lt;/li&gt;&#39;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jonny&#39;</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">}</span>
+</span><span class='line'>        <span class="p">,</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jonas&#39;</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">hackerList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;hacker-list&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
+
+<h2>New initization options</h2>
+
+<ul>
+<li><strong>page</strong> <em>(int, default: 200)</em> have replaced <code>maxVisibleItemsCount</code> and represents how many items that should be visible at the same time.</li>
+<li><strong>i</strong> <em>(int, default: 0)</em> defines which item should be the first visble.</li>
+<li><strong>plugins</strong> <em>(array, default: undefined)</em> defines which plugins this instance of the List should use. <a href="/listjs-plugins-guide/">Read more about plugins »</a></li>
+</ul>
+
+
+<h2>New properties</h2>
+
+<ul>
+<li><strong>visibleItems</strong> <em>(array)</em> Returns the currently visible items.</li>
+<li><strong>matchingItems</strong> <em>(array)</em> Returns the items matching the currently active searches and filters, it could there by contains non visible items. If no active searches and filters does <code>.matchingItems</code> contain same items as <code>.items</code></li>
+<li><strong>searched</strong> <em>(boolean)</em> Returns <code>true</code> if there are a active search in the list.</li>
+<li><strong>filtered</strong> <em>(boolean)</em> Returns <code>true</code> if there are a active filter in the list.</li>
+<li><strong>plugins</strong> <em>(object)</em> Returns the <em>plugins</em> that could be initiated (to interact with active plugins use <code>listObj.pluginName</code>).</li>
+</ul>
+
+
+<h2>New methods</h2>
+
+<ul>
+<li>Replaced <code>.addAsync(items)</code> with <code>.add(items, callback)</code>.</li>
+<li><strong>show()</strong>
+Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">itemsInList</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jonny&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Gustaf&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Jonas&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Egon&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Frank&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="o">&amp;</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Ester&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="p">];</span>
+</span><span class='line'>      
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><strong>update()</strong>
+Updates the current state of the list. Meaning that if you for instance hides some items with <code>itemObj.hide()</code> method then you have to call <code>listObj.update()</code> if you want the paging to update.</li>
+<li><strong>on(event, callback)</strong><br/>
+Execute <code>callback</code> when list have been updated (triggered by <code>update()</code>, which is used by a lot of methods).</li>
+</ul>
+
+
+<h2>New Item methods</h2>
+
+<ul>
+<li><strong>matching()</strong>
+Returns true if the item match the current filter and searches. Visible items always matches, but matching items are not always visible.</li>
+<li><strong>visible()</strong>
+Returns boolean. True if the item is visible. Visible items always matches, but matching items are not always visible.</li>
+</ul>
+
+
+<h2>Various</h2>
+
+<ul>
+<li>Fixed IE7 bug in helper <code>hasClass()</code>, <code>addClass()</code> and <code>removeClass()</code>.</li>
+<li>Fix searching with null and undefined values + using <code>searchString = 0</code></li>
+</ul>
+
+
+<p>That was it! Pretty exciting right? Looking forward do see some awesome plugins!</p>
+
+    
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
+</div>
+</div>
+
+
     </article>
     
     
@@ -211,6 +628,35 @@
         
     
         <h1 class="entry-title"><a href="/listjs-beta-0-1-4-filter-search-sort/">List.js Beta 0.1.4: Filter, search and sort!</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-29T00:00:00+01:00" pubdate data-updated="true">Nov 29<span>th</span>, 2011</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
@@ -224,8 +670,7 @@
 
 <p>Grab the latest version at <a href="http://github.com/list/javve">Github.com/javve/list</a></p>
 
-
-
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -243,27 +688,9 @@
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
-    
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
-</div>
+
     </article>
     
     
@@ -271,6 +698,35 @@
         
     
         <h1 class="entry-title"><a href="/listjs-beta-0-1-3-release/">List.js Beta 0.1.3 release!</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-29T00:00:00+01:00" pubdate data-updated="true">Nov 29<span>th</span>, 2011</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
@@ -292,8 +748,7 @@
 
 <p>Go to <a href="http://github.com/javve/list">github.com/javve/list</a> to download the latest version (and remember to change your sort button)!</p>
 
-
-
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -311,27 +766,9 @@
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
-    
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
-</div>
+
     </article>
     
     
@@ -339,6 +776,35 @@
         
     
         <h1 class="entry-title"><a href="/performance-wroooooom-index-search-and-sort/">Performance, wroooooom! Index, search and sort thousands of items</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-28T00:00:00+02:00" pubdate data-updated="true">Oct 28<span>th</span>, 2011</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
@@ -403,8 +869,7 @@ get MUCH faster the second time they are called. The data above are all based
 on first runs. <strong>Searching in 10 000 takes e.g 18 ms the second time compared
 to 800 the first.</strong></p>
 
-
-
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -422,27 +887,9 @@ to 800 the first.</strong></p>
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
-    
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
-</div>
+
     </article>
     
     
@@ -450,6 +897,35 @@ to 800 the first.</strong></p>
         
     
         <h1 class="entry-title"><a href="/listjs-com-with-examples-is-now-available-at-github/">Listjs.com with examples is now available at GitHub</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-25T00:00:00+02:00" pubdate data-updated="true">Oct 25<span>th</span>, 2011</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
@@ -464,8 +940,7 @@ examples and try them out locally.</p>
 performance and benchmarking, but other work got in the way. But I
 promis you, its worth waiting for.</p>
 
-
-
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -483,27 +958,9 @@ promis you, its worth waiting for.</p>
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
-    
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
-</div>
+
     </article>
     
     
@@ -511,6 +968,35 @@ promis you, its worth waiting for.</p>
         
     
         <h1 class="entry-title"><a href="/6-days-666-watchers-and-37-forks/">6 days, 666 followers and 37 forks</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-25T00:00:00+02:00" pubdate data-updated="true">Oct 25<span>th</span>, 2011</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
@@ -558,8 +1044,7 @@ promis you, its worth waiting for.</p>
 
 <p><img src="/images/posts/2011/tumblr_ltn42qDS3H1qzsy82.jpg"></p>
 
-
-
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -577,27 +1062,9 @@ promis you, its worth waiting for.</p>
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
-    
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
-</div>
+
     </article>
     
     
@@ -605,6 +1072,35 @@ promis you, its worth waiting for.</p>
         
     
         <h1 class="entry-title"><a href="/listjs-first-45-hours-in-the-wild/">List.js first 45 hours out in the wild</a></h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-21T00:00:00+02:00" pubdate data-updated="true">Oct 21<span>st</span>, 2011</time> 
+                <span class="category">
+                    Category 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+                </span>
+            </p>
+        
+
     
 
 
@@ -628,8 +1124,7 @@ promis you, its worth waiting for.</p>
 
 <p>Probably the best thing is the amazing response at Twitter, Im so freakin’ happy right now.</p>
 
-
-
+    
     <div class="share">
     <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
@@ -647,27 +1142,9 @@ promis you, its worth waiting for.</p>
     </li>
 </ul>
 </div>
-
 </div>
 
-<div class="author">
-    <h3>About the author and discussions</h3>
-    
-    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
-    <p class="first">
-        I&#8217;m Jonny. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    <p style="display:none;">
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="#">Hacker News</a> is the place to be. 
-        <em>Follow me at Twitter, do it!</em>
-    </p>
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
-</div>
+
     </article>
     
     <div class="pagination">
@@ -675,15 +1152,49 @@ promis you, its worth waiting for.</p>
         <a href="/blog/archives">Blog Archives</a>
         
     </div>
+
+        </div>
+    </div>
+    <div id="lifestream" class="tweetstream">
+    <h3>Lifestream</h3>
+    <ul class="list">
+        <li id="tmpl-item">
+            <p class="text"></p>
+            <p class="user"></p>
+        </li>
+    </ul>
+    <div id="stream-loading"></div>
 </div>
-<aside class="sidebar">
+
+<script type="text/javascript">
+$(function() {
+    window.lifeStream = new TweetStream(
+        'lifestream', 
+        {
+            streamName: "lifeStream",
+            twitterUrl: "https://api.twitter.com/statuses/user_timeline/javve.json?callback",
+			count: 3
+        }
+    );
+});
+</script>
     
-    <section>
+    <aside class="sidebar">
+        
+        <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/listjs-plugins-guide/">List.js Plugins</a>
+        <a href="/listjs-plugins-guide/">Plugins - List.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/listjs-paging-plugin/">Paging Plugin - List.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/listjs-0-2-0-plugins-paging/">Beta 0.2.0: Plugins and Paging - List.js</a>
       </li>
     
       <li class="post">
@@ -694,14 +1205,6 @@ promis you, its worth waiting for.</p>
         <a href="/listjs-beta-0-1-3-release/">List.js Beta 0.1.3 release!</a>
       </li>
     
-      <li class="post">
-        <a href="/performance-wroooooom-index-search-and-sort/">Performance, wroooooom! Index, search and sort thousands of items</a>
-      </li>
-    
-      <li class="post">
-        <a href="/listjs-com-with-examples-is-now-available-at-github/">Listjs.com with examples is now available at GitHub</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -710,8 +1213,9 @@ promis you, its worth waiting for.</p>
 
 
 
-    
-</aside>
+        
+    </aside>
+</div>
 
             </div>
         </div>

@@ -88,7 +88,8 @@ var TweetStream = function(id, options) {
                 }
             }
             spinner.stop();
-            for (var i = 0, il = tweets.length; i < il && i < 7; i++) {
+			var maxLength = options.count || 7;
+            for (var i = 0, il = tweets.length; i < il && i < maxLength; i++) {
                 var tweet = getTweet(tweets[i]);
             
                 tweetList.add({

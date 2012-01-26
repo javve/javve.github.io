@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>Plugins - List.js - Jonny Strömberg @javve</title>
+    <title>Paging Plugin - List.js - Jonny Strömberg @javve</title>
     <meta name="author" content="Jonny Strömberg">
 
     
-    <meta name="description" content="Plugins - List.js Jan 26th, 2012 - Category: listjs Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you &hellip;">
+    <meta name="description" content="Paging Plugin - List.js Jan 26th, 2012 - Category: listjs The List.js paging plugin is bundled with the script and is located in /plugins/paging/ &hellip;">
     
 
     <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    <link rel="canonical" href="http://jonnystromberg.com/listjs-plugins-guide">
+    <link rel="canonical" href="http://jonnystromberg.com/listjs-paging-plugin">
     <link href="/favicon.png" rel="icon">
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
     
@@ -71,7 +71,7 @@
         <div class="float-left">
             
     
-        <h1 class="entry-title">Plugins - List.js</h1>
+        <h1 class="entry-title">Paging Plugin - List.js</h1>
         
             <p class="meta-date">
                 
@@ -102,36 +102,7 @@
 
 
 <div class="entry-content box">
-    <p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
-
-<p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.pluginName</code>.</p>
-
-<p>There are one plugin bundled with List.js and it is found in <code>/plugins/paging/list.paging.js</code> (and <code>/plugins/paging/list.paging.min.js</code>). Here is some code that shows how to load it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
-</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it).</p>
-
-<p><strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example). This is useful when having multiple instances of the same plugin.</p>
+    <p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/examples/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -149,57 +120,122 @@
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
 </span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
 </span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
 </span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">],</span>
-</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="p">{</span>
-</span><span class='line'>          <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;paging2&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;topPaging&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">right</span><span class="o">:</span> <span class="mi">2</span>
-</span><span class='line'>      <span class="p">]</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
 </span><span class='line'>  <span class="p">]</span>
 </span><span class='line'><span class="p">};</span>
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Read more about the <a href="#">paging plugin here</a>.</p>
+<p>There are som options available thought.</p>
 
-<h2>Make Your Own Plugin</h2>
+<ul>
+<li><p><strong>name</strong> <em>(String, default: &#8220;paging&#8221;)</em><br/>
+Default option for all plugins. Defines how to access the plugin from the list object <code>listObj.pluginName</code>.</p></li>
+<li><p><strong>pagingClass</strong> <em>(String, default: &#8220;paging&#8221;)</em><br/>
+The class that defines which <code>ul</code> that should contain the paging (must be inside the list container)</p></li>
+<li><p><strong>innerWindow</strong> <em>(Int, default: 2)</em><br/>
+How many pages should be visible on each side of the current page.<br/>
+<code>innerWindow: 2</code> &#8230; 3 4 <strong>5</strong> 6 7 &#8230;<br/>
+<code>innerWindow: 1</code> &#8230; 4 <strong>5</strong> 6 &#8230;</p></li>
+<li><p><strong>outerWindow</strong> <em>(Int, default: 0)</em><br/>
+How many pages should be visible on from the beginning and from the end of the paging.<br/>
+<code>outerWindow: 0</code> &#8230; 3 4 <strong>5</strong> 6 7&#8230;<br/>
+<code>outerWindow: 2</code> 1 2 &#8230; 4 5 <strong>6</strong> 7 8 &#8230; 11 12</p></li>
+<li><p><strong>left</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>outerWindow</code> but only from left.
+<code>outerWindow: 2</code> and <code>left: 1</code> 1 &#8230; 4 5 <strong>6</strong> 7 8 &#8230; 11 12</p></li>
+<li><p><strong>right</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>left</code> but from right.</p></li>
+</ul>
 
-<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>list</code> is the actual list that uses the plugin, <code>options</code> contains the options shown in the example above.</p>
 
-<figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><strong>Notice</strong>: The number of items at each page are decided by the List.js own property <code>page</code>. To set this just add <code>page: Number</code> to the option object sent into the List.js constructor (as been done in both of the examples at this page).</p>
+
+<h2>Two pagings</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="c1">// Do stuff!</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingTop&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingBottom&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingTopOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">outerWindow</span><span class="o">:</span> <span class="mi">2</span>
 </span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingBottomOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">right</span><span class="o">:</span> <span class="mi">4</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingTopOptions</span><span class="p">],</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingBottomOptions</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">listOptions</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>The plugin is run after the list is initiated. See the source code of the <a href="#">paging plugin here</a>.</p>
-
-<h3>Naming</h3>
-
-<p>All List.js plugins should be named <code>list.pluginName.js</code> or <code>list.pluginName.min.js</code>.</p>
-
-<h3>A Good Tip</h3>
-
-<p>Use <code>list.on('updated', yourFancyFunction);</code> to updated you plugin when the list have been updated.</p>
-
-<p>One other really useful method is <code>.update()</code> that updates the list and then triggers the above metioned event (be careful, do not make an infinit loop here).</p>
-
-<p>Remeber that you find all List &amp; Item methods in the <a href="https://github.com/javve/list/blob/master/README.md">documentation at Github</a>.</p>
-
-<h3>Pull requests or links wanted</h3>
-
-<p>If you&#8217;ve made a nice, well written and useful plugin, I would be very happy if you <a href="http://github.com/javve/list">made a pull request</a> so I could bundle it with List.js, or sent me a link so I could add it to <a href="http://listjs.com">Listjs.com</a> and <a href="http://github.com/javve/list">Github</a>.</p>
 
     
     <div class="share">
@@ -234,7 +270,10 @@
         <a href="http://startuplocation.com">StartupLocation</a>.
     </p>
     
-    <p><em>Follow me at Twitter, do it!</em></p>
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="http://news.ycombinator.com/item?id=3511485">Hacker News</a> is the place to be. 
+    </p>
     
     <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
 </div>
@@ -271,7 +310,7 @@ $(function() {
     <article class="hentry" role="article">
         
     
-        <h1 class="entry-title">Plugins - List.js</h1>
+        <h1 class="entry-title">Paging Plugin - List.js</h1>
         
             <p class="meta-date">
                 
@@ -302,36 +341,7 @@ $(function() {
 
 
 <div class="entry-content box">
-    <p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
-
-<p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.pluginName</code>.</p>
-
-<p>There are one plugin bundled with List.js and it is found in <code>/plugins/paging/list.paging.js</code> (and <code>/plugins/paging/list.paging.min.js</code>). Here is some code that shows how to load it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
-</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it).</p>
-
-<p><strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example). This is useful when having multiple instances of the same plugin.</p>
+    <p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/examples/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -349,57 +359,122 @@ $(function() {
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
 </span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
 </span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
 </span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">],</span>
-</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="p">{</span>
-</span><span class='line'>          <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;paging2&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;topPaging&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">right</span><span class="o">:</span> <span class="mi">2</span>
-</span><span class='line'>      <span class="p">]</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
 </span><span class='line'>  <span class="p">]</span>
 </span><span class='line'><span class="p">};</span>
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Read more about the <a href="#">paging plugin here</a>.</p>
+<p>There are som options available thought.</p>
 
-<h2>Make Your Own Plugin</h2>
+<ul>
+<li><p><strong>name</strong> <em>(String, default: &#8220;paging&#8221;)</em><br/>
+Default option for all plugins. Defines how to access the plugin from the list object <code>listObj.pluginName</code>.</p></li>
+<li><p><strong>pagingClass</strong> <em>(String, default: &#8220;paging&#8221;)</em><br/>
+The class that defines which <code>ul</code> that should contain the paging (must be inside the list container)</p></li>
+<li><p><strong>innerWindow</strong> <em>(Int, default: 2)</em><br/>
+How many pages should be visible on each side of the current page.<br/>
+<code>innerWindow: 2</code> &#8230; 3 4 <strong>5</strong> 6 7 &#8230;<br/>
+<code>innerWindow: 1</code> &#8230; 4 <strong>5</strong> 6 &#8230;</p></li>
+<li><p><strong>outerWindow</strong> <em>(Int, default: 0)</em><br/>
+How many pages should be visible on from the beginning and from the end of the paging.<br/>
+<code>outerWindow: 0</code> &#8230; 3 4 <strong>5</strong> 6 7&#8230;<br/>
+<code>outerWindow: 2</code> 1 2 &#8230; 4 5 <strong>6</strong> 7 8 &#8230; 11 12</p></li>
+<li><p><strong>left</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>outerWindow</code> but only from left.
+<code>outerWindow: 2</code> and <code>left: 1</code> 1 &#8230; 4 5 <strong>6</strong> 7 8 &#8230; 11 12</p></li>
+<li><p><strong>right</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>left</code> but from right.</p></li>
+</ul>
 
-<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>list</code> is the actual list that uses the plugin, <code>options</code> contains the options shown in the example above.</p>
 
-<figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><strong>Notice</strong>: The number of items at each page are decided by the List.js own property <code>page</code>. To set this just add <code>page: Number</code> to the option object sent into the List.js constructor (as been done in both of the examples at this page).</p>
+
+<h2>Two pagings</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="c1">// Do stuff!</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingTop&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingBottom&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingTopOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">outerWindow</span><span class="o">:</span> <span class="mi">2</span>
 </span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingBottomOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">right</span><span class="o">:</span> <span class="mi">4</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingTopOptions</span><span class="p">],</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingBottomOptions</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">listOptions</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>The plugin is run after the list is initiated. See the source code of the <a href="#">paging plugin here</a>.</p>
-
-<h3>Naming</h3>
-
-<p>All List.js plugins should be named <code>list.pluginName.js</code> or <code>list.pluginName.min.js</code>.</p>
-
-<h3>A Good Tip</h3>
-
-<p>Use <code>list.on('updated', yourFancyFunction);</code> to updated you plugin when the list have been updated.</p>
-
-<p>One other really useful method is <code>.update()</code> that updates the list and then triggers the above metioned event (be careful, do not make an infinit loop here).</p>
-
-<p>Remeber that you find all List &amp; Item methods in the <a href="https://github.com/javve/list/blob/master/README.md">documentation at Github</a>.</p>
-
-<h3>Pull requests or links wanted</h3>
-
-<p>If you&#8217;ve made a nice, well written and useful plugin, I would be very happy if you <a href="http://github.com/javve/list">made a pull request</a> so I could bundle it with List.js, or sent me a link so I could add it to <a href="http://listjs.com">Listjs.com</a> and <a href="http://github.com/javve/list">Github</a>.</p>
 
     
     <div class="share">
@@ -434,7 +509,10 @@ $(function() {
         <a href="http://startuplocation.com">StartupLocation</a>.
     </p>
     
-    <p><em>Follow me at Twitter, do it!</em></p>
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="http://news.ycombinator.com/item?id=3511485">Hacker News</a> is the place to be. 
+    </p>
     
     <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
 </div>
@@ -453,7 +531,10 @@ $(function() {
         <a href="http://startuplocation.com">StartupLocation</a>.
     </p>
     
-    <p><em>Follow me at Twitter, do it!</em></p>
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="http://news.ycombinator.com/item?id=3511485">Hacker News</a> is the place to be. 
+    </p>
     
     <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
 </div>
@@ -484,7 +565,7 @@ $(function() {
             
                 <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jonnystromberg.com/listjs-plugins-guide/" data-via="" data-counturl="http://jonnystromberg.com/listjs-plugins-guide/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jonnystromberg.com/listjs-paging-plugin/" data-via="" data-counturl="http://jonnystromberg.com/listjs-paging-plugin/" >Tweet</a>
   
   
   
@@ -494,8 +575,10 @@ $(function() {
             
             <p class="meta">
                 
-                <a class="basic-alignment left" href="/listjs-paging-plugin/" title="Previous Post: Paging Plugin - List.js">&laquo; Paging Plugin - List.js</a>
+                <a class="basic-alignment left" href="/listjs-0-2-0-plugins-paging/" title="Previous Post: Beta 0.2.0: Plugins and Paging - List.js">&laquo; Beta 0.2.0: Plugins and Paging - List.js</a>
                 
+                
+                <a class="basic-alignment right" href="/listjs-plugins-guide/" title="next Post: Plugins - List.js">Plugins - List.js &raquo;</a>
                 
             </p>
         </footer>

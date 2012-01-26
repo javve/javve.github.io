@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Beta 0.2.0: Plugins and Paging - List.js - Jonny Strömberg @javve</title>
+    <meta name="author" content="Jonny Strömberg">
+
+    
+    <meta name="description" content="Beta 0.2.0: Plugins and Paging - List.js Jan 26th, 2012 - Category: listjs This is a release many have been waiting on! Beta 0.2.0 several large &hellip;">
+    
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="canonical" href="http://jonnystromberg.com/listjs-0-2-0-plugins-paging">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    
+    <script src="/javascripts/modernizr-2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    
+    <link href="/atom.xml" rel="alternate" title="Jonny Strömberg @javve" type="application/atom+xml">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Enriqueta' rel='stylesheet' type='text/css'>
+</head>
+
+<body   >
+    <header role="banner" class="clearfix">
+        <div class="wrapper">
+            <hgroup class="author">
+    <h2>
+        <a class="item" href="/">
+            <img class="portrait" src="/images/graphics/jonny/jonny-small.jpg" width="72" height="70" />
+            <span>Jonny Strömberg</span>
+        </a>
+    </h2>
+    <h3>
+        <a class="item" href="http://twitter.com/javve">@javve</a>
+        <span class="follow">
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        </span>
+    </h3>
+</hgroup>
+
+            <nav role="navigation"><ul class="main-navigation">
+  <li><a class="item" href="/">Home</a></li>
+  <li><a class="item" href="/about">Me</a></li>
+  <li><a class="item" href="/projects">Projects</a></li>
+  <li>
+      <a class="blog item" href="/blog/archives">
+          Blog
+      </a>
+      <a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">
+          <img class="rss"src="/images/icons/rss_16.png" width="16" height="16" />
+      </a>
+  </li>
+</ul>
+</nav>    
+        </div>
+    </header>
+    <div id="main" class="clearfix">
+        <div class="wrapper">
+            <div id="content">
+                <div class="blog">
+    <div class="padder">
+        <div class="float-left">
+            
+    
+        <h1 class="entry-title">Beta 0.2.0: Plugins and Paging - List.js</h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time> - Category: 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+            </p>
+        
+    
+
+
+
+<div class="entry-content box">
+    <p>This is a release many have been waiting on! Beta 0.2.0 several large improvments and I will go through them one by one.</p>
+
+<h2>Plugins!</h2>
+
+<p>The biggest update in List.js 0.2.0 is the support for plugins. With plugin it gets much easier to make scripts that integrate with List.js. <a href="/listjs-plugins-guide/">Read more »</a></p>
+
+<h2>Paging Plugin</h2>
+
+<p>The first plugin includes the most wanted feature in List.js history (haha). Paging! <a href="/listjs-paging-plugin/">Read more about the paging plugin »</a></p>
+
+<h2>Better options for initization of empty lists</h2>
+
+<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;hacker-list&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="o">&gt;&lt;</span><span class="err">/ul&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">item</span><span class="o">:</span> <span class="s1">&#39;&lt;li&gt;&lt;h3 class=&quot;name&quot;&gt;&lt;/h3&gt;&lt;p class=&quot;city&quot;&gt;&lt;/p&gt;&lt;/li&gt;&#39;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jonny&#39;</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">}</span>
+</span><span class='line'>        <span class="p">,</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jonas&#39;</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">hackerList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;hacker-list&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
+
+<h2>New initization options</h2>
+
+<ul>
+<li><strong>page</strong> <em>(int, default: 200)</em> have replaced <code>maxVisibleItemsCount</code> and represents how many items that should be visible at the same time.</li>
+<li><strong>i</strong> <em>(int, default: 0)</em> defines which item should be the first visble.</li>
+<li><strong>plugins</strong> <em>(array, default: undefined)</em> defines which plugins this instance of the List should use. <a href="/listjs-plugins-guide/">Read more about plugins »</a></li>
+</ul>
+
+
+<h2>New properties</h2>
+
+<ul>
+<li><strong>visibleItems</strong> <em>(array)</em> Returns the currently visible items.</li>
+<li><strong>matchingItems</strong> <em>(array)</em> Returns the items matching the currently active searches and filters, it could there by contains non visible items. If no active searches and filters does <code>.matchingItems</code> contain same items as <code>.items</code></li>
+<li><strong>searched</strong> <em>(boolean)</em> Returns <code>true</code> if there are a active search in the list.</li>
+<li><strong>filtered</strong> <em>(boolean)</em> Returns <code>true</code> if there are a active filter in the list.</li>
+<li><strong>plugins</strong> <em>(object)</em> Returns the <em>plugins</em> that could be initiated (to interact with active plugins use <code>listObj.pluginName</code>).</li>
+</ul>
+
+
+<h2>New methods</h2>
+
+<ul>
+<li>Replaced <code>.addAsync(items)</code> with <code>.add(items, callback)</code>.</li>
+<li><strong>show()</strong>
+Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">itemsInList</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jonny&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Gustaf&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Jonas&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Egon&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Frank&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="o">&amp;</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Ester&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="p">];</span>
+</span><span class='line'>      
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><strong>update()</strong>
+Updates the current state of the list. Meaning that if you for instance hides some items with <code>itemObj.hide()</code> method then you have to call <code>listObj.update()</code> if you want the paging to update.</li>
+<li><strong>on(event, callback)</strong><br/>
+Execute <code>callback</code> when list have been updated (triggered by <code>update()</code>, which is used by a lot of methods).</li>
+</ul>
+
+
+<h2>New Item methods</h2>
+
+<ul>
+<li><strong>matching()</strong>
+Returns true if the item match the current filter and searches. Visible items always matches, but matching items are not always visible.</li>
+<li><strong>visible()</strong>
+Returns boolean. True if the item is visible. Visible items always matches, but matching items are not always visible.</li>
+</ul>
+
+
+<h2>Various</h2>
+
+<ul>
+<li>Fixed IE7 bug in helper <code>hasClass()</code>, <code>addClass()</code> and <code>removeClass()</code>.</li>
+<li>Fix searching with null and undefined values + using <code>searchString = 0</code></li>
+</ul>
+
+
+<p>That was it! Pretty exciting right? Looking forward do see some awesome plugins!</p>
+
+    
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
+</div>
+</div>
+
+
+    <div class="author">
+    <h3>About the author and discussions</h3>
+    
+    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
+    <p class="first">
+        I'm Jonny. A Photoshopping JavaScript Ninja from Stockholm.
+        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
+        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
+        <a href="http://silarapp.com">SilarApp</a> and 
+        <a href="http://startuplocation.com">StartupLocation</a>.
+    </p>
+    
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="">Hacker News</a> is the place to be. 
+    </p>
+    
+    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+</div>
+
+        </div>
+    </div>
+    <div id="lifestream" class="tweetstream">
+    <h3>Lifestream</h3>
+    <ul class="list">
+        <li id="tmpl-item">
+            <p class="text"></p>
+            <p class="user"></p>
+        </li>
+    </ul>
+    <div id="stream-loading"></div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    window.lifeStream = new TweetStream(
+        'lifestream', 
+        {
+            streamName: "lifeStream",
+            twitterUrl: "https://api.twitter.com/statuses/user_timeline/javve.json?callback",
+			count: 3
+        }
+    );
+});
+</script>
+</div>
+
+<!--
+<div>
+    <article class="hentry" role="article">
+        
+    
+        <h1 class="entry-title">Beta 0.2.0: Plugins and Paging - List.js</h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time> - Category: 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+            </p>
+        
+    
+
+
+
+<div class="entry-content box">
+    <p>This is a release many have been waiting on! Beta 0.2.0 several large improvments and I will go through them one by one.</p>
+
+<h2>Plugins!</h2>
+
+<p>The biggest update in List.js 0.2.0 is the support for plugins. With plugin it gets much easier to make scripts that integrate with List.js. <a href="/listjs-plugins-guide/">Read more »</a></p>
+
+<h2>Paging Plugin</h2>
+
+<p>The first plugin includes the most wanted feature in List.js history (haha). Paging! <a href="/listjs-paging-plugin/">Read more about the paging plugin »</a></p>
+
+<h2>Better options for initization of empty lists</h2>
+
+<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;hacker-list&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="o">&gt;&lt;</span><span class="err">/ul&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">item</span><span class="o">:</span> <span class="s1">&#39;&lt;li&gt;&lt;h3 class=&quot;name&quot;&gt;&lt;/h3&gt;&lt;p class=&quot;city&quot;&gt;&lt;/p&gt;&lt;/li&gt;&#39;</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jonny&#39;</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span><span class="s1">&#39;Stockholm&#39;</span> <span class="p">}</span>
+</span><span class='line'>        <span class="p">,</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jonas&#39;</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span><span class="s1">&#39;Berlin&#39;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">hackerList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;hacker-list&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
+
+<h2>New initization options</h2>
+
+<ul>
+<li><strong>page</strong> <em>(int, default: 200)</em> have replaced <code>maxVisibleItemsCount</code> and represents how many items that should be visible at the same time.</li>
+<li><strong>i</strong> <em>(int, default: 0)</em> defines which item should be the first visble.</li>
+<li><strong>plugins</strong> <em>(array, default: undefined)</em> defines which plugins this instance of the List should use. <a href="/listjs-plugins-guide/">Read more about plugins »</a></li>
+</ul>
+
+
+<h2>New properties</h2>
+
+<ul>
+<li><strong>visibleItems</strong> <em>(array)</em> Returns the currently visible items.</li>
+<li><strong>matchingItems</strong> <em>(array)</em> Returns the items matching the currently active searches and filters, it could there by contains non visible items. If no active searches and filters does <code>.matchingItems</code> contain same items as <code>.items</code></li>
+<li><strong>searched</strong> <em>(boolean)</em> Returns <code>true</code> if there are a active search in the list.</li>
+<li><strong>filtered</strong> <em>(boolean)</em> Returns <code>true</code> if there are a active filter in the list.</li>
+<li><strong>plugins</strong> <em>(object)</em> Returns the <em>plugins</em> that could be initiated (to interact with active plugins use <code>listObj.pluginName</code>).</li>
+</ul>
+
+
+<h2>New methods</h2>
+
+<ul>
+<li>Replaced <code>.addAsync(items)</code> with <code>.add(items, callback)</code>.</li>
+<li><strong>show()</strong>
+Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">itemsInList</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jonny&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Gustaf&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Jonas&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Egon&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Frank&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="o">&amp;</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Ester&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="p">];</span>
+</span><span class='line'>      
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><strong>update()</strong>
+Updates the current state of the list. Meaning that if you for instance hides some items with <code>itemObj.hide()</code> method then you have to call <code>listObj.update()</code> if you want the paging to update.</li>
+<li><strong>on(event, callback)</strong><br/>
+Execute <code>callback</code> when list have been updated (triggered by <code>update()</code>, which is used by a lot of methods).</li>
+</ul>
+
+
+<h2>New Item methods</h2>
+
+<ul>
+<li><strong>matching()</strong>
+Returns true if the item match the current filter and searches. Visible items always matches, but matching items are not always visible.</li>
+<li><strong>visible()</strong>
+Returns boolean. True if the item is visible. Visible items always matches, but matching items are not always visible.</li>
+</ul>
+
+
+<h2>Various</h2>
+
+<ul>
+<li>Fixed IE7 bug in helper <code>hasClass()</code>, <code>addClass()</code> and <code>removeClass()</code>.</li>
+<li>Fix searching with null and undefined values + using <code>searchString = 0</code></li>
+</ul>
+
+
+<p>That was it! Pretty exciting right? Looking forward do see some awesome plugins!</p>
+
+    
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
+</div>
+</div>
+
+
+    <div class="author">
+    <h3>About the author and discussions</h3>
+    
+    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
+    <p class="first">
+        I'm Jonny. A Photoshopping JavaScript Ninja from Stockholm.
+        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
+        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
+        <a href="http://silarapp.com">SilarApp</a> and 
+        <a href="http://startuplocation.com">StartupLocation</a>.
+    </p>
+    
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="">Hacker News</a> is the place to be. 
+    </p>
+    
+    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+</div>
+
+        <footer>
+            <p class="meta">
+                <div class="author">
+    <h3>About the author and discussions</h3>
+    
+    <img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" />
+    <p class="first">
+        I'm Jonny. A Photoshopping JavaScript Ninja from Stockholm.
+        Works as <em>The</em> designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
+        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
+        <a href="http://silarapp.com">SilarApp</a> and 
+        <a href="http://startuplocation.com">StartupLocation</a>.
+    </p>
+    
+    <p>
+        If you want to comment, discuss, upvote or downvote this 
+        post, <a href="">Hacker News</a> is the place to be. 
+    </p>
+    
+    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+</div>
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time>
+                
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+            </p>
+            
+            
+                <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jonnystromberg.com/listjs-0-2-0-plugins-paging/" data-via="" data-counturl="http://jonnystromberg.com/listjs-0-2-0-plugins-paging/" >Tweet</a>
+  
+  
+  
+</div>
+
+            
+            
+            <p class="meta">
+                
+                <a class="basic-alignment left" href="/listjs-beta-0-1-4-filter-search-sort/" title="Previous Post: List.js Beta 0.1.4: Filter, search and sort!">&laquo; List.js Beta 0.1.4: Filter, search and sort!</a>
+                
+                
+                <a class="basic-alignment right" href="/listjs-paging-plugin/" title="next Post: Paging Plugin - List.js">Paging Plugin - List.js &raquo;</a>
+                
+            </p>
+        </footer>
+    </article>
+    
+    
+    
+</div>
+
+
+<aside class="sidebar">
+    
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/listjs-plugins-guide/">Plugins - List.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/listjs-paging-plugin/">Paging Plugin - List.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/listjs-0-2-0-plugins-paging/">Beta 0.2.0: Plugins and Paging - List.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/listjs-beta-0-1-4-filter-search-sort/">List.js Beta 0.1.4: Filter, search and sort!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/listjs-beta-0-1-3-release/">List.js Beta 0.1.3 release!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+    
+</aside>
+
+-->
+            </div>
+        </div>
+    </div>
+    <footer role="contentinfo" class="clearfix">
+        <div class="wrapper">
+            
+        </div>
+    </footer>
+
+    
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+<script src="/javascripts/libs/spin.min.js" type="text/javascript"></script>
+<script src="/javascripts/libs/twitter-text.js" type="text/javascript"></script>
+<script src="/javascripts/libs/list.min.js" type="text/javascript"></script>
+<script src="/javascripts/tweetstream.js" type="text/javascript"></script>
+<script src="/javascripts/js.js" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8204597-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+<div id="fb-root"></div>
+
+<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=231755320213849";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+</body>
+</html>
