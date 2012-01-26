@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Jonny Strömberg @javve]]></title>
+  <title><![CDATA[@javve]]></title>
   <link href="http://jonnystromberg.com/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-01-26T01:44:13+01:00</updated>
+  <updated>2012-01-26T21:17:39+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -14,11 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Plugins - List.js]]></title>
+    <title type="html"><![CDATA[The List.js Plugin Guide]]></title>
     <link href="http://jonnystromberg.com/listjs-plugins-guide/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-plugins-guide</id>
-    <content type="html"><![CDATA[<p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
+    <content type="html"><![CDATA[<p><img class="float-right default" src="http://jonnystromberg.com/images/projects/listjs/listjs-logo.jpg"></p>
+
+<p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
 
 <p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.pluginName</code>.</p>
 
@@ -120,7 +122,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Paging Plugin - List.js]]></title>
+    <title type="html"><![CDATA[The List.js Paging Plugin]]></title>
     <link href="http://jonnystromberg.com/listjs-paging-plugin/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-paging-plugin</id>
@@ -162,6 +164,55 @@
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And the paging that gets created looks <em><strong>kinda</strong></em> like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;li&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=\&quot;</span><span class="err">\&quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;li&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=\&quot;</span><span class="err">\&quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;li&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>             ...
+</span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -262,11 +313,14 @@ Same as <code>left</code> but from right.</p></li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Beta 0.2.0: Plugins and Paging - List.js]]></title>
+    <title type="html"><![CDATA[List.js 0.2.0: Plugins and Paging]]></title>
     <link href="http://jonnystromberg.com/listjs-0-2-0-plugins-paging/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-0-2-0-plugins-paging</id>
-    <content type="html"><![CDATA[<p>This is a release many have been waiting on! Beta 0.2.0 several large improvments and I will go through them one by one.</p>
+    <content type="html"><![CDATA[<p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em>
+<img class="float-right default" src="http://jonnystromberg.com/images/projects/listjs/listjs-logo.jpg"></p>
+
+<p>This is a release many have been waiting on! Beta 0.2.0 includes several large improvments and I will go through them one by one.</p>
 
 <h2>Plugins!</h2>
 
@@ -396,6 +450,8 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
 
 
 <p>That was it! Pretty exciting right? Looking forward do see some awesome plugins!</p>
+
+<p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em></p>
 ]]></content>
   </entry>
   

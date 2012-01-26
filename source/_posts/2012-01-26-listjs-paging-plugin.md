@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paging Plugin - List.js"
+title: "The List.js Paging Plugin"
 date: 2012-01-26
 comments: true
 commentsUrl: "http://news.ycombinator.com/item?id=3511485"
@@ -28,6 +28,33 @@ var options = {
 
 var listObj = new List('listId', options);
 </script>
+```
+
+And the paging that gets created looks _**kinda**_ like this:
+
+``` html
+<div id="listId">
+	<ul class="list">
+		/* A bunch of items */
+	</ul>
+	<ul class="paging">
+	   <li>
+	       <div class="page">
+	           <a class="active" href="javascript:function Z(){Z=\"\"}Z()">1</a>
+           </div>
+       </li>
+	   <li>
+	       <div class="page">
+	           <a href="javascript:function Z(){Z=\"\"}Z()">2</a>
+           </div>
+       </li>
+	   <li>
+	       <div class="page">
+	           ...
+           </div>
+       </li>
+	</ul>
+</div>
 ```
 
 There are som options available thought.

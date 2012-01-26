@@ -268,6 +268,9 @@ a {
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
 }
+.box p a {
+  text-decoration: underline;
+}
 .box h4 {
   font-weight: bold;
 }
@@ -493,13 +496,18 @@ header .main-navigation .rss {
   left: -37px;
 }
 
+/*
 footer {
-  background: url('/images/bg/body-light.png?1324410681') repeat;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 10px 0 0;
-  border-top: dotted 1px #e3dfd9;
+    background:image-url('bg/body-light.png') repeat;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    padding:10px 0 0;
+    border-top:dotted 1px #e3dfd9;
+}
+*/
+footer {
+  display: none;
 }
 
 .tweetstream {
@@ -1175,6 +1183,14 @@ figure.code .highlight {
   line-height: 1.1;
   margin-bottom: 10px;
   font-weight: bold;
+}
+.blog img.default {
+  width: 280px;
+}
+.blog img.default.float-right {
+  margin-left: 20px;
+  margin-right: -30px;
+  margin-top: -30px;
 }
 .blog .meta-date {
   font-size: 22px;

@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "Plugins - List.js"
+title: "The List.js Plugin Guide"
 date: 2012-01-26
 comments: false
 categories: listjs
 ---
+
+{% img float-right default /images/projects/listjs/listjs-logo.jpg %}
 
 Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.
 

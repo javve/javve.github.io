@@ -1,12 +1,16 @@
 ---
 layout: post
-title: "Beta 0.2.0: Plugins and Paging - List.js"
+title: "List.js 0.2.0: Plugins and Paging"
+shareText: "Checkout the new awesome List.js with plugins and paging by @javve"
 date: 2012-01-26
 comments: true
 categories: listjs
 ---
 
-This is a release many have been waiting on! Beta 0.2.0 several large improvments and I will go through them one by one.  
+_**[Go to Listjs.com](http://listjs.com) and download tha latest version!**_
+{% img float-right default /images/projects/listjs/listjs-logo.jpg %}
+
+This is a release many have been waiting on! Beta 0.2.0 includes several large improvments and I will go through them one by one.  
 
 ## Plugins!
 The biggest update in List.js 0.2.0 is the support for plugins. With plugin it gets much easier to make scripts that integrate with List.js. [Read more »](/listjs-plugins-guide/)
@@ -82,3 +86,5 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
 
 
 That was it! Pretty exciting right? Looking forward do see some awesome plugins!
+
+_**[Go to Listjs.com](http://listjs.com) and download tha latest version!**_

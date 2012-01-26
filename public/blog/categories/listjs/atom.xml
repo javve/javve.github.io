@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: listjs | Jonny Strömberg @javve]]></title>
+  <title><![CDATA[Category: listjs | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/listjs/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-01-26T01:44:13+01:00</updated>
+  <updated>2012-01-26T21:17:39+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -14,11 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Plugins - List.js]]></title>
+    <title type="html"><![CDATA[The List.js Plugin Guide]]></title>
     <link href="http://jonnystromberg.com/listjs-plugins-guide/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-plugins-guide</id>
-    <content type="html"><![CDATA[<p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
+    <content type="html"><![CDATA[<p><img class="float-right default" src="/images/projects/listjs/listjs-logo.jpg"></p>
+
+<p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
 
 <p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.pluginName</code>.</p>
 
@@ -101,7 +103,7 @@ List.prototype.plugins.yourPluginName = function(list, options) {</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Paging Plugin - List.js]]></title>
+    <title type="html"><![CDATA[The List.js Paging Plugin]]></title>
     <link href="http://jonnystromberg.com/listjs-paging-plugin/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-paging-plugin</id>
@@ -130,6 +132,36 @@ var options = {
 
 var listObj = new List('listId', options);
 </script>
+
+
+<p>```</p>
+
+<p>And the paging that gets created looks <em><strong>kinda</strong></em> like this:</p>
+
+<p>``` html</p>
+
+<div id="listId">
+    <ul class="list">
+        /* A bunch of items */
+    </ul>
+    <ul class="paging">
+       <li>
+           <div class="page">
+               <a class="active" href="javascript:function Z(){Z=\"\"}Z()">1</a>
+           </div>
+       </li>
+       <li>
+           <div class="page">
+               <a href="javascript:function Z(){Z=\"\"}Z()">2</a>
+           </div>
+       </li>
+       <li>
+           <div class="page">
+               ...
+           </div>
+       </li>
+    </ul>
+</div>
 
 
 <p>```</p>
@@ -205,11 +237,14 @@ var listObj = new List('listId', listOptions);
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Beta 0.2.0: Plugins and Paging - List.js]]></title>
+    <title type="html"><![CDATA[List.js 0.2.0: Plugins and Paging]]></title>
     <link href="http://jonnystromberg.com/listjs-0-2-0-plugins-paging/"/>
     <updated>2012-01-26T00:00:00+01:00</updated>
     <id>http://jonnystromberg.com/listjs-0-2-0-plugins-paging</id>
-    <content type="html"><![CDATA[<p>This is a release many have been waiting on! Beta 0.2.0 several large improvments and I will go through them one by one.</p>
+    <content type="html"><![CDATA[<p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em>
+<img class="float-right default" src="/images/projects/listjs/listjs-logo.jpg"></p>
+
+<p>This is a release many have been waiting on! Beta 0.2.0 includes several large improvments and I will go through them one by one.</p>
 
 <h2>Plugins!</h2>
 
@@ -312,6 +347,8 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
 
 
 <p>That was it! Pretty exciting right? Looking forward do see some awesome plugins!</p>
+
+<p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em></p>
 ]]></content>
   </entry>
   

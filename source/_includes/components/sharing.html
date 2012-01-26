@@ -1,6 +1,14 @@
 <ul class="sharing">
     <li class="tweet">
+    {% if page.shareText %}
+        {% if page.hackernews %}
+            <a href="https://twitter.com/share" data-text="{{ page.shareText }} (HN: {{ page.hackernews }})" class="twitter-share-button">Tweet</a>
+        {% else %}
+            <a href="https://twitter.com/share" data-text="{{ page.shareText }}" class="twitter-share-button">Tweet</a>
+        {% endif %}
+    {% else %}
         <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    {% endif %}
     </li>
     <li class="facebook">
         <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
