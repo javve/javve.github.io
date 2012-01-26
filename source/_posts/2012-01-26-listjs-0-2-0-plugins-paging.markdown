@@ -3,7 +3,7 @@ layout: post
 title: "List.js 0.2.0: Plugins and Paging"
 shareText: "Checkout the new awesome List.js with plugins and paging by @javve"
 date: 2012-01-26
-comments: true
+hackernews: "http://news.ycombinator.com/item?id=3515820"
 categories: listjs
 ---
 
