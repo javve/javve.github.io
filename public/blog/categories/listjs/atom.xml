@@ -4,7 +4,7 @@
   <title><![CDATA[Category: listjs | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/listjs/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-01-26T21:38:14+01:00</updated>
+  <updated>2012-01-26T21:51:50+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -244,7 +244,7 @@ var listObj = new List('listId', listOptions);
     <content type="html"><![CDATA[<p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em>
 <img class="float-right default" src="/images/projects/listjs/listjs-logo.jpg"></p>
 
-<p>This is a release many have been waiting on! Beta 0.2.0 includes several large improvments and I will go through them one by one.</p>
+<p>This is a release many have been waiting for! Beta 0.2.0 includes several large improvments and I will go through them one by one.</p>
 
 <h2>Plugins!</h2>
 
