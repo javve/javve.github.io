@@ -1,0 +1,19 @@
+{% unless page.no_header %}
+<div class="tagline">
+    <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% if page.subtitle %}
+    <h2>{{ page.subtitle }}</h2>
+    {% endif %}
+</div>
+
+{% endunless %}
+
+<div class="entry-content box">
+    {{ content }}
+    
+    {% include components/box_share.html %}
+</div>
+
+{% unless index %}
+    {% include post/author.html %}
+{% endunless %}

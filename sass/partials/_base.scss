@@ -63,6 +63,10 @@ a {
 .float-left {
     float:left;
 }
+.image-right {
+    margin-right:-30px;
+    margin-left:20px;
+}
 
 .clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}.clearfix{display:inline-block}* html .clearfix{height:1%}
 .clearfix{display:block}

@@ -219,6 +219,11 @@ a {
   float: left;
 }
 
+.image-right {
+  margin-right: -30px;
+  margin-left: 20px;
+}
+
 .clearfix:after {
   clear: both;
   content: ' ';
@@ -264,6 +269,25 @@ a {
   border: solid 1px #e7e3d3;
   padding: 30px;
 }
+.box.wide {
+  float: none;
+}
+.box h1 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.box h2 {
+  padding-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.box h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 .box p {
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
@@ -274,12 +298,34 @@ a {
 .box h4 {
   font-weight: bold;
 }
+.box ul {
+  font-family: "PT Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+.box ul li {
+  list-style-type: disc;
+  margin-bottom: 5px;
+}
+.box ol {
+  font-family: "PT Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+.box ol li {
+  list-style-type: decimal;
+  margin-bottom: 5px;
+}
+.box .code {
+  margin: 30px -30px;
+}
 .box .share {
 @extends .clearfix;
   background-color: #f5f4ed;
   border-top: solid 1px #e7e3d3;
   padding: 15px 30px;
   margin: 0 -30px;
+  height: 22px;
   position: relative;
   top: 30px;
   float: left;
@@ -300,6 +346,25 @@ a {
 .box .share p em {
   font-family: "Enriqueta", Georgia, serif;
   color: #89857e;
+}
+
+.about-author {
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+.about-author h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.about-author p.first {
+  font-size: 16px;
+}
+.about-author p {
+  font-size: 14px;
+}
+.about-author .profile-image {
+  float: left;
+  margin-right: 15px;
 }
 
 .padder {
@@ -1184,6 +1249,13 @@ figure.code .highlight {
   margin-bottom: 10px;
   font-weight: bold;
 }
+.blog img.header-image {
+  width: 730px;
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-top: -30px;
+  margin-bottom: 5px;
+}
 .blog img.default {
   width: 280px;
 }
@@ -1202,22 +1274,15 @@ figure.code .highlight {
 .blog .meta-date .category a {
   color: #4a688e;
 }
-.blog .code {
-  margin: 30px -30px;
+.blog li pre {
+  max-width: 620px;
+}
+.blog pre {
+  max-width: 640px;
+  overflow: hidden;
 }
 .blog .author {
   clear: left;
-}
-.blog .box h2 {
-  padding-top: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.blog .box h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 .blog .box ul {
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
@@ -1228,24 +1293,6 @@ figure.code .highlight {
   list-style-type: disc;
   margin-bottom: 5px;
 }
-.blog .author {
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-}
-.blog .author h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-.blog .author p.first {
-  font-size: 16px;
-}
-.blog .author p {
-  font-size: 14px;
-}
-.blog .author .profile-image {
-  float: left;
-  margin-right: 15px;
-}
 
 .blog-archives .box {
   float: none;
@@ -1253,13 +1300,17 @@ figure.code .highlight {
 .blog-archives h2 {
   font-size: 28px;
 }
-.blog-archives h1 {
+.blog-archives h3 {
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 0;
 }
 .blog-archives time {
   font-size: 13px;
   font-family: "PT Sans", "Helvetica Neue", sans-serif;
+}
+.blog-archives article {
+  margin-bottom: 7px;
 }
 
 .about .aside {
@@ -1343,4 +1394,17 @@ figure.code .highlight {
 .about .misc .list ul li {
   list-style-type: disc;
   margin-bottom: 10px;
+}
+
+.tutorial,
+.projectpost {
+  margin: 0 110px;
+}
+.tutorial .box,
+.projectpost .box {
+  float: none;
+}
+.tutorial .header-image,
+.projectpost .header-image {
+  margin: -30px -30px 5px;
 }

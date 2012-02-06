@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: hashjs | @javve]]></title>
+  <link href="http://jonnystromberg.com/blog/categories/hashjs/atom.xml" rel="self"/>
+  <link href="http://jonnystromberg.com/"/>
+  <updated>2012-02-07T00:40:40+01:00</updated>
+  <id>http://jonnystromberg.com/</id>
+  <author>
+    <name><![CDATA[Jonny Strömberg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hash.js - We Stand Behind #]]></title>
+    <link href="http://jonnystromberg.com/hash-js/"/>
+    <updated>2012-02-07T00:00:00+01:00</updated>
+    <id>http://jonnystromberg.com/hash-js</id>
+    <content type="html"><![CDATA[<p>Hash.js is a micro (0.5 KB) JavaScript lib that makes it easy
+to manipulate everything that is behind <code>#</code> in the url.</p>
+
+<p>See it in action at <a href="http://pngtextures.com">PNGTextures.com</a></p>
+
+<p><strong>Notice</strong>:  The main focus of Hash.js is simplcity. This is no tool for your super-ajax-native-feeling-app-with-google-bot-support. If
+that's your usage situation, use the awesome <a href="https://github.com/balupton/history.js">History.js</a>.</p>
+
+<h2>Usage</h2>
+
+<p>Just include <code>hash.min.js</code> or <code>hash.js</code> at your site and then a <code>hash</code> object will become available.</p>
+
+<p>``` html</p>
+
+<pre><code>&lt;script src="hash.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    hash.add({foo: "bar" });        // Url becomes http://url.com#foo=bar
+&lt;/scrtip&gt;
+</code></pre>
+
+<p>```</p>
+
+<h2>Methods</h2>
+
+<ul>
+<li><strong>hash.add(params)</strong><br/>
+Add parameter to hash</li>
+</ul>
+
+
+<p>``` javascript
+hash.add({ foo: "bar" });             <br/>
+// http://url.com#foo=bar</p>
+
+<p>hash.add({ car: "dar", sar: "par" });
+// http://url.com#foo=bar&amp;car=dar&amp;sar=par
+```</p>
+
+<ul>
+<li><strong>hash.get(param)</strong> or <strong>hash.get()</strong>  <br/>
+Returns value of paramter in hash. If <code>param</code> is <code>undefined</code> then all values are returned.</li>
+</ul>
+
+
+<p>``` javascript      <br/>
+var fooValue = hash.get('foo');
+// fooValue == "bar"</p>
+
+<p>var allValues = hash.get();
+// allValues == { foo: "bar", car: "dar", sar: "par"}
+```</p>
+
+<ul>
+<li><strong>hash.remove(param)</strong><br/>
+Removes the value with name <code>param</code>.</li>
+</ul>
+
+
+<p><code>javascript       
+hash.remove('foo');
+// http://url.com#car=dar&amp;sar=par
+</code></p>
+
+<ul>
+<li><strong>hash.clear()</strong><br/>
+Clears entire hash.</li>
+</ul>
+
+
+<p><code>javascript    
+hash.clear();
+// http://url.com#
+</code></p>
+
+<h2>Example</h2>
+
+<script src="http://jonnystromberg.com/javascripts/libs/hash.js"></script>
+
+
+<ul>
+    <li><a href="javascript:hash.add({ foo: 'bar' });">Run <code>hash.add({ foo: "bar" });</code></a></li>
+    <li><a href="javascript:hash.add({ car: 'dar', sar: 'par' })">Run <code>hash.add({ car: "dar", sar: "par" });</code></a></li>
+    <li><a href="javascript:hash.remove('foo')">Run <code>hash.remove("foo");</code></a></li>
+    <li><a href="javascript:alert(hash.get('foo'))">Run <code>alert(hash.get("foo"));</code></a></li>
+    <li><a href="javascript:hash.clear()">Run <code>hash.clear();</code></a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

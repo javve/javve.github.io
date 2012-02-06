@@ -6,7 +6,7 @@ comments: true
 categories: listjs
 ---
 
-Tonight I added the [http://listjs.com/](Listjs.com website) to List.js Github repository. 
+Tonight I added the [Listjs.com website](http://listjs.com/) to List.js Github repository. 
 The reason for this is simply that its a more convenient structure 
 for myself and there will also be easier to download the List.js 
 examples and try them out locally.
