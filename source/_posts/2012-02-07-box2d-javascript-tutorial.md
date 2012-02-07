@@ -3,7 +3,7 @@ layout: tutorial
 title: "Box2D JaveScript Tutorial"
 subtitle: "Uncovering The Magic Behind SilarApp.com"
 date: 2012-02-07
-hackernews: "http://news.ycombinator.com/item?id=3515855"
+hackernews: "http://news.ycombinator.com/item?id=3562244"
 categories: box2d-javascript
 ---
 
