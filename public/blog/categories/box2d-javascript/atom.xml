@@ -4,7 +4,7 @@
   <title><![CDATA[Category: box2d-javascript | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/box2d-javascript/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-02-07T16:59:03+01:00</updated>
+  <updated>2012-02-07T22:26:54+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -26,7 +26,7 @@
 
 <p><a href="http://silarapp.com"><img class="float-right image-right" src="/images/posts/2012/box2d-web/silarapp.jpg"></a></p>
 
-<p>The tutorial explains how to the demo above was made and you can find the source at <a href="http://github.com/javve/box2d-web-demos">Github.com/javve/box2d-web-demos</a>. I <strong>strongly</strong> encourages you to download the source and look at it while reading this tutorial.</p>
+<p>The tutorial explains how to the demo above was made and you can find the source at <a href="http://github.com/javve/box2d-javascript">Github.com/javve/box2d-javascript</a>. I <strong>strongly</strong> encourages you to download the source and look at it while reading this tutorial.</p>
 
 <p>I will go through the demo step by step in order of execution.</p>
 
@@ -286,7 +286,7 @@ ctx.restore();
 
 <p>That's it. I hope you liked the tutorial and if you have any questions or suggestions feel free to ping me at Twitter <a href="http://twitter.com/javve">@javve</a>.</p>
 
-<p>Hopefully will I follow up this tutorial with a new one and with more <a href="http://github.com/javve/box2d-web-demos">demos at Github</a>.</p>
+<p>Hopefully will I follow up this tutorial with a new one and with more <a href="http://github.com/javve/box2d-javascript">demos at Github</a>.</p>
 
 <h2>Continue reading</h2>
 

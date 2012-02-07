@@ -13,7 +13,7 @@ This is tutorial is written as a compliment to my [@Sthlmjs](http://twitter.com/
 
 [{% img float-right image-right /images/posts/2012/box2d-web/silarapp.jpg %}](http://silarapp.com)
 
-The tutorial explains how to the demo above was made and you can find the source at [Github.com/javve/box2d-web-demos](http://github.com/javve/box2d-web-demos). I **strongly** encourages you to download the source and look at it while reading this tutorial.
+The tutorial explains how to the demo above was made and you can find the source at [Github.com/javve/box2d-javascript](http://github.com/javve/box2d-javascript). I **strongly** encourages you to download the source and look at it while reading this tutorial.
 
 I will go through the demo step by step in order of execution.
 
@@ -230,7 +230,7 @@ this.draw = function() {
 ## Wrapping up
 That's it. I hope you liked the tutorial and if you have any questions or suggestions feel free to ping me at Twitter [@javve](http://twitter.com/javve).
 
-Hopefully will I follow up this tutorial with a new one and with more [demos at Github](http://github.com/javve/box2d-web-demos). 
+Hopefully will I follow up this tutorial with a new one and with more [demos at Github](http://github.com/javve/box2d-javascript). 
 
 ## Continue reading
 * [Box2D manual](http://www.box2d.org/manual.html) contains a lot of interesting stuff.
