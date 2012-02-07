@@ -4,7 +4,7 @@
   <title><![CDATA[@javve]]></title>
   <link href="http://jonnystromberg.com/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-02-07T00:40:40+01:00</updated>
+  <updated>2012-02-07T16:50:30+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>Hash.js is a micro (0.5 KB) JavaScript lib that makes it easy
 to manipulate everything that is behind <code>#</code> in the url.</p>
 
-<p>See it in action at <a href="http://pngtextures.com">PNGTextures.com</a></p>
+<p><strong>Check out the Github repo</strong> at <strong><a href="http://github.com/javve/hash.js">github.com/javve/hash.js</a></strong> and see it in action at <a href="http://pngtextures.com">PNGTextures.com</a></p>
 
 <p><strong>Notice</strong>:  The main focus of Hash.js is simplcity. This is no tool for your super-ajax-native-feeling-app-with-google-bot-support. If
 that&#8217;s your usage situation, use the awesome <a href="https://github.com/balupton/history.js">History.js</a>.</p>
@@ -126,10 +126,10 @@ Clears entire hash.</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Box2d-Web Tutorial]]></title>
-    <link href="http://jonnystromberg.com/box2d-web-tutorial/"/>
+    <title type="html"><![CDATA[Box2D JaveScript Tutorial]]></title>
+    <link href="http://jonnystromberg.com/box2d-javascript-tutorial/"/>
     <updated>2012-02-07T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/box2d-web-tutorial</id>
+    <id>http://jonnystromberg.com/box2d-javascript-tutorial</id>
     <content type="html"><![CDATA[<p><canvas id="box2d-demo" width="740" height="380" style="background-color:#2A3038; margin:-30px -30px 20px;"></canvas></p>
 
 <script src="http://jonnystromberg.com/tutorials/box2d-web/box2d-web-2.1.a.3.js"></script>
@@ -148,7 +148,7 @@ Clears entire hash.</li>
 
 <h2>Background</h2>
 
-<p><a href="http://box2d.org/">Box2d</a> is a open source physics engine originally written by <a href="https://twitter.com/#!/erin_catto">Erin Catto</a> in C++. Over the years it has been ported to a number of <a href="http://www.box2d.org/links.html">different languages</a>. Today there are two version in JavaScript,  <strong><a href="http://code.google.com/p/box2dweb/">Box2d-web</a></strong> and <a href="http://box2d-js.sourceforge.net/">Box2d-js</a>. The latter one is sadly no longer supported so my suggestion is using the first. It is a direct port from <a href="http://www.box2dflash.org/">Box2DFlash 2.1a</a> and is the one that this tutorial is using.</p>
+<p><a href="http://box2d.org/">Box2D</a> is a open source physics engine originally written by <a href="https://twitter.com/#!/erin_catto">Erin Catto</a> in C++. Over the years it has been ported to a number of <a href="http://www.box2d.org/links.html">different languages</a>. Today there are two version in JavaScript,  <strong><a href="http://code.google.com/p/box2dweb/">Box2d-web</a></strong> and <a href="http://box2d-js.sourceforge.net/">Box2d-js</a>. The latter one is sadly no longer supported so my suggestion is using the first. It is a direct port from <a href="http://www.box2dflash.org/">Box2DFlash 2.1a</a> and is the one that this tutorial is using.</p>
 
 <h2>Good things to know</h2>
 

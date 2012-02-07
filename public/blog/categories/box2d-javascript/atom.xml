@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: box2d-web | @javve]]></title>
-  <link href="http://jonnystromberg.com/blog/categories/box2d-web/atom.xml" rel="self"/>
+  <title><![CDATA[Category: box2d-javascript | @javve]]></title>
+  <link href="http://jonnystromberg.com/blog/categories/box2d-javascript/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-02-07T00:40:40+01:00</updated>
+  <updated>2012-02-07T16:50:30+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Box2d-Web Tutorial]]></title>
-    <link href="http://jonnystromberg.com/box2d-web-tutorial/"/>
+    <title type="html"><![CDATA[Box2D JaveScript Tutorial]]></title>
+    <link href="http://jonnystromberg.com/box2d-javascript-tutorial/"/>
     <updated>2012-02-07T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/box2d-web-tutorial</id>
+    <id>http://jonnystromberg.com/box2d-javascript-tutorial</id>
     <content type="html"><![CDATA[<p><canvas id="box2d-demo" width="740" height="380" style="background-color:#2A3038; margin:-30px -30px 20px;"></canvas>
 <script src="/tutorials/box2d-web/box2d-web-2.1.a.3.js"></script>
 <script src="/tutorials/box2d-web/box2d-web-demo.js"></script></p>
@@ -32,7 +32,7 @@
 
 <h2>Background</h2>
 
-<p><a href="http://box2d.org/">Box2d</a> is a open source physics engine originally written by <a href="https://twitter.com/#!/erin_catto">Erin Catto</a> in C++. Over the years it has been ported to a number of <a href="http://www.box2d.org/links.html">different languages</a>. Today there are two version in JavaScript,  <strong><a href="http://code.google.com/p/box2dweb/">Box2d-web</a></strong> and <a href="http://box2d-js.sourceforge.net/">Box2d-js</a>. The latter one is sadly no longer supported so my suggestion is using the first. It is a direct port from <a href="http://www.box2dflash.org/">Box2DFlash 2.1a</a> and is the one that this tutorial is using.</p>
+<p><a href="http://box2d.org/">Box2D</a> is a open source physics engine originally written by <a href="https://twitter.com/#!/erin_catto">Erin Catto</a> in C++. Over the years it has been ported to a number of <a href="http://www.box2d.org/links.html">different languages</a>. Today there are two version in JavaScript,  <strong><a href="http://code.google.com/p/box2dweb/">Box2d-web</a></strong> and <a href="http://box2d-js.sourceforge.net/">Box2d-js</a>. The latter one is sadly no longer supported so my suggestion is using the first. It is a direct port from <a href="http://www.box2dflash.org/">Box2DFlash 2.1a</a> and is the one that this tutorial is using.</p>
 
 <h2>Good things to know</h2>
 

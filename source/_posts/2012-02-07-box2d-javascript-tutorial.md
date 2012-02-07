@@ -1,10 +1,10 @@
 ---
 layout: tutorial
-title: "Box2d-Web Tutorial"
+title: "Box2D JaveScript Tutorial"
 subtitle: "Uncovering The Magic Behind SilarApp.com"
 date: 2012-02-07
 hackernews: "http://news.ycombinator.com/item?id=3515855"
-categories: box2d-web
+categories: box2d-javascript
 ---
 
 {% render_partial tutorials/box2d-web/index.html %}
@@ -18,7 +18,7 @@ The tutorial explains how to the demo above was made and you can find the source
 I will go through the demo step by step in order of execution.
 
 ## Background
-[Box2d](http://box2d.org/) is a open source physics engine originally written by [Erin Catto](https://twitter.com/#!/erin_catto) in C++. Over the years it has been ported to a number of [different languages](http://www.box2d.org/links.html). Today there are two version in JavaScript,  **[Box2d-web](http://code.google.com/p/box2dweb/)** and [Box2d-js](http://box2d-js.sourceforge.net/). The latter one is sadly no longer supported so my suggestion is using the first. It is a direct port from [Box2DFlash 2.1a](http://www.box2dflash.org/) and is the one that this tutorial is using.
+[Box2D](http://box2d.org/) is a open source physics engine originally written by [Erin Catto](https://twitter.com/#!/erin_catto) in C++. Over the years it has been ported to a number of [different languages](http://www.box2d.org/links.html). Today there are two version in JavaScript,  **[Box2d-web](http://code.google.com/p/box2dweb/)** and [Box2d-js](http://box2d-js.sourceforge.net/). The latter one is sadly no longer supported so my suggestion is using the first. It is a direct port from [Box2DFlash 2.1a](http://www.box2dflash.org/) and is the one that this tutorial is using.
 
 ## Good things to know
 * Box2d does **not** uses pixels, it measures MKS (meters, kilograms, and seconds). This could be a bit weird but no worries! [Read more here](http://blog.zincroe.com/2009/05/units-in-box2d/).

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hashjs | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/hashjs/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-02-07T00:40:40+01:00</updated>
+  <updated>2012-02-07T16:50:30+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>Hash.js is a micro (0.5 KB) JavaScript lib that makes it easy
 to manipulate everything that is behind <code>#</code> in the url.</p>
 
-<p>See it in action at <a href="http://pngtextures.com">PNGTextures.com</a></p>
+<p><strong>Check out the Github repo</strong> at <strong><a href="http://github.com/javve/hash.js">github.com/javve/hash.js</a></strong> and see it in action at <a href="http://pngtextures.com">PNGTextures.com</a></p>
 
 <p><strong>Notice</strong>:  The main focus of Hash.js is simplcity. This is no tool for your super-ajax-native-feeling-app-with-google-bot-support. If
 that's your usage situation, use the awesome <a href="https://github.com/balupton/history.js">History.js</a>.</p>
