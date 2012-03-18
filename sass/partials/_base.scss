@@ -28,12 +28,14 @@ p {
 p:last-child {
     margin-bottom:0;
 }
-p a {
+p a,
+li a {
     color:$link;
     @include transition-property(color);
     @include transition-duration(.5s); 
 }
-p a:hover {
+p a:hover,
+li a:hover {
     color:lighten($dark, 20%);
 }
 li {
@@ -56,7 +58,9 @@ a {
 .sidebar {
     width:200px;
 }
-
+.hide {
+    display:none;
+}
 .float-right {
     float:right;
 }

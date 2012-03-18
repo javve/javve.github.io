@@ -174,7 +174,8 @@ p:last-child {
   margin-bottom: 0;
 }
 
-p a {
+p a,
+li a {
   color: #4a688e;
   -moz-transition-property: color;
   -webkit-transition-property: color;
@@ -186,7 +187,8 @@ p a {
   transition-duration: 0.5s;
 }
 
-p a:hover {
+p a:hover,
+li a:hover {
   color: #566272;
 }
 
@@ -209,6 +211,10 @@ a {
 
 .sidebar {
   width: 200px;
+}
+
+.hide {
+  display: none;
 }
 
 .float-right {
