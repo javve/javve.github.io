@@ -409,7 +409,7 @@ a {
 }
 
 .sharing {
-  width: 281px;
+  width: 301px;
 }
 .sharing li {
   height: 20px;
@@ -421,7 +421,7 @@ a {
   width: 85px;
 }
 .sharing li.facebook {
-  width: 65px;
+  width: 85px;
 }
 .sharing li.facebook iframe {
   padding-bottom: 4px;
