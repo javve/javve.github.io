@@ -1,5 +1,5 @@
 .project {
-    
+
     .facts {
         width:350px;
         float:right;
@@ -31,7 +31,7 @@
             margin-bottom:5px;
         }
     }
-    
+
     blockquote {
         .text {
             font-family:$serif;
@@ -53,37 +53,50 @@
             font-size:12px;
         }
     }
-    
+
     .slides {
         float:left;
         width:350px;
         overflow:hidden;
     }
-    
+
 }
 .projects {
     clear:left;
+    margin-bottom:20px;
     li {
         display:inline-block;
         width:33%;
-        margin-bottom:30px;
-        margin-right:-3px;
+        margin-bottom:0;
+        margin-right:-4px;
         a {
             text-align:center;
             display:block;
-            @include clearfix(); 
+            @include clearfix();
+        }
+        &.teamtailor {
+            background:image-url('projects/teamtailor/teamtailor-bg.jpg') repeat 50px 100px;
+            @include border-radius(5px 0 0 0);
         }
         &.startuplocation {
             background:image-url('projects/startuplocation/startuplocation-bg.png') repeat;
-            @include border-radius(5px 0 0 5px); 
         }
         &.silarapp {
             background-color:#fff;
             width:34%;
+            @include border-radius(0 5px 0 0);
         }
         &.listjs {
             background:image-url('projects/listjs/listjs-bg.jpg') repeat;
-            @include border-radius(0 5px 5px 0);
+            @include border-radius(0 0 0 5px);
+        }
+        &.sthlmstartuphack {
+            background:image-url('projects/sthlmstartuphack/sthlmstartuphack-bg.jpg') repeat 50px 100px;
+        }
+        &.hashjs {
+            background:image-url('projects/hashjs/hashjs-bg.jpg') repeat;
+            @include border-radius(0 0 5px 0);
+            width:34%;
         }
         h2 {
             display:none;

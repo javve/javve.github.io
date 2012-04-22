@@ -58,9 +58,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* To use the light Solarized highlighting theme uncomment the following line */
-/* If you want to tweak the Solarized colors you can do that here */
-/* Non highlighted code colors */
 /* non highlighted code colors */
 /* Navigation */
 /* Sidebar colors */
@@ -411,10 +408,14 @@ a {
   background-position: -405px 0;
 }
 
+.sharing {
+  width: 281px;
+}
 .sharing li {
   height: 20px;
   list-style-type: none;
-  display: inline-block;
+  display: block;
+  float: left;
 }
 .sharing li.tweet {
   width: 85px;
@@ -1106,6 +1107,7 @@ figure.code .highlight {
 
 #start .social {
   padding-top: 20px;
+  text-align: center;
 }
 #start .social li {
   display: inline-block;
@@ -1204,12 +1206,13 @@ figure.code .highlight {
 
 .projects {
   clear: left;
+  margin-bottom: 20px;
 }
 .projects li {
   display: inline-block;
   width: 33%;
-  margin-bottom: 30px;
-  margin-right: -3px;
+  margin-bottom: 0;
+  margin-right: -4px;
 }
 .projects li a {
   text-align: center;
@@ -1217,27 +1220,49 @@ figure.code .highlight {
   overflow: hidden;
   *zoom: 1;
 }
+.projects li.teamtailor {
+  background: url('/images/projects/teamtailor/teamtailor-bg.jpg?1335112629') repeat 50px 100px;
+  -moz-border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -o-border-radius: 5px 0 0 0;
+  -ms-border-radius: 5px 0 0 0;
+  -khtml-border-radius: 5px 0 0 0;
+  border-radius: 5px 0 0 0;
+}
 .projects li.startuplocation {
   background: url('/images/projects/startuplocation/startuplocation-bg.png?1326910342') repeat;
-  -moz-border-radius: 5px 0 0 5px;
-  -webkit-border-radius: 5px 0 0 5px;
-  -o-border-radius: 5px 0 0 5px;
-  -ms-border-radius: 5px 0 0 5px;
-  -khtml-border-radius: 5px 0 0 5px;
-  border-radius: 5px 0 0 5px;
 }
 .projects li.silarapp {
   background-color: #fff;
   width: 34%;
+  -moz-border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -o-border-radius: 0 5px 0 0;
+  -ms-border-radius: 0 5px 0 0;
+  -khtml-border-radius: 0 5px 0 0;
+  border-radius: 0 5px 0 0;
 }
 .projects li.listjs {
   background: url('/images/projects/listjs/listjs-bg.jpg?1326910297') repeat;
-  -moz-border-radius: 0 5px 5px 0;
-  -webkit-border-radius: 0 5px 5px 0;
-  -o-border-radius: 0 5px 5px 0;
-  -ms-border-radius: 0 5px 5px 0;
-  -khtml-border-radius: 0 5px 5px 0;
-  border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 0 0 5px;
+  -webkit-border-radius: 0 0 0 5px;
+  -o-border-radius: 0 0 0 5px;
+  -ms-border-radius: 0 0 0 5px;
+  -khtml-border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 5px;
+}
+.projects li.sthlmstartuphack {
+  background: url('/images/projects/sthlmstartuphack/sthlmstartuphack-bg.jpg?1333968063') repeat 50px 100px;
+}
+.projects li.hashjs {
+  background: url('/images/projects/hashjs/hashjs-bg.jpg?1335111673') repeat;
+  -moz-border-radius: 0 0 5px 0;
+  -webkit-border-radius: 0 0 5px 0;
+  -o-border-radius: 0 0 5px 0;
+  -ms-border-radius: 0 0 5px 0;
+  -khtml-border-radius: 0 0 5px 0;
+  border-radius: 0 0 5px 0;
+  width: 34%;
 }
 .projects li h2 {
   display: none;

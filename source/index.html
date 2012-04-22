@@ -10,57 +10,30 @@ description: "No talent, just a decade of rock solid passion. Foolish and hungry
         <h2>No talent, just a decade of rock solid passion. Foolish and hungry.</h2>
     </div>
 
-    <ul class="projects">
-        <li class="startuplocation">
-            <a href="{{ root_url }}/projects/startuplocation">
-                <img src="{{ root_url }}/images/projects/startuplocation/startuplocation-logo-200x200.png" />
-            </a>
-            <h2>StartupLocation</h2>
-            <p>Gather and unite all startups, beginning in Norden</p>
-        </li>
-        <li class="silarapp">
-            <a href="{{ root_url }}/projects/silarapp">
-                <img src="{{ root_url }}/images/projects/silarapp/silarapp-logo-200x200.png" />
-            </a>
-            <h2>SilarApp</h2>
-            <p>Clean and ambient data visualization.</p>
-        </li>
-        <li class="listjs">
-            <a href="{{ root_url }}/projects/listjs">
-                <img src="{{ root_url }}/images/projects/listjs/listjs-logo-200x200.png" />
-            </a>
-            <h2>List.js</h2>
-            <p>Gather and unite all startups, beginning in Norden</p>
-        </li>
+    {% include projects.html %}
+
+    <div class="short-about box">
+        <p>
+            Hi, my name is Jonny and I'm a Photoshopping
+            JavaScript Ninja from Stockholm working as lead
+            designer at <a href="http://getmynewsdesk.com">Mynewsdesk</a>.
+
+            Design and programming have been my passion since
+            2000 and during the last six years have I co-founded
+            a couple of companies and projects while studying
+            to become a master of engineering on interaction technology and
+            design. <a href="/about">More »</a>
+        </p>
+
+        {% include components/box_share.html %}
+    </div>
+
+    <ul class="social">
+        <li><a title="twitter.com/javve" href="http://twitter.com/javve" class="twitter"><span>Twitter: @javve</span></a></li>
+        <li><a title="github.com/javve" href="http://github.com/javve" class="github"><span>Github: javve</span></a></li>
+        <li><a title="facebook.com/javve" href="http://facebook.com/javve" class="facebook"><span>Facebook: javve</span></a></li>
+        <li><a title="dribble.com/javve" href="http://dribbble.com/javve" class="dribble"><span>Dribble: javve</span></a></li>
+        <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg" class="linkedin"><span>Linkedin: jonnystromberg</span></a></li>
     </ul>
 
-    {% include components/lifestream.html %}
-
-    <div class="padder">
-
-        <div class="short-about box">
-            <p>
-                Hi, my name is Jonny and I'm a Photoshopping 
-                JavaScript Ninja from Stockholm working as lead
-                designer at <a href="http://getmynewsdesk.com">Mynewsdesk</a>.
-                
-                Design and programming have been my passion since 
-                2000 and during the last six years have I co-founded 
-                a couple of companies and projects while studying 
-                to become a master of engineering on interaction technology and 
-                design. <a href="/about">More »</a>
-            </p>
-            <ul class="social">
-                <li><a href="http://twitter.com/javve" class="twitter"><span>Twitter: @javve</span></a></li>
-                <li><a href="http://github.com/javve" class="github"><span>Github: javve</span></a></li>
-                <li><a href="http://facebook.com/javve" class="facebook"><span>Facebook: javve</span></a></li>
-                <li><a href="http://dribbble.com/javve" class="dribble"><span>Dribble: javve</span></a></li>
-                <li><a href="http://www.linkedin.com/in/jonnystromberg" class="linkedin"><span>Linkedin: jonnystromberg</span></a></li>
-            </ul>
-            
-            {% include components/box_share.html %}
-        </div>
-        
-    </div>
-    
 </div>
