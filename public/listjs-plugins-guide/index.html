@@ -48,8 +48,8 @@
         </span>
     </h3>
 </hgroup>
-
-            <nav role="navigation"><ul class="main-navigation">
+            <nav role="navigation"><nav>
+<ul class="main-navigation">
   <li><a class="item" href="/">Home</a></li>
   <li><a class="item" href="/about">Me</a></li>
   <li><a class="item" href="/projects">Projects</a></li>
@@ -62,7 +62,7 @@
       </a>
   </li>
 </ul>
-</nav>    
+</nav></nav>    
         </div>
     </header>
     <div id="main" class="clearfix">
@@ -172,22 +172,23 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Read more about the <a href="#">paging plugin here</a>.</p>
+<p>Read more about the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
 
 <h2>Make Your Own Plugin</h2>
 
-<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>list</code> is the actual list that uses the plugin, <code>options</code> contains the options shown in the example above.</p>
+<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>locals</code> that contains
+all hidden/private local variables of List.js, <code>options</code> contains the options shown in the example above.</p>
 
 <figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">locals</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>  <span class="c1">// Do stuff!</span>
 </span><span class='line'><span class="p">};</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>The plugin is run after the list is initiated. See the source code of the <a href="#">paging plugin here</a>.</p>
+<p>The plugin is run after the list is initiated. See the source code of the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
 
 <h3>Naming</h3>
 
@@ -232,19 +233,20 @@
 
     <div class="about-author">
     <h3>About the author and discussions</h3>
-    
+
     <a href="/about"><img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" /></a>
     <p class="first">
-        I'm <a href="/about">Jonny</a>. A Photoshopping JavaScript Ninja from Stockholm.
-        Works as almighty designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>. Entrepreneur-ish 
-        tech evangelist behind <a href="http://listjs.com">List.js</a>, 
-        <a href="http://silarapp.com">SilarApp</a> and 
+        I'm <a href="/about">Jonny</a>. A Designer, Entrepreneur & JavaScript Hacker from Stockholm.
+        Currently designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>.
+        Behind <a href="http://listjs.com">List.js</a>, <a href="http://teamtailor.com">Teamtailor</a>,
+        <a href="http://startuplocation.com/hack">Stockholm Startup Hack</a>,
+        <a href="http://silarapp.com">SilarApp</a> and
         <a href="http://startuplocation.com">StartupLocation</a>.
     </p>
     
     <p>
-        If you want to comment, discuss, upvote or downvote this 
-        post, <a href="http://news.ycombinator.com/item?id=3515850">Hacker News</a> is the place to be. 
+        If you want to comment, discuss, upvote or downvote this
+        post, <a href="http://news.ycombinator.com/item?id=3515850">Hacker News</a> is the place to be.
     </p>
     
     <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>

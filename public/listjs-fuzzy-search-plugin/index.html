@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>List.js: Fuzzy Search Plugin - @javve</title>
+    <meta name="author" content="Jonny Strömberg">
+
+    
+    <meta name="description" content="List.js: Fuzzy Search Plugin Apr 24th, 2012 - Category: listjs A big thanks to LuukvE who made a commit from which I could
+create this Fuzzy Search &hellip;">
+    
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+    
+    <link rel="canonical" href="http://jonnystromberg.com/listjs-fuzzy-search-plugin">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    
+    <script src="/javascripts/modernizr-2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    
+    <link href="http://feeds.feedburner.com/jonnystromberg" rel="alternate" title="@javve" type="application/atom+xml">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Enriqueta' rel='stylesheet' type='text/css'>
+</head>
+
+<body   >
+    <header role="banner" class="clearfix">
+        <div class="wrapper">
+            <hgroup class="author">
+    <h2>
+        <a class="item" href="/">
+            <img class="portrait" src="/images/graphics/jonny/jonny-small.jpg" width="72" height="70" />
+            <span>Jonny Strömberg</span>
+        </a>
+    </h2>
+    <h3>
+        <a class="item" href="http://twitter.com/javve">@javve</a>
+        <span class="follow">
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        </span>
+    </h3>
+</hgroup>
+            <nav role="navigation"><nav>
+<ul class="main-navigation">
+  <li><a class="item" href="/">Home</a></li>
+  <li><a class="item" href="/about">Me</a></li>
+  <li><a class="item" href="/projects">Projects</a></li>
+  <li>
+      <a class="blog item" href="/blog/archives">
+          Blog
+      </a>
+      <a href="http://feeds.feedburner.com/jonnystromberg" rel="subscribe-rss" title="subscribe via RSS">
+          <img class="rss"src="/images/icons/rss_16.png" width="16" height="16" />
+      </a>
+  </li>
+</ul>
+</nav></nav>    
+        </div>
+    </header>
+    <div id="main" class="clearfix">
+        <div class="wrapper">
+            <div id="content">
+                <div class="blog">
+    <div class="padder">
+        <div class="float-left">
+            
+    
+        <h1 class="entry-title">List.js: Fuzzy Search Plugin</h1>
+        
+            <p class="meta-date">
+                
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-24T00:00:00+02:00" pubdate data-updated="true">Apr 24<span>th</span>, 2012</time> - Category: 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/listjs/'>listjs</a>
+  
+</span>
+
+
+            </p>
+        
+    
+
+
+
+<div class="entry-content box">
+    <p>A big thanks to <a href="https://github.com/LuukvE">LuukvE</a> who made a <a href="https://github.com/LuukvE/list/commit/a75b6ef5649c5fb4232a40ef2f5191d0b57e1ede">commit</a> from which I could
+create this Fuzzy Search plugin.</p>
+
+<h2>The difference between Fuzzy Search and List.js default search</h2>
+
+<p>The default search will conduct a time efficient search for an exact match in the content searched, while the fuzzy search will render results depending on if they are included anywhere in the content.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">character</span><span class="o">:</span> <span class="s2">&quot;Guybrush Threepwood&quot;</span><span class="p">,</span> <span class="nx">game</span><span class="o">:</span> <span class="s2">&quot;The Secret of Monkey Island&quot;</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">character</span><span class="o">:</span> <span class="s2">&quot;Manny Calavera&quot;</span><span class="p">,</span> <span class="nx">game</span><span class="o">:</span> <span class="s2">&quot;Grim Fandango&quot;</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">character</span><span class="o">:</span> <span class="s2">&quot;Bernard Bernoulli&quot;</span><span class="p">,</span> <span class="nx">game</span><span class="o">:</span> <span class="s2">&quot;Maniac Mansion&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">list</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s1">&#39;gu thre&#39;</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="nx">none</span>
+</span><span class='line'><span class="nx">list</span><span class="p">.</span><span class="nx">fuzzySearch</span><span class="p">(</span><span class="s1">&#39;gu thre&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="mi">1</span> <span class="nx">item</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Live example</h2>
+
+<p>Check out this -> <a href="http://listjs.com/examples/fuzzy-search.html">Listjs.com/examples/fuzzy-search</a></p>
+
+<h2>Implementation</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;list-id&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;fuzzy-search&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">fuzzyOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">searchClass</span><span class="o">:</span> <span class="s2">&quot;fuzzy-search&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">location</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">distance</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">threshold</span><span class="o">:</span> <span class="mf">0.4</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">multiSearch</span><span class="o">:</span> <span class="kc">true</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>        <span class="p">[</span> <span class="s1">&#39;fuzzySearch&#39;</span><span class="p">,</span> <span class="nx">fuzzyOptions</span> <span class="p">]</span>
+</span><span class='line'>    <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;list-id&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Search manually </span>
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">fuzzySearch</span><span class="p">(</span><span class="s1">&#39;my search&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Search manually on specific columns</span>
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">fuzzySearch</span><span class="p">(</span><span class="s1">&#39;my search&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span> <span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Options</h2>
+
+<p>All options are optional. Simplest implementation is: <code>plugins: [ [ 'fuzzySearch' ] ]</code></p>
+
+<ul>
+<li><strong>location</strong> <em>(Int, default: 0)</em><br/>
+Approximately where in the text is the pattern expected to be found?</li>
+<li><strong>distance</strong> <em>(Int, default: 100)</em><br/>
+Determines how close the match must be to the fuzzy location (specified above). An exact letter match which is &#8216;distance&#8217; characters away from the fuzzy location would score as a complete mismatch. A distance of <code>0</code> requires the match be at the exact location specified, a threshold of <code>1000</code> would require a perfect match to be within 800 characters of the fuzzy location to be found using a 0.8 threshold.</li>
+<li><strong>threshold</strong> <em>(Int, default: 0.4)</em><br/>
+At what point does the match algorithm give up. A threshold of <code>0.0</code> requires a perfect match (of both letters and location), a threshold of <code>1.0</code> would match anything.</li>
+<li><strong>multiSearch</strong> <em>(Boolean, default: true)</em><br/>
+Subtract arguments from the <code>searchString</code> or put <code>searchString</code> as only argument</li>
+</ul>
+
+
+    
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+    
+        
+            <a href="https://twitter.com/share" data-text="Checkout the new awesome List.js with plugins and paging by @javve (HN: http://news.ycombinator.com/item?id=3515820)" class="twitter-share-button">Tweet</a>
+        
+    
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
+</div>
+</div>
+
+
+    <div class="about-author">
+    <h3>About the author and discussions</h3>
+
+    <a href="/about"><img src="/images/graphics/jonny/jonny-2.jpg" class="profile-image" /></a>
+    <p class="first">
+        I'm <a href="/about">Jonny</a>. A Designer, Entrepreneur & JavaScript Hacker from Stockholm.
+        Currently designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>.
+        Behind <a href="http://listjs.com">List.js</a>, <a href="http://teamtailor.com">Teamtailor</a>,
+        <a href="http://startuplocation.com/hack">Stockholm Startup Hack</a>,
+        <a href="http://silarapp.com">SilarApp</a> and
+        <a href="http://startuplocation.com">StartupLocation</a>.
+    </p>
+    
+    <p>
+        If you want to comment, discuss, upvote or downvote this
+        post, <a href="http://news.ycombinator.com/item?id=3515820">Hacker News</a> is the place to be.
+    </p>
+    
+    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+</div>
+
+        </div>
+    </div>
+    <div id="lifestream" class="tweetstream">
+    <h3>Lifestream</h3>
+    <ul class="list">
+        <li id="tmpl-item">
+            <p class="text"></p>
+            <p class="user"></p>
+        </li>
+    </ul>
+    <div id="stream-loading"></div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    window.lifeStream = new TweetStream(
+        'lifestream', 
+        {
+            streamName: "lifeStream",
+            twitterUrl: "https://api.twitter.com/statuses/user_timeline/javve.json?callback",
+			count: 3
+        }
+    );
+});
+</script>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <footer role="contentinfo" class="clearfix">
+        <div class="wrapper">
+            
+        </div>
+    </footer>
+
+    
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+<script src="/javascripts/libs/spin.min.js" type="text/javascript"></script>
+<script src="/javascripts/libs/twitter-text.js" type="text/javascript"></script>
+<script src="/javascripts/libs/list.min.js" type="text/javascript"></script>
+<script src="/javascripts/tweetstream.js" type="text/javascript"></script>
+<script src="/javascripts/js.js" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8204597-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+<div id="fb-root"></div>
+
+<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=231755320213849";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+</body>
+</html>

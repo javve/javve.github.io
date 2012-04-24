@@ -49,20 +49,21 @@ var options = {
 var listObj = new List('listId', options);
 ```
 
-Read more about the [paging plugin here](#).
+Read more about the [paging plugin here](http://jonnystromberg.com/listjs-paging-plugin/).
 
 
 ## Make Your Own Plugin
 
-This is everything that is needed to make you own plugin. Notice  the two parameters: `list` is the actual list that uses the plugin, `options` contains the options shown in the example above.
+This is everything that is needed to make you own plugin. Notice  the two parameters: `locals` that contains
+all hidden/private local variables of List.js, `options` contains the options shown in the example above.
 
 ``` javascript list.yourPluginName.js
-List.prototype.plugins.yourPluginName = function(list, options) {
+List.prototype.plugins.yourPluginName = function(locals, options) {
 	// Do stuff!
 };
 ```
 
-The plugin is run after the list is initiated. See the source code of the [paging plugin here](#).
+The plugin is run after the list is initiated. See the source code of the [paging plugin here](http://jonnystromberg.com/listjs-paging-plugin/).
 
 ### Naming
 All List.js plugins should be named `list.pluginName.js` or `list.pluginName.min.js`.

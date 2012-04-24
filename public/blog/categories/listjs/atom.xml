@@ -4,7 +4,7 @@
   <title><![CDATA[Category: listjs | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/listjs/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-04-22T20:01:19+02:00</updated>
+  <updated>2012-04-24T10:26:00+02:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -12,6 +12,132 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[List.js: Fuzzy Search Plugin]]></title>
+    <link href="http://jonnystromberg.com/listjs-fuzzy-search-plugin/"/>
+    <updated>2012-04-24T00:00:00+02:00</updated>
+    <id>http://jonnystromberg.com/listjs-fuzzy-search-plugin</id>
+    <content type="html"><![CDATA[<p>A big thanks to <a href="https://github.com/LuukvE">LuukvE</a> who made a <a href="https://github.com/LuukvE/list/commit/a75b6ef5649c5fb4232a40ef2f5191d0b57e1ede">commit</a> from which I could
+create this Fuzzy Search plugin.</p>
+
+<h2>The difference between Fuzzy Search and List.js default search</h2>
+
+<p>The default search will conduct a time efficient search for an exact match in the content searched, while the fuzzy search will render results depending on if they are included anywhere in the content.</p>
+
+<p>``` javascript
+var items = [</p>
+
+<pre><code>{ character: "Guybrush Threepwood", game: "The Secret of Monkey Island" },
+{ character: "Manny Calavera", game: "Grim Fandango" },
+{ character: "Bernard Bernoulli", game: "Maniac Mansion" }
+</code></pre>
+
+<p>];</p>
+
+<p>list.search('gu thre'); -> return none
+list.fuzzySearch('gu thre') -> return 1 item
+```</p>
+
+<h2>Live example</h2>
+
+<p>Check out this -> <a href="http://listjs.com/examples/fuzzy-search.html">Listjs.com/examples/fuzzy-search</a></p>
+
+<h2>Implementation</h2>
+
+<p>``` html</p>
+
+<div id="list-id">
+    <input class="fuzzy-search" />
+    <ul class="list">
+        /* A bunch of items */
+    </ul>
+</div>
+
+
+
+
+<script>
+
+var fuzzyOptions = {
+    searchClass: "fuzzy-search",
+      location: 0,
+      distance: 100,
+      threshold: 0.4,
+    multiSearch: true
+};
+var options = {
+      valueNames: [ 'name', 'category' ],
+      plugins: [
+        [ 'fuzzySearch', fuzzyOptions ]
+      ]
+};
+
+var listObj = new List('list-id', options);
+
+// Search manually 
+listObj.fuzzySearch('my search');
+
+// Search manually on specific columns
+listObj.fuzzySearch('my search', [ 'name' ]);
+
+</script>
+
+
+<p>```</p>
+
+<h2>Options</h2>
+
+<p>All options are optional. Simplest implementation is: <code>plugins: [ [ 'fuzzySearch' ] ]</code></p>
+
+<ul>
+<li><strong>location</strong> <em>(Int, default: 0)</em><br/>
+Approximately where in the text is the pattern expected to be found?</li>
+<li><strong>distance</strong> <em>(Int, default: 100)</em><br/>
+Determines how close the match must be to the fuzzy location (specified above). An exact letter match which is 'distance' characters away from the fuzzy location would score as a complete mismatch. A distance of <code>0</code> requires the match be at the exact location specified, a threshold of <code>1000</code> would require a perfect match to be within 800 characters of the fuzzy location to be found using a 0.8 threshold.</li>
+<li><strong>threshold</strong> <em>(Int, default: 0.4)</em><br/>
+At what point does the match algorithm give up. A threshold of <code>0.0</code> requires a perfect match (of both letters and location), a threshold of <code>1.0</code> would match anything.</li>
+<li><strong>multiSearch</strong> <em>(Boolean, default: true)</em><br/>
+Subtract arguments from the <code>searchString</code> or put <code>searchString</code> as only argument</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[List.js 0.2.1: Release notes]]></title>
+    <link href="http://jonnystromberg.com/listjs-0-2-1-release-notes/"/>
+    <updated>2012-04-24T00:00:00+02:00</updated>
+    <id>http://jonnystromberg.com/listjs-0-2-1-release-notes</id>
+    <content type="html"><![CDATA[<p><img class="float-right default" src="/images/projects/listjs/listjs-logo.jpg"></p>
+
+<h2>Major changes</h2>
+
+<ul>
+<li>A <a href="/listjs-fuzzy-search-plugin/">Fuzzy Search plugin</a> is added</li>
+<li>The filter function in <code>list.filter(filterFunction)</code> now takes an <code>Item</code> instead of <code>values</code> which results in greater possibilities, e.g. by using <code>item.elm</code>. _Thanks <a href="https://github.com/sprynmr">Bob Spryn</a></li>
+</ul>
+
+
+<h2>Other changes</h2>
+
+<ul>
+<li>Change plugin functionality so that plugins are created with `Plugin.call(list, locals, options)?, so that plugins extends the List-objects that they are created in.</li>
+<li>Add possibility to initiate with a <code>element</code> instead of a <code>ID</code>.</li>
+</ul>
+
+
+<h2>Bug fixes</h2>
+
+<ul>
+<li>Don't break <code>.hasClass()</code> if a element doesn't have a class.</li>
+<li>Do not require items to contain all <code>valueNames</code> on initiation.</li>
+</ul>
+
+
+<p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The List.js Plugin Guide]]></title>
@@ -67,14 +193,15 @@ plugins: [
 <p>var listObj = new List('listId', options);
 ```</p>
 
-<p>Read more about the <a href="#">paging plugin here</a>.</p>
+<p>Read more about the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
 
 <h2>Make Your Own Plugin</h2>
 
-<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>list</code> is the actual list that uses the plugin, <code>options</code> contains the options shown in the example above.</p>
+<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>locals</code> that contains
+all hidden/private local variables of List.js, <code>options</code> contains the options shown in the example above.</p>
 
 <p>``` javascript list.yourPluginName.js
-List.prototype.plugins.yourPluginName = function(list, options) {</p>
+List.prototype.plugins.yourPluginName = function(locals, options) {</p>
 
 <pre><code>// Do stuff!
 </code></pre>
@@ -82,7 +209,7 @@ List.prototype.plugins.yourPluginName = function(list, options) {</p>
 <p>};
 ```</p>
 
-<p>The plugin is run after the list is initiated. See the source code of the <a href="#">paging plugin here</a>.</p>
+<p>The plugin is run after the list is initiated. See the source code of the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
 
 <h3>Naming</h3>
 
@@ -349,44 +476,6 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
 <p>That was it! Pretty exciting right? Looking forward do see some awesome plugins!</p>
 
 <p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[List.js Beta 0.1.4: Filter, search and sort!]]></title>
-    <link href="http://jonnystromberg.com/listjs-beta-0-1-4-filter-search-sort/"/>
-    <updated>2011-11-29T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/listjs-beta-0-1-4-filter-search-sort</id>
-    <content type="html"><![CDATA[<p>Version 0.1.4 of List.js is now released and it contains one major update and one minor.</p>
-
-<p>The <strong>major</strong> one is that filters, search and sort now depend on each other. If you searches in a filtered list, the items hidden by the filter will stay hidden. The same goes if you have searched in a list and then filters the result.</p>
-
-<p>The minor update is that <code>.filter()</code> is now used to reset filters instead of <code>.filter(false)</code>.</p>
-
-<p>Grab the latest version at <a href="http://github.com/list/javve">Github.com/javve/list</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[List.js Beta 0.1.3 release!]]></title>
-    <link href="http://jonnystromberg.com/listjs-beta-0-1-3-release/"/>
-    <updated>2011-11-29T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/listjs-beta-0-1-3-release</id>
-    <content type="html"><![CDATA[<p>Today a new version of List.js was released. There are <strong>one major change</strong> that you have to be aware of!</p>
-
-<p>The sort buttons now sorts values based on <code>data-sort=”valueName”</code> instead of <code>rel=”valueName”</code>. The resone for this is basically that rel=”” is not valid at most elements according to W3C.</p>
-
-<h2>Other changes in the 0.1.3 release (from the documentation):</h2>
-
-<ul>
-<li>Added function <code>.clear()</code> that removes all items from the list</li>
-<li>Changed the sort function to be based on <code>data-sort</code> instead of <code>rel</code></li>
-<li>When sorting one category, all sort-related classes will be removed from the other sort buttons</li>
-<li>Updated <code>.sort(valueName, sortFunction)</code> to <code>.sort(valueName, options)</code>, see more info in the documentation</li>
-</ul>
-
-
-<p>Go to <a href="http://github.com/javve/list">github.com/javve/list</a> to download the latest version (and remember to change your sort button)!</p>
 ]]></content>
   </entry>
   
