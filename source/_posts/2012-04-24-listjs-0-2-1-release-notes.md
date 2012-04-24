@@ -3,7 +3,7 @@ layout: post
 title: "List.js 0.2.1: Release notes"
 shareText: "Checkout version 0.2.1 of List.js with a Fuzzy Search plugin included."
 date: 2012-04-24
-hackernews: "http://news.ycombinator.com/item?id=3515820"
+hackernews: "http://news.ycombinator.com/item?id=3883035"
 categories: listjs
 ---
 
