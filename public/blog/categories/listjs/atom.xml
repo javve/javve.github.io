@@ -4,7 +4,7 @@
   <title><![CDATA[Category: listjs | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/listjs/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-04-24T11:15:51+02:00</updated>
+  <updated>2012-04-24T11:38:08+02:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -114,8 +114,8 @@ Subtract arguments from the <code>searchString</code> or put <code>searchString<
 <h2>Major changes</h2>
 
 <ul>
-<li>A <a href="/listjs-fuzzy-search-plugin/">Fuzzy Search plugin</a> is added</li>
-<li>The filter function in <code>list.filter(filterFunction)</code> now takes an <code>Item</code> instead of <code>values</code> which results in greater possibilities, e.g. by using <code>item.elm</code>. _Thanks <a href="https://github.com/sprynmr">Bob Spryn</a></li>
+<li>A <a href="/listjs-fuzzy-search-plugin/">Fuzzy Search plugin</a> is added <em>Thanks <a href="https://github.com/LuukvE">Luuk van Egeraat</a> for this <a href="https://github.com/LuukvE/list/commit/a75b6ef5649c5fb4232a40ef2f5191d0b57e1ede">commit</a></em></li>
+<li>The filter function in <code>list.filter(filterFunction)</code> now takes an <code>Item</code> instead of <code>values</code> which results in greater possibilities, e.g. by using <code>item.elm</code>. <em>Thanks <a href="https://github.com/sprynmr">Bob Spryn</a></em></li>
 </ul>
 
 
@@ -130,7 +130,7 @@ Subtract arguments from the <code>searchString</code> or put <code>searchString<
 <h2>Bug fixes</h2>
 
 <ul>
-<li>Don't break <code>.hasClass()</code> if a element doesn't have a class.</li>
+<li>Don't break <code>.hasClass()</code> if a element doesn't have a class.  <em>Thanks <a href="https://github.com/himynameisjonas">Jonas Forsberg</a></em></li>
 <li>Do not require items to contain all <code>valueNames</code> on initiation.</li>
 </ul>
 
