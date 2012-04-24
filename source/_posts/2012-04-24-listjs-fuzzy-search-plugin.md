@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "List.js: Fuzzy Search Plugin"
-shareText: "Checkout the new awesome List.js with plugins and paging by @javve"
+shareText: "Checkout List.js fuzzy search plugin, it's awesome! #listjs #javascript"
 date: 2012-04-24
 hackernews: "http://news.ycombinator.com/item?id=3883031"
 categories: listjs
