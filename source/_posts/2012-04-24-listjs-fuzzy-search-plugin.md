@@ -40,9 +40,9 @@ Check out this -> [Listjs.com/examples/fuzzy-search](http://listjs.com/examples/
 
 var fuzzyOptions = {
     searchClass: "fuzzy-search",
-	  location: 0,
-	  distance: 100,
-	  threshold: 0.4,
+    location: 0,
+	distance: 100,
+	threshold: 0.4,
     multiSearch: true
 };
 var options = {

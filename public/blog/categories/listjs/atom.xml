@@ -4,7 +4,7 @@
   <title><![CDATA[Category: listjs | @javve]]></title>
   <link href="http://jonnystromberg.com/blog/categories/listjs/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-04-24T11:38:08+02:00</updated>
+  <updated>2012-08-13T23:51:18+02:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -61,9 +61,9 @@ list.fuzzySearch('gu thre') -> return 1 item
 
 var fuzzyOptions = {
     searchClass: "fuzzy-search",
-      location: 0,
-      distance: 100,
-      threshold: 0.4,
+    location: 0,
+    distance: 100,
+    threshold: 0.4,
     multiSearch: true
 };
 var options = {

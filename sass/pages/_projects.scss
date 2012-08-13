@@ -69,6 +69,21 @@
         width:33%;
         margin-bottom:0;
         margin-right:-4px;
+        &:first-child {
+            @include border-radius(5px 0 0 0);
+        }
+        &:last-child {
+            @include border-radius(0 0 5px 0);
+        }
+        &:nth-child(3) {
+            @include border-radius(0 5px 0 0);
+        }
+        &:nth-last-child(3) {
+            @include border-radius(0 0 0 5px);
+        }
+        &:nth-child(n3 + 3) {
+            width:34%;
+        }
         a {
             text-align:center;
             display:block;
@@ -76,27 +91,30 @@
         }
         &.teamtailor {
             background:image-url('projects/teamtailor/teamtailor-bg.jpg') repeat 50px 100px;
-            @include border-radius(5px 0 0 0);
         }
         &.startuplocation {
             background:image-url('projects/startuplocation/startuplocation-bg.png') repeat;
         }
         &.silarapp {
             background-color:#fff;
-            width:34%;
-            @include border-radius(0 5px 0 0);
         }
         &.listjs {
             background:image-url('projects/listjs/listjs-bg.jpg') repeat;
-            @include border-radius(0 0 0 5px);
         }
         &.sthlmstartuphack {
             background:image-url('projects/sthlmstartuphack/sthlmstartuphack-bg.jpg') repeat 50px 100px;
         }
         &.hashjs {
             background:image-url('projects/hashjs/hashjs-bg.jpg') repeat;
-            @include border-radius(0 0 5px 0);
-            width:34%;
+        }
+        &.pong {
+            background:image-url('projects/sthlmstartuppong/bg.jpg') repeat;
+        }
+        &.textcloud {
+            background:image-url('projects/textcloud/bg.jpg') repeat;
+        }
+        &.nothing {
+            background-color:#2A3038;
         }
         h2 {
             display:none;
