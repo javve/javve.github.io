@@ -4,7 +4,7 @@
   <title><![CDATA[@javve]]></title>
   <link href="http://jonnystromberg.com/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2012-08-13T23:51:18+02:00</updated>
+  <updated>2012-11-11T18:54:16+01:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -694,15 +694,6 @@ Clears entire hash.</li>
 <li><a href="http://blog.j15r.com/2011/12/for-those-unfamiliar-with-it-box2d-is.html">Box2D-web performance</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Releasing PNGTextures.com]]></title>
-    <link href="http://jonnystromberg.com/releasing-png-textures/"/>
-    <updated>2012-02-06T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/releasing-png-textures</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   

@@ -14,12 +14,12 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-body {
+html {
   line-height: 1;
 }
 
@@ -174,12 +174,12 @@ p:last-child {
 p a,
 li a {
   color: #4a688e;
-  -moz-transition-property: color;
   -webkit-transition-property: color;
+  -moz-transition-property: color;
   -o-transition-property: color;
   transition-property: color;
-  -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
@@ -323,7 +323,7 @@ a {
   margin: 30px -30px;
 }
 .box .share {
-@extends .clearfix;
+  @extends .clearfix;
   background-color: #f5f4ed;
   border-top: solid 1px #e7e3d3;
   padding: 15px 30px;
@@ -379,12 +379,12 @@ a {
   display: inline-block;
   width: 82px;
   height: 82px;
-  -moz-transition-property: opacity;
   -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
-  -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
@@ -462,12 +462,12 @@ header .author h2 {
 }
 header .author h2 a.item {
   display: inline-block;
-  -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
   -o-transition-property: background-color;
   transition-property: background-color;
-  -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
@@ -488,12 +488,12 @@ header .author .portrait {
 }
 header .author h3 {
   float: left;
-  -moz-transition-property: all;
   -webkit-transition-property: all;
+  -moz-transition-property: all;
   -o-transition-property: all;
   transition-property: all;
-  -moz-transition-duration: 0.7s;
   -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
   -o-transition-duration: 0.7s;
   transition-duration: 0.7s;
 }
@@ -512,12 +512,12 @@ header .author h3 .follow a {
   display: none;
 }
 header .author h3 .follow iframe {
-  -moz-transition-property: width;
   -webkit-transition-property: width;
+  -moz-transition-property: width;
   -o-transition-property: width;
   transition-property: width;
-  -moz-transition-duration: 0.7s;
   -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
   -o-transition-duration: 0.7s;
   transition-duration: 0.7s;
   width: 0 !important;
@@ -543,12 +543,12 @@ header .main-navigation a.item {
   padding-left: 25px;
   padding-right: 25px;
   line-height: 70px;
-  -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
   -o-transition-property: background-color;
   transition-property: background-color;
-  -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
@@ -628,17 +628,15 @@ footer {
   line-height: 1.45em;
   background: #073642 url('/images/noise.png?1324335718') top left !important;
   border-right: 1px solid #00232c !important;
-  -moz-box-shadow: #083e4b -1px 0 inset;
   -webkit-box-shadow: #083e4b -1px 0 inset;
-  -o-box-shadow: #083e4b -1px 0 inset;
+  -moz-box-shadow: #083e4b -1px 0 inset;
   box-shadow: #083e4b -1px 0 inset;
   text-shadow: #021014 0 -1px;
   padding: .8em !important;
-  -moz-border-radius: 0;
   -webkit-border-radius: 0;
-  -o-border-radius: 0;
+  -moz-border-radius: 0;
   -ms-border-radius: 0;
-  -khtml-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
 }
 .highlight .line-numbers span, html .gist .gist-file .gist-syntax .gist-highlight .line-numbers span {
@@ -646,15 +644,13 @@ footer {
 }
 
 figure.code, .gist-file, pre {
-  -moz-box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
-  -o-box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
   box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px;
 }
 figure.code .highlight pre, .gist-file .highlight pre, pre .highlight pre {
-  -moz-box-shadow: none;
   -webkit-box-shadow: none;
-  -o-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
 
@@ -705,11 +701,10 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 
 pre {
   background: #002b36 url('/images/noise.png?1324335718') top left;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
-  -khtml-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
   border: 1px solid #05232b;
   line-height: 1.45em;
@@ -723,15 +718,9 @@ pre {
 h3.filename + pre {
   -moz-border-radius-topleft: 0px;
   -webkit-border-top-left-radius: 0px;
-  -o-border-top-left-radius: 0px;
-  -ms-border-top-left-radius: 0px;
-  -khtml-border-top-left-radius: 0px;
   border-top-left-radius: 0px;
   -moz-border-radius-topright: 0px;
   -webkit-border-top-right-radius: 0px;
-  -o-border-top-right-radius: 0px;
-  -ms-border-top-right-radius: 0px;
-  -khtml-border-top-right-radius: 0px;
   border-top-right-radius: 0px;
 }
 
@@ -743,11 +732,10 @@ p code, li code {
   line-height: 1.5em;
   color: #555;
   border: 1px solid #ddd;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
-  -khtml-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
   padding: 0 .3em;
   margin: -1px 0;
@@ -1018,11 +1006,10 @@ p pre code, li pre code {
 }
 .highlight pre, .gist-highlight pre {
   background: none;
-  -moz-border-radius: none;
   -webkit-border-radius: none;
-  -o-border-radius: none;
+  -moz-border-radius: none;
   -ms-border-radius: none;
-  -khtml-border-radius: none;
+  -o-border-radius: none;
   border-radius: none;
   border: none;
   padding: 0;
@@ -1069,15 +1056,9 @@ figure.code .highlight {
   margin-bottom: 0;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
-  -o-border-top-left-radius: 5px;
-  -ms-border-top-left-radius: 5px;
-  -khtml-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
-  -o-border-top-right-radius: 5px;
-  -ms-border-top-right-radius: 5px;
-  -khtml-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
   font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
   background: #aaaaaa url('/images/code_bg.png?1324335718') top repeat-x;
@@ -1116,12 +1097,12 @@ figure.code .highlight {
   display: inline-block;
   width: 82px;
   height: 82px;
-  -moz-transition-property: opacity;
   -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
-  -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
@@ -1212,35 +1193,31 @@ figure.code .highlight {
   margin-right: -4px;
 }
 .projects li:first-child {
-  -moz-border-radius: 5px 0 0 0;
   -webkit-border-radius: 5px 0 0 0;
-  -o-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
   -ms-border-radius: 5px 0 0 0;
-  -khtml-border-radius: 5px 0 0 0;
+  -o-border-radius: 5px 0 0 0;
   border-radius: 5px 0 0 0;
 }
 .projects li:last-child {
-  -moz-border-radius: 0 0 5px 0;
   -webkit-border-radius: 0 0 5px 0;
-  -o-border-radius: 0 0 5px 0;
+  -moz-border-radius: 0 0 5px 0;
   -ms-border-radius: 0 0 5px 0;
-  -khtml-border-radius: 0 0 5px 0;
+  -o-border-radius: 0 0 5px 0;
   border-radius: 0 0 5px 0;
 }
 .projects li:nth-child(3) {
-  -moz-border-radius: 0 5px 0 0;
   -webkit-border-radius: 0 5px 0 0;
-  -o-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
   -ms-border-radius: 0 5px 0 0;
-  -khtml-border-radius: 0 5px 0 0;
+  -o-border-radius: 0 5px 0 0;
   border-radius: 0 5px 0 0;
 }
 .projects li:nth-last-child(3) {
-  -moz-border-radius: 0 0 0 5px;
   -webkit-border-radius: 0 0 0 5px;
-  -o-border-radius: 0 0 0 5px;
+  -moz-border-radius: 0 0 0 5px;
   -ms-border-radius: 0 0 0 5px;
-  -khtml-border-radius: 0 0 0 5px;
+  -o-border-radius: 0 0 0 5px;
   border-radius: 0 0 0 5px;
 }
 .projects li:nth-child(n3 + 3) {
