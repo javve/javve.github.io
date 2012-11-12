@@ -81,6 +81,49 @@
                 <section>
                     <section>
                         <h2>Example</h2>
+                        <div class="listjs-example">
+                            <ul class="list">
+                                <li><h4 class="name">Jonny</h4></li>
+                                <li><h4 class="name">Beatrice</h4></li>
+                            </ul>
+                        </div>
+                        <pre><code contenteditable>
+&lt;div id="persons">
+    &lt;ul class="list">
+       &lt;li>
+           &lt;h4 class="name">Jonny&lt;/h4>
+       &lt;/li>
+       &lt;li>
+           &lt;h4 class="name">Beatrice&lt;/h4>
+       &lt;/li>
+    &lt;/ul>
+&lt;/div>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Add List.js</h2>
+                        <pre><code contenteditable>
+&lt;div id="persons">
+    &lt;ul class="list">
+       &lt;li>
+           &lt;h4 class="name">Jonny&lt;/h4>
+       &lt;/li>
+       &lt;li>
+           &lt;h4 class="name">Beatrice&lt;/h4>
+       &lt;/li>
+    &lt;/ul>
+&lt;/div>
+                        </code></pre>
+                        <pre><code contenteditable>
+var options = {
+    valueNames: [ 'name' ]
+};
+var personList = new List('persons', options);
+                    </code></pre>
+                    </section>
+                    <section>
+                        <h1>Woah!</h1>
+                        <h2>Sort & Search</h2>
                         <div id="persons" class="listjs-example">
                             <button class="sort" data-sort="name">Sort</button>
                             <input class="search" />
@@ -131,7 +174,7 @@ var options = {
         { name: 'Beatrice' }
     ];
 };
-var personList = new List('persons', options);
+var personList = new List('persons', options, values);
                     </code></pre>
                     </section>
                     <section>
@@ -288,6 +331,7 @@ personList.add({
                 progress: true,
                 history: true,
                 center: true,
+                mouseWheel: false,
 
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: 'page', // default/cube/page/concave/zoom/linear/none
@@ -305,6 +349,31 @@ personList.add({
 
             window.personList = new List('persons', { valueNames: [ 'name' ]});
         </script>
+
+        <!-- Everything below this point is unrelated to the slideshow -->
+
+        <div class="share-reveal" style="position: absolute; bottom: 10px; left: 50%; margin-left: -155px; z-index: 20;">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-text="List.js - What, how and who? A presentation at @opentechschool by @javve." data-url="http://jonnystromberg.com/talks/opentechschool-1/" data-count="small" data-related="javve"></a>
+
+            <iframe id="facebook-button" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fjonnystromberg.com%2Ftalks%2Fopentechschool-1%2F&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:95px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
+
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @javve</a>
+        </div>
+
+
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-8204597-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
 
     </body>
 </html>
