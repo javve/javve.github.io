@@ -29,6 +29,10 @@ body {
   background-repeat: repeat;
   /*background-color: #2b2b2b;*/
 }
+.reveal code b {
+  color:#f7fd45;
+  font-size: 130%;
+}
 
 .reveal {
   font-family: "Lato", Times, "Times New Roman", serif;

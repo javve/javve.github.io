@@ -88,13 +88,13 @@
                             </ul>
                         </div>
                         <pre><code contenteditable>
-&lt;div id="persons">
-    &lt;ul class="list">
+&lt;div>
+    &lt;ul>
        &lt;li>
-           &lt;h4 class="name">Jonny&lt;/h4>
+           &lt;h4>Jonny&lt;/h4>
        &lt;/li>
        &lt;li>
-           &lt;h4 class="name">Beatrice&lt;/h4>
+           &lt;h4>Beatrice&lt;/h4>
        &lt;/li>
     &lt;/ul>
 &lt;/div>
@@ -103,13 +103,13 @@
                     <section>
                         <h2>Add List.js</h2>
                         <pre><code contenteditable>
-&lt;div id="persons">
-    &lt;ul class="list">
+&lt;div id="<b>persons</b>">
+    &lt;ul class="<b>list</b>">
        &lt;li>
-           &lt;h4 class="name">Jonny&lt;/h4>
+           &lt;h4 class="<b>name</b>">Jonny&lt;/h4>
        &lt;/li>
        &lt;li>
-           &lt;h4 class="name">Beatrice&lt;/h4>
+           &lt;h4 class="<b>name</b>">Beatrice&lt;/h4>
        &lt;/li>
     &lt;/ul>
 &lt;/div>
@@ -137,8 +137,8 @@ var personList = new List('persons', options);
                         <h2>From HTML</h2>
                         <pre><code contenteditable>
 &lt;div id="persons">
-    &lt;button class="sort" data-sort="name">Sort&lt;/button>
-    &lt;input class="search" />
+    &lt;button class="<b>sort</b>" data-sort="<b>name</b>">Sort&lt;/button>
+    &lt;input class="<b>search</b>" />
     &lt;ul class="list">
        &lt;li>
            &lt;h4 class="name">Jonny&lt;/h4>
@@ -168,13 +168,13 @@ var personList = new List('persons', options);
                     <pre><code class="javascript" contenteditable>
 var options = {
     valueNames: [ 'name' ],
-    item: '&lt;li>&lt;h2 class="name">&lt;/h2>&lt;/li>',
-    values: [
-        { name: 'Jonny' },
-        { name: 'Beatrice' }
-    ];
+    <b>item</b>: '&lt;li>&lt;h2 class="name">&lt;/h2>&lt;/li>'
 };
-var personList = new List('persons', options, values);
+var <b>values</b>: [
+    { name: 'Jonny' },
+    { name: 'Beatrice' }
+];
+var personList = new List('persons', options, <b>values</b>);
                     </code></pre>
                     </section>
                     <section>
@@ -195,7 +195,7 @@ var options = {
     valueNames: [ 'name' ]
 };
 var personList = new List('persons', options);
-personList.add({ name: 'Beatrice' });
+personList.<b>add</b>({ name: 'Beatrice' });
                     </code></pre>
                     </section>
 
