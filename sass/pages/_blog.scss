@@ -8,6 +8,16 @@
         margin-bottom:10px;
         font-weight:bold;
     }
+    @media (max-width: 767px) {
+        h1 {
+            font-size:30px;
+            padding:0 30px;
+        }
+        .meta-date {
+            font-size:20px;
+            padding:0 30px;
+        }
+    }
     img.header-image {
         width:730px;
         margin-left:-30px;
@@ -33,7 +43,7 @@
             }
         }
     }
-    li pre { 
+    li pre {
         max-width:620px;
     }
     pre {

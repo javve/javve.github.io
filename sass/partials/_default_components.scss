@@ -4,12 +4,12 @@
     text-align:center;
 
     h1 {
-        font-size:45px;
+        font-size:37px;
         text-align:center;
         font-weight:bold;
     }
     h2 {
-        font-size:27px;
+        font-size:25px;
         color:#656565;
     }
     @media (max-width: 767px) {
@@ -35,11 +35,10 @@
     &.wide {
         float:none;
     }
-    float:left;
     margin-bottom:30px;
     background-color:$lightest;
     border:solid 1px darken($lightest, 10%);
-    padding:30px;
+    padding:35px 50px;
 
     h1 {
         font-size:45px;
@@ -108,16 +107,22 @@
     }
 
     .code {
-        margin:30px -30px;
+        margin:50px -50px;
+        .hightligt {
+            width:100%;
+        }
     }
 
     .share {
         @extends .clearfix;
         background-color:darken($lightest, 2%);
         border-top:solid 1px darken($lightest, 10%);
-        padding:15px 30px;
-        margin:0 -30px;
+        padding:15px 50px;
+        margin:0 -50px 50px;
         height:22px;
+        @media (max-width: 767px) {
+            height:auto;
+        }
         position:relative;
         top:30px;
         float:left;
@@ -125,6 +130,13 @@
         .sharing {
             float:right;
             height:20px;
+
+            @media (max-width: 767px) {
+                padding:10px 0 0 0;
+                height:auto;
+                float:none;
+                clear:left;
+            }
         }
         p {
             font-size:12px;
@@ -142,6 +154,9 @@
 }
 .about-author {
     text-shadow:$light-shadow;
+    @media (max-width: 767px) {
+        margin:0 30px;
+    }
     h3 {
         font-size:20px;
         margin-bottom:10px;
@@ -156,6 +171,14 @@
     .profile-image {
         float:left;
         margin-right:15px;
+    }
+
+    @media (max-width: 480px) {
+        .profile-image {
+            width:100%;
+            float:none;
+            margin-right:0;
+        }
     }
 }
 .padder {

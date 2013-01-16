@@ -1,32 +1,4 @@
 .about {
-    .do {
-        clear:both;
-        padding-top:30px;
-        .c {
-            float:left;
-            width:45%;
-            margin-left:10%;
-            &:first-child {
-                margin-left:0;
-            }
-        }
-        text-align:left;
-        h3 {
-            font-size:18px;
-            font-weight:bold;
-            margin-bottom:7px;
-        }
-        ul {
-            font-family:$sans;
-            padding-left:25px;
-            margin-bottom:25px;
-            li {
-                list-style-type:disc;
-                margin-bottom:10px;
-            }
-        }
-    }
-
     .misc {
         clear:both;
         .c {
@@ -35,6 +7,16 @@
             margin-left:6%;
             &:first-child {
                 margin-left:0;
+            }
+        }
+        @media (max-width: 480px) {
+            .c {
+                width:88%;
+                float:none;
+                margin:6%;
+                &:first-child {
+                    margin:6%;
+                }
             }
         }
 
@@ -46,7 +28,6 @@
                 margin-bottom:7px;
             }
             ul {
-                font-family:$sans;
                 padding-left:25px;
                 margin-bottom:25px;
                 li {
