@@ -1366,6 +1366,17 @@ a {
 .box .code .hightligt {
   width: 100%;
 }
+@media (max-width: 480px) {
+  .box {
+    padding: 30px;
+  }
+  .box .code {
+    margin: 30px -30px;
+  }
+  .box .share {
+    margin: 0 -30px 50px;
+  }
+}
 .box .share {
   @extends .clearfix;
   background-color: #f5f4ed;
@@ -1642,8 +1653,8 @@ header .main-navigation .rss {
 }
 @media (max-width: 480px) {
   header .main-navigation a.item {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

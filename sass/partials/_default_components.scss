@@ -113,6 +113,18 @@
         }
     }
 
+    @media (max-width: 767px) {}
+
+    @media (max-width: 480px) {
+        padding:30px;
+        .code {
+            margin:30px -30px;
+        }
+        .share {
+            margin: 0 -30px 50px;
+        }
+    }
+
     .share {
         @extends .clearfix;
         background-color:darken($lightest, 2%);
