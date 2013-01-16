@@ -64,26 +64,13 @@
 .projects {
     clear:left;
     margin-bottom:20px;
+    overflow:hidden;
+    @include border-radius(5px);
     li {
-        display:inline-block;
-        width:33%;
+        display:block;
+        width:33.333333%;
         margin-bottom:0;
-        margin-right:-4px;
-        &:first-child {
-            @include border-radius(5px 0 0 0);
-        }
-        &:last-child {
-            @include border-radius(0 0 5px 0);
-        }
-        &:nth-child(3) {
-            @include border-radius(0 5px 0 0);
-        }
-        &:nth-last-child(3) {
-            @include border-radius(0 0 0 5px);
-        }
-        &:nth-child(n3 + 3) {
-            width:34%;
-        }
+        float:left;
         a {
             text-align:center;
             display:block;
@@ -121,6 +108,23 @@
         }
         p {
             display:none;
+        }
+    }
+    @media (max-width: 767px) {
+        li {
+            width:50%;
+            &.nothing {
+                display:none;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        li {
+            width:100%;
+            &.nothing {
+                display:none;
+            }
         }
     }
 }

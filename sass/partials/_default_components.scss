@@ -12,6 +12,23 @@
         font-size:27px;
         color:#656565;
     }
+    @media (max-width: 767px) {
+        h1 {
+            font-size:35px;
+        }
+        h2 {
+            font-size:23px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size:30px;
+        }
+        h2 {
+            font-size:20px;
+        }
+    }
 }
 
 .box {
@@ -34,6 +51,24 @@
         font-size:20px;
         font-weight:bold;
         margin-bottom:10px;
+    }
+
+    @media (max-width: 767px) {
+        h1 {
+            font-size:35px;
+        }
+        h2 {
+            font-size:23px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size:30px;
+        }
+        h2 {
+            font-size:20px;
+        }
     }
     h3 {
         font-size:16px;

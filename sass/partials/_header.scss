@@ -1,15 +1,15 @@
 header {
     background-color:$dark;
-    font-size:18px;
+    font-size:16px;
     font-family:$serif;
     margin-bottom:30px;
     line-height:70px;
-    
+
     a {
         color:$lightest;
     }
     @include clearfix();
-    
+
     .author {
         height:70px;
         float:left;
@@ -19,7 +19,7 @@ header {
             a.item {
                 display:inline-block;
                 @include transition-property(background-color);
-                @include transition-duration(.5s); 
+                @include transition-duration(.5s);
                 &:hover {
                     background-color:darken($dark, 5%);
                     color:$white;
@@ -40,7 +40,7 @@ header {
         h3 {
             float:left;
             @include transition-property(all);
-            @include transition-duration(.7s); 
+            @include transition-duration(.7s);
             &:hover {
                 background-color:darken($dark, 5%);
                 .follow iframe {
@@ -56,7 +56,7 @@ header {
                 }
                 iframe {
                     @include transition-property(width);
-                    @include transition-duration(.7s); 
+                    @include transition-duration(.7s);
                     width:0 !important;
                 }
             }
@@ -66,25 +66,24 @@ header {
                 padding-left:5px;
                 padding-right:10px;
                 color:$medium;
-                
-                
+
                 &:hover {
                     color:$white;
                 }
             }
         }
     }
-    
+
     .main-navigation {
         float:right;
-        
+
         li {
             display:inline-block;
         }
         a.item {
             display:inline-block;
-            padding-left:25px;
-            padding-right:25px;
+            padding-left:20px;
+            padding-right:20px;
             line-height:70px;
             @include transition-property(background-color);
             @include transition-duration(.5s);
@@ -102,5 +101,22 @@ header {
             left:-37px;
         }
     }
-    
+
+    @media (max-width: 767px) {
+        .main-navigation {
+            background-color:lighten($dark, 5%);
+            float:none;
+            clear:left;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-navigation {
+            a.item {
+                padding-left:15px;
+                padding-right:15px;
+            }
+        }
+    }
+
 }
