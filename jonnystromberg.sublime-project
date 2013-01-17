@@ -1,0 +1,15 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": [
+                "public",
+                ".pygments-cache",
+                ".sass-cache",
+                ".themes",
+                "source/stylesheets"
+            ]
+        }
+    ]
+}
