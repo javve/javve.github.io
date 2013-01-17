@@ -1,5 +1,5 @@
 ---
-layout: tutorial
+layout: article
 title: "Box2D JaveScript Tutorial"
 subtitle: "Uncovering The Magic Behind SilarApp.com"
 date: 2012-02-07

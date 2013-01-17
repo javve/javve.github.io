@@ -1,5 +1,5 @@
 (function() {
-    
+
     // Init som useful stuff for easier access (don't need 'em all)
     var   b2Vec2 = Box2D.Common.Math.b2Vec2
         , b2AABB = Box2D.Collision.b2AABB
@@ -17,11 +17,11 @@
 
     // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
     window.requestAnimFrame = (function(){
-        return  window.requestAnimationFrame       || 
-        window.webkitRequestAnimationFrame || 
-        window.mozRequestAnimationFrame    || 
-        window.oRequestAnimationFrame      || 
-        window.msRequestAnimationFrame     || 
+        return  window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        window.oRequestAnimationFrame      ||
+        window.msRequestAnimationFrame     ||
         function(/* function */ callback, /* DOMElement */ element){
             window.setTimeout(callback, 1000 / 60);
         };
@@ -36,29 +36,29 @@
         height,
         shapes = {},
         needToDraw = false;
-        
+
     var debug = false;
-    
+
     var init = {
         start: function(id) {
             this.defaultProperties();
             this.canvas(id);
-            
+
             box2d.create.world();
             box2d.create.defaultFixture();
-            
+
             this.surroundings.leftWall();
             this.surroundings.rightWall();
             this.surroundings.ground();
-            
+
             this.callbacks();
-            
+
             setTimeout(function() { add.random(); }, 0);
             setTimeout(function() { add.random(); }, 100);
             setTimeout(function() { add.random(); }, 500);
             setTimeout(function() { add.random(); }, 700);
             setTimeout(function() { add.random(); }, 1000);
-            
+
             // On my signal: Unleash hell.
             (function hell() {
                 loop.step();
@@ -80,7 +80,7 @@
         surroundings: {
             rightWall: function() {
                 add.box({
-                    x: 25.7,        // 740 / 30 + 1.1
+                    x: 26.5,        // 760 / 30 + 1.1
                     y:  6.3,        // 380px / 30 / 2
                     height: 12.6,   // 380px / 30
                     width:2,
@@ -115,9 +115,9 @@
                 add.random(shapeOptions);
             }, false);
         }
-    };        
-     
-     
+    };
+
+
     var add = {
         random: function(options) {
             options = options || {};
@@ -158,7 +158,7 @@
                     new b2Vec2(0, 10)    //gravity
                     , false                 //allow sleep
                 );
-                
+
                 if (debug) {
                     var debugDraw = new b2DebugDraw();
                     debugDraw.SetSprite(ctx);
@@ -177,7 +177,7 @@
             },
             bodyDef: function(shape) {
                 var bodyDef = new b2BodyDef;
-        
+
                 if (shape.isStatic == true) {
                     bodyDef.type = b2Body.b2_staticBody;
                 } else {
@@ -187,7 +187,7 @@
                 bodyDef.position.y = shape.y;
                 bodyDef.userData = shape.id;
                 bodyDef.angle = shape.angle;
-            
+
                 return bodyDef;
             },
             body: function(bodyDef) {
@@ -219,7 +219,7 @@
             world.Step(stepRate, 10, 10);
             world.ClearForces();
         },
-        update: function () {            
+        update: function () {
             for (var b = world.GetBodyList(); b; b = b.m_next) {
                 if (b.IsActive() && typeof b.GetUserData() !== 'undefined' && b.GetUserData() != null) {
                     shapes[b.GetUserData()].update(box2d.get.bodySpec(b));
@@ -229,16 +229,16 @@
         },
         draw: function() {
             if (!needToDraw) return;
-            
+
             if (!debug) ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
             for (var i in shapes) {
                 shapes[i].draw(ctx);
             }
             needToDraw = false;
         }
-    };    
-    
+    };
+
     var helpers = {
         randomColor: function() {
             var letters = '0123456789ABCDEF'.split(''),
@@ -249,9 +249,9 @@
             return color;
         }
     };
-    
+
     /* Shapes down here */
-    
+
     var Shape = function(v) {
         this.id = Math.round(Math.random() * 1000000);
         this.x = v.x || Math.random()*23 + 1;
@@ -260,7 +260,7 @@
         this.color = helpers.randomColor();
         this.center = { x: null, y: null };
         this.isStatic = v.isStatic || false;
-        
+
         this.update = function(options) {
             this.angle = options.angle;
             this.center = options.center;
@@ -268,11 +268,11 @@
             this.y = options.y;
         };
     };
-    
+
     var Circle = function(options) {
         Shape.call(this, options);
         this.radius = options.radius || 1;
-        
+
         this.draw = function() {
             ctx.save();
             ctx.translate(this.x * SCALE, this.y * SCALE);
@@ -288,12 +288,12 @@
         };
     };
     Circle.prototype = Shape;
-    
+
     var Box = function(options) {
         Shape.call(this, options);
         this.width = options.width || Math.random()*2+0.5;
         this.height = options.height || Math.random()*2+0.5;
-        
+
         this.draw = function() {
             ctx.save();
             ctx.translate(this.x * SCALE, this.y * SCALE);
@@ -310,6 +310,6 @@
         };
     };
     Box.prototype = Shape;
-    
+
     init.start('box2d-demo');
 })();

@@ -1,3 +1,38 @@
+.content {
+    h1 {
+        font-size:45px;
+        font-weight:bold;
+        margin-bottom:20px;
+    }
+    h2 {
+        padding-top:5px;
+        font-size:20px;
+        margin-bottom:10px;
+    }
+
+    @media (max-width: 767px) {
+        h1 {
+            font-size:35px;
+        }
+        h2 {
+            font-size:23px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size:30px;
+        }
+        h2 {
+            font-size:20px;
+        }
+    }
+    h3 {
+        font-size:16px;
+        margin-bottom:10px;
+    }
+}
+
 .tagline {
     text-shadow:$light-shadow;
     margin-bottom:30px;
@@ -7,8 +42,10 @@
         font-size:37px;
         text-align:center;
         font-weight:bold;
+        margin-bottom:0;
     }
     h2 {
+        padding-top:0;
         font-size:25px;
         color:#656565;
     }
@@ -32,48 +69,11 @@
 }
 
 .box {
-    &.wide {
-        float:none;
-    }
     margin-bottom:30px;
     background-color:$lightest;
     border:solid 1px darken($lightest, 10%);
     padding:35px 50px;
 
-    h1 {
-        font-size:45px;
-        font-weight:bold;
-        margin-bottom:20px;
-    }
-    h2 {
-        padding-top:5px;
-        font-size:20px;
-        font-weight:bold;
-        margin-bottom:10px;
-    }
-
-    @media (max-width: 767px) {
-        h1 {
-            font-size:35px;
-        }
-        h2 {
-            font-size:23px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        h1 {
-            font-size:30px;
-        }
-        h2 {
-            font-size:20px;
-        }
-    }
-    h3 {
-        font-size:16px;
-        font-weight:bold;
-        margin-bottom:10px;
-    }
     p {
         font-family:$sans;
         font-size:16px;
@@ -113,12 +113,28 @@
         }
     }
 
+    .full-width {
+        img {
+            width:100%;
+        }
+        margin:10px -50px 30px;
+        &.full-width-top {
+            margin-top:-35px;
+        }
+        @media (max-width: 480px) {
+            margin:7px -30px 20px;
+        }
+    }
+
     @media (max-width: 767px) {}
 
     @media (max-width: 480px) {
         padding:30px;
         .code {
             margin:30px -30px;
+        }
+        .header-image {
+            margin:-30px -30px 5px;
         }
         .share {
             margin: 0 -30px 50px;
