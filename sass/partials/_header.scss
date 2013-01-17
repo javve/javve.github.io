@@ -104,14 +104,18 @@ header {
 
     @media (max-width: 767px) {
         .main-navigation {
-            background-color:lighten($dark, 5%);
             float:none;
             clear:left;
+            margin-left:15px;
+        }
+        .author {
+            display:none;
         }
     }
 
     @media (max-width: 480px) {
         .main-navigation {
+            margin-left:25px;
             a.item {
                 padding-left:10px;
                 padding-right:10px;
