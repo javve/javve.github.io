@@ -58,7 +58,7 @@ var listObj = new List('list-id', options);
 listObj.fuzzySearch('my search');
 
 // Search manually on specific columns
-listObj.fuzzySearch('my search', [ 'name' ]);
+listObj.fuzzySearch('my search', { name: true });
 
 </script>
 ```
