@@ -99,7 +99,11 @@
 
 <section>
 <section>
-        <h3>Getting started</h3>
+    <h4>Time for the designer to show some code!</h4>
+    <img src="img/memes/dance.gif" style="width:100%;">
+</section>
+<section>
+        <h3>package.json</h3>
         <pre><code class="json" contenteditable>
 {
     "name": "mongoose-js-example",
@@ -229,7 +233,11 @@ Person.findOne({ 'name': 'Jonny'}, function(err, person) {
 
 <section>
 <section>
-<h3>My structure</h3>
+    <h4><b>Cool.</b> How do I use it in my project?</h4>
+    <img src="img/memes/mongo.jpg" style="width:100%;">
+</section>
+<section>
+<h3>This is <em>my</em> structure</h3>
     <pre><code class="javascript" contenteditable>
 app.js
 
@@ -251,7 +259,7 @@ app.js
 <section>
     <h5>app.js</h5>
     <pre><code class="javascript" contenteditable>
-var database = require('./database'),
+var mongoose = require('./database'),
     Person = database.model('Person');
 
 Person.getByName('johannes', function(err, persons) {
@@ -279,6 +287,8 @@ module.exports = {
     </code></pre>
     <pre><code class="javascript" contenteditable>
 var config = require('./config');
+
+console.log("Yey, username is:", config.mongohq.user);
     </code></pre>
 </section>
 
@@ -292,8 +302,7 @@ module.exports = function(mongoose) {
     </code></pre>
     <h5>/models/person.js</h5>
     <pre><code class="javascript" contenteditable>
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
+var Schema = require('mongoose').Schema,
     lastModified = require('./plugins/lastModified');
 
 var Person = module.exports = new Schema({
@@ -317,13 +326,25 @@ var mongoose = require('mongoose'),
 require('./../models')(mongoose);
 
 module.exports = (function() {
-    return mongoose.createConnection('mongodb://'+
+    return mongoose.connect('mongodb://'+
         conf.mongohq.user+':'+
         conf.mongohq.password+'@'+conf.mongohq.url);
 })();
     </code></pre>
     <pre><code class="javascript" contenteditable>
-var database = require('./database');
+var mongoose = require('./database');
+    </code></pre>
+</section>
+
+<section>
+    <h5>app.js (again)</h5>
+    <pre><code class="javascript" contenteditable>
+var mongoose = require('./database'),
+    Person = database.model('Person');
+
+Person.getByName('johannes', function(err, persons) {
+    console.log(persons);
+});
     </code></pre>
 </section>
 
@@ -351,7 +372,8 @@ var database = require('./database');
 
 
 <section>
-    <h2>Thanks</h2>
+    <img src="img/questions2.gif">
+    <h2>Thanks! Questions?</h2>
     <p>
     Visit <a href="http://jonnystromberg.com">jonnystromberg.com</a> •
     Follow <a href="http://twitter.com/javve">@javve</a>
@@ -394,7 +416,7 @@ var database = require('./database');
         <!-- Everything below this point is unrelated to the slideshow -->
 
         <div class="share-reveal" style="position: absolute; bottom: 10px; left: 50%; margin-left: -155px; z-index: 20;">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-text="List.js - An introduction by @javve at @opentechschool.  Add search, sort and flexibility to any HTML lists or tables." data-url="http://jonnystromberg.com/talks/mongoose-js/" data-count="small" data-related="javve"></a>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-text="MongoDB + Node.js + ODM = Mongoose.js. A presentation by @javve for STHLM @MongoDB user group." data-url="http://jonnystromberg.com/talks/mongoose-js/" data-count="small" data-related="javve"></a>
 
             <iframe id="facebook-button" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fjonnystromberg.com%2Ftalks%2Fmongoose-js%2F&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:95px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
 
