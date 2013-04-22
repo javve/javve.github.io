@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>MongoDB + Node.js + ODM = Mongoose.js</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="Jonny Strömberg">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="lib/css/listjs.css">
+
+        <link rel="shortcut icon" href="img/mongodb.png">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+<section>
+    <h1 style="line-height:1.24; font-size:30px; margin-bottom:40px;">MongoDB + Node.js + ODM =<br /><span style="font-size:80px;">Mongoose.js</span></h1>
+    <p>
+        By <a href="http://jonnystromberg.com">Jonny Strömberg</a> / <a href="http://twitter.com/javve">@javve</a>
+    </p>
+</section>
+
+<section>
+    <h2>I'm <a href="http://twitter.com/javve">@javve</a></h2>
+    <p>
+        Designer & engineer who've built web since 1998.<br />
+        Creator of
+        <a href="http://silarapp.com">SilarApp.com</a>,
+        <a href="http://listjs.com">Listjs.com</a>,
+        <a href="http://startuplocation.com">Startuplocation.com</a> & more.
+        <br />
+        Part time designer at <a href="http://mynewsdesk.com">Mynewsdesk</a><br /><br />
+    </p>
+</section>
+
+<section>
+    <h2>Node.js</h2>
+    <p>Web server running Chromes Javascript engine V8.<br />
+        Event-driven, non-blocking I/O model.</p>
+    <p><a href="http://nodejs.org/">nodejs.org</a></p>
+</section>
+
+<section>
+    <img src="img/memes/tell-me-more.jpg" />
+    <p>
+        Document-oriented. JSON-style documents. Open Source.<br />
+        And of course scalable & high-performance
+    </p>
+    <p><a href="http://www.mongodb.org/">mongodb.org</a></p>
+</section>
+
+<section>
+    <h2>Mongoose.js</h2>
+    <p>
+        MongoDB object modeling tool designed to work in an asynchronous environment.
+    </p>
+    <p>
+        <a href="http://www.mongoosejs.com/">mongoosejs.com</a>
+    </p>
+</section>
+
+<section>
+    <h2>Features</h2>
+    <ul>
+        <li>Schemas & Models</li>
+        <li>Queries</li>
+        <li>Validation</li>
+        <li>Middleware</li>
+        <li>Population</li>
+        <li>Connections</li>
+        <li>Plugins</li>
+    </ul>
+</section>
+
+<section>
+<section>
+        <h3>Getting started</h3>
+        <pre><code class="json" contenteditable>
+{
+    "name": "mongoose-js-example",
+    "version": "0.0.1",
+    "engines": {
+        "node": "0.8.x",
+        "npm":  "1.1.x"
+    },
+    "dependencies": {
+        <b>"mongoose": "3.6.x"</b>
+    }
+}
+    </code></pre>
+</section>
+
+<section>
+        <h3>Connecting</h3>
+        <pre><code class="javascript" contenteditable>
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://'+
+    conf.mongohq.user+':'+
+    conf.mongohq.password+'@'+conf.mongohq.url
+);
+    </code></pre>
+</section>
+
+
+<section>
+    <h3>Models & Schemas</h3>
+    <pre><code class="javascript" contenteditable>
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
+
+var personSchema = new Schema({
+    name        : { type: String, required: true }
+});
+
+mongoose.model('Person', personSchema);
+    </code></pre>
+</section>
+
+<section>
+    <h3>Documents</h3>
+    <pre><code class="javascript" contenteditable>
+var Person = mongoose.model('Person');
+
+var jonny = new Person({
+    name: "Jonny"
+});
+
+jonny.save(function(err) {
+    console.log('Great success');
+});
+
+    </code></pre>
+</section>
+
+<section>
+    <h3>Instance method</h3>
+    <pre><code class="javascript" contenteditable>
+personSchema.methods.findWithSameName = function (callback) {
+  return this.model('Person').find({ name: this.name }, callback);
+}
+                        </code></pre>
+                        <pre><code class="javascript" contenteditable>
+var person = new Person({ name: 'Johannes' });
+
+person.findWithSameName(function (err, persons) {
+  console.log(persons);
+});
+    </code></pre>
+</section>
+
+
+<section>
+    <h3>Statics</h3>
+    <pre><code class="javascript" contenteditable>
+personSchema.statics.findByName = function (name, callback) {
+  this.find({ name: new RegExp(name, 'i') }, callback);
+}
+                        </code></pre>
+                        <pre><code class="javascript" contenteditable>
+var Person = mongoose.model('Person');
+
+Person.findByName('Johannes', function (err, persons) {
+  console.log(persons);
+});
+    </code></pre>
+</section>
+
+
+<section>
+    <h3>Plugins</h3>
+    <pre><code class="javascript" contenteditable>
+module.exports = function lastModifiedPlugin (schema, options) {
+    schema.add({ lastMod: Date });
+    schema.pre('save', function (next) {
+        this.lastMod = new Date();
+        next()
+    });
+};
+</code></pre>
+<pre><code class="javascript" contenteditable>
+var lastModified = require('./pathTo/lastModified');
+
+/* code */
+
+Person.plugin(lastModified);
+    </code></pre>
+</section>
+<section>
+    <h3>Queries</h3>
+    <pre><code class="javascript" contenteditable>
+var Person = mongoose.model('Person');
+
+Person.findOne({ 'name': 'Jonny'}, function(err, person) {
+    if (err) return handleError(err);
+    console.log('Found', person);
+});
+        </code></pre>
+    </section>
+
+
+</section>
+
+
+<section>
+<section>
+<h3>My structure</h3>
+    <pre><code class="javascript" contenteditable>
+app.js
+
+<b>/config</b>
+    development.js
+    index.js
+    production.js
+    test.js
+<b>/models</b>
+    index.js
+    person.js
+    <b>/plugins</b>
+        lastModified.js
+<b>/database</b>
+    index.js
+    </code></pre>
+</section>
+
+<section>
+    <h5>app.js</h5>
+    <pre><code class="javascript" contenteditable>
+var database = require('./database'),
+    Person = database.model('Person');
+
+Person.getByName('johannes', function(err, persons) {
+    console.log(persons);
+});
+    </code></pre>
+</section>
+
+<section>
+    <h5>/config/index.js</h5>
+    <pre><code class="javascript" contenteditable>
+module.exports = (function() {
+    return require('./'+process.env.NODE_ENV);
+})();
+    </code></pre>
+    <h5>/config/test.js</h5>
+    <pre><code class="javascript" contenteditable>
+module.exports = {
+    mongohq: {
+        user: "",
+        password: "",
+        url: ""
+    }
+};
+    </code></pre>
+    <pre><code class="javascript" contenteditable>
+var config = require('./config');
+    </code></pre>
+</section>
+
+
+<section>
+    <h5>/models/index.js</h5>
+    <pre><code class="javascript" contenteditable>
+module.exports = function(mongoose) {
+    mongoose.model('Person', require('./person'));
+};
+    </code></pre>
+    <h5>/models/person.js</h5>
+    <pre><code class="javascript" contenteditable>
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    lastModified = require('./plugins/lastModified');
+
+var Person = module.exports = new Schema({
+    name        : { type: String, required: true }
+    created     : Date,
+    updated     : Date
+});
+
+Person.plugin(lastModified);
+    </code></pre>
+</section>
+
+
+<section>
+    <h5>/database/index.js</h5>
+    <pre><code class="javascript" contenteditable>
+var mongoose = require('mongoose'),
+    config = require('./../config');
+
+// Set the Schemas
+require('./../models')(mongoose);
+
+module.exports = (function() {
+    return mongoose.createConnection('mongodb://'+
+        conf.mongohq.user+':'+
+        conf.mongohq.password+'@'+conf.mongohq.url);
+})();
+    </code></pre>
+    <pre><code class="javascript" contenteditable>
+var database = require('./database');
+    </code></pre>
+</section>
+
+</section>
+
+
+<section>
+    <h3>Github</h3>
+    <p><a href="https://github.com/javve/mongoose-js-example">github.com/javve/mongoose-js-example</a></p>
+</section>
+
+
+<section>
+    <h3>Free Mongo in the cloud ☁</h3>
+    <p><a href="https://www.mongohq.com">mongohq.com</a></p>
+    <p><a href="https://mongolab.com">mongolab.com</a></p>
+</section>
+
+
+<section>
+    <h3>More reading</h3>
+    <p><a href="http://mongoosejs.com/docs/guide.html">mongoosejs.com/docs/guide.html</a></p>
+    <p><a href="https://github.com/guille/mongoose-meetup-04-05">github.com/guille/mongoose-meetup-04-05</a></p>
+</section>
+
+
+<section>
+    <h2>Thanks</h2>
+    <p>
+    Visit <a href="http://jonnystromberg.com">jonnystromberg.com</a> •
+    Follow <a href="http://twitter.com/javve">@javve</a>
+    </p>
+</section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                mouseWheel: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: 'linear', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+
+        <!-- Everything below this point is unrelated to the slideshow -->
+
+        <div class="share-reveal" style="position: absolute; bottom: 10px; left: 50%; margin-left: -155px; z-index: 20;">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-text="List.js - An introduction by @javve at @opentechschool.  Add search, sort and flexibility to any HTML lists or tables." data-url="http://jonnystromberg.com/talks/mongoose-js/" data-count="small" data-related="javve"></a>
+
+            <iframe id="facebook-button" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fjonnystromberg.com%2Ftalks%2Fmongoose-js%2F&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:95px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
+
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @javve</a>
+        </div>
+
+
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-8204597-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+
+    </body>
+</html>
