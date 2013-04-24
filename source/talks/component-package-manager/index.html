@@ -79,12 +79,22 @@
 </section>
 
 <section>
+    <h3>Where am I using it and why?</h3>
+    <ul>
+        <li><a href="http://silarapp.com">Silarapp.com</a></li>
+        <li><a href="https://github.com/javve/list/tree/component">List.js (next version)</a></li>
+    </ul>
+</section>
+
+<section>
 <section>
         <h3>Getting started</h3>
         <pre><code class="bash">
-> <b>component create component-example</b>
-> repo (username/project): <b>javve/component-example</b>
-> description: <b>A example component</b>
+> <b>npm install -g component</b>
+...
+> <b>component create cool</b>
+> repo (username/project): <b>javve/cool</b>
+> description: <b>A cool component</b>
 > does this component have js? <b>y</b>
 > does this component have css? <b>y</b>
 > does this component have html? <b>y</b>
@@ -228,14 +238,14 @@ module.exports = Cool;
 &lt;html>
 &lt;head>
     &lt;title>Cool test&lt;/title>
-    &lt;link rel="stylesheet" type="text/css" href="build/build.css">
+    &lt;link rel="stylesheet" type="text/css" href="<b>build/build.css</b>">
 &lt;/head>
 &lt;body>
     &lt;div id="cool-el">Hover me!&lt;/div>
 
-    &lt;script src="build/build.js">&lt;/script>
+    &lt;script src="<b>build/build.js</b>">&lt;/script>
     &lt;script>
-        var Cool = require('cool')
+        <b>var Cool = require('cool')</b>
 
         new Cool('cool-el');
     &lt;/script>
@@ -283,15 +293,8 @@ module.exports = Cool;
 </section>
 
 <section>
-    <h2>Where am I using it?</h2>
-    <ul>
-        <li><a href="http://silarapp.com">Silarapp.com</a></li>
-        <li><a href="https://github.com/javve/list/tree/component">List.js (next version)</a></li>
-    </ul>
-</section>
-
-<section>
-    <h2>Kind-of-weaknesses</h2>
+    <img src="img/gif/problem.gif" width="500" height="200" style="margin-bottom:30px;" />
+    <h3>Kind-of-weaknesses</h3>
     <ul>
         <li>Debugging</li>
         <li>Build to try</li>

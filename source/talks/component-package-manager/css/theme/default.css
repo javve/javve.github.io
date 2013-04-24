@@ -68,8 +68,8 @@ body {
 }
 
 ::selection {
-  color: white;
-  background: rgba(0,0,0,.2);/*#FF5E99;*/
+  color: #222;
+  background: #fdc200;/*#FF5E99;*/
   text-shadow: none;
 }
 
