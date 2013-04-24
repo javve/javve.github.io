@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>What is the Component Package Manager</title>
+
+        <meta name="description" content="This is the slides from a presentation by Javve at Sthlm.js in April 2013.">
+        <meta name="author" content="Jonny Strömberg">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="lib/css/listjs.css">
+
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+<section>
+    <img src="img/gif/yeah.gif" width="476" height="200" />
+    <h1 style="line-height:1.24; font-size:70px; margin-bottom:20px;">What is Component?</span></h1>
+    <p style="margin-bottom:40px;"><em>(except for the most generic name ever)</em></p>
+    <p>
+        By <a href="http://jonnystromberg.com">Jonny Strömberg</a> / <a href="http://twitter.com/javve">@javve</a>
+    </p>
+</section>
+
+<section>
+    <h2 style="line-height:1.2;">I'm <a href="http://twitter.com/javve">@javve</a></h2>
+    <p>
+        Designer & engineer who've built web since 1998.<br />
+        Creator of
+        <a href="http://silarapp.com">SilarApp.com</a>,
+        <a href="http://listjs.com">Listjs.com</a>,
+        <a href="http://startuplocation.com">Startuplocation.com</a> & more.
+        <br />
+        Part time designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>
+    </p>
+</section>
+
+<section>
+    <img src="img/component-logo.png">
+    <p>Component package manager for building a better web.</p>
+    <p><a href="https://github.com/component/component">github.com/component/component</a></p>
+</section>
+
+<section>
+    <h2>Features</h2>
+    <ul>
+        <li>Write modular Commonjs components (Node.js-style!)</li>
+        <li>Not only JS! Supports CSS, HTML, images, fonts & more.</li>
+        <li>Local & hosted components</li>
+        <li>Uses Github as registry</li>
+        <li>Installs dependencies from the commandline</li>
+        <li>Over 800 existing components</li>
+    </ul>
+</section>
+
+<section>
+<section>
+        <h3>Getting started</h3>
+        <pre><code class="bash">
+> <b>component create component-example</b>
+> repo (username/project): <b>javve/component-example</b>
+> description: <b>A example component</b>
+> does this component have js? <b>y</b>
+> does this component have css? <b>y</b>
+> does this component have html? <b>y</b>
+    </code></pre>
+</section>
+
+<section>
+        <h3>Files generated</h3>
+        <pre><code class="javascript">
+<b>cool/</b>
+    .gitignore
+    History.md
+    cool.css
+    template.html
+    Makefile
+    component.json
+    Readme.md
+    index.js
+    </code></pre>
+</section>
+
+
+<section>
+    <h3>component.json</h3>
+    <a href="https://github.com/component/component/wiki/Spec">https://github.com/component/component/wiki/Spec</a>
+    <pre><code class="json">
+{
+  "name": "cool",
+  "repo": "javve/cool",
+  "description": "A cool component",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    <b>"component/event": "*",
+    "component/domify": "*"</b>
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "cool.css"
+  ]
+}
+    </code></pre>
+</section>
+
+<section>
+    <h3>template.html</h3>
+    <pre><code class="html">
+&lt;div class="cool-box">
+    Cool
+&lt;/div>
+    </code></pre>
+</section>
+
+<section>
+    <h3>cool.css</h3>
+    <pre><code class="css">
+.cool-box {
+    background-color:#c60505;
+    padding:8px 20px;
+    color:#fff;
+    border-radius: 15px;
+    display:inline-block;
+    position: absolute;
+    -webkit-animation: pulse .3s linear .1s infinite;
+}
+
+@-webkit-keyframes pulse {
+      0% { box-shadow: inset 0 0 10px rgba(255,255,255,0.2); }
+     50% { box-shadow: inset 0 0 20px rgba(255,255,255,1.0); }
+    100% { box-shadow: inset 0 0 10px rgba(255,255,255,0.2); }
+}
+    </code></pre>
+</section>
+
+<section>
+    <h3>index.js</h3>
+    <pre><code class="javascript">
+function Cool(id) {
+    var events = require('event'),
+        domify = require('domify'),
+        coolHTML = require('./template');
+
+    var coolEl = domify(coolHTML)[0],
+        el = document.getElementById(id);
+
+    events.bind(el, 'mouseover', function(e) {
+        e.target.appendChild(coolEl);
+    });
+    events.bind(el, 'mouseout', function(e) {
+        e.target.removeChild(coolEl);
+    });
+};
+
+module.exports = Cool;
+    </code></pre>
+</section>
+
+<section>
+    <h3>Build</h3>
+    <pre><code class="bash">
+> make
+
+     install : component/event@master
+     install : component/domify@master
+       fetch : component/domify:index.js
+       fetch : component/event:index.js
+    complete : component/domify
+    complete : component/event
+    </code></pre>
+</section>
+
+<section>
+    <h3>New folders</h3>
+    <pre><code class="javascript">
+<b>cool/</b>
+    ...
+    <b>build/</b>
+        build.js
+        build.css
+    <b>components/</b>
+        component-domify/
+            component.json
+            index.js
+        component-event
+            component.json
+            index.js
+    ...
+    </code></pre>
+</section>
+
+
+<section>
+    <h3>Use the component</h3>
+    <pre><code class="javascript">
+&lt;html>
+&lt;head>
+    &lt;title>Cool test&lt;/title>
+    &lt;link rel="stylesheet" type="text/css" href="build/build.css">
+&lt;/head>
+&lt;body>
+    &lt;div id="cool-el">Hover me!&lt;/div>
+
+    &lt;script src="build/build.js">&lt;/script>
+    &lt;script>
+        var Cool = require('cool')
+
+        new Cool('cool-el');
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+
+</code></pre>
+</section>
+<section>
+    <script src="demo/build.js"></script>
+    <link rel="stylesheet" type="text/css" href="demo/build.css" />
+
+    <h3>Demo</h3>
+    <p id="cool-el">Hover me!</p>
+    <script>
+        var Cool = require('cool')
+
+        new Cool('cool-el');
+    </script>
+</section>
+
+<section>
+    <h3>Dislike require? --standalone</h3>
+    <pre style="margin-bottom:-39px;"><code class="javascript">
+> component build --dev --standalone Cool -n cool
+    </code></pre>
+    <pre><code class="javascript">
+&lt;html>
+&lt;head>
+    &lt;title>Cool test&lt;/title>
+    &lt;link rel="stylesheet" type="text/css" href="build/<b>cool.css</b>">
+&lt;/head>
+&lt;body>
+    &lt;div id="cool-el">Hover me!&lt;/div>
+
+    &lt;script src="build/<b>cool.js</b>">&lt;/script>
+    &lt;script>
+        <b>new Cool('cool-el');</b>
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+    </code></pre>
+</section>
+
+</section>
+
+<section>
+    <h2>Where am I using it?</h2>
+    <ul>
+        <li><a href="http://silarapp.com">Silarapp.com</a></li>
+        <li><a href="https://github.com/javve/list/tree/component">List.js (next version)</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Kind-of-weaknesses</h2>
+    <ul>
+        <li>Debugging</li>
+        <li>Build to try</li>
+        <li>Hard to google</li>
+    </ul>
+</section>
+
+<section>
+    <img src="img/gif/fight.gif" width="341" height="200" />
+    <h2>It's a crowded space</h2>
+    <p>
+        Bower, Ender, Jam, Volo, NPM, Hipsterpackage2000.<br />
+        Solution: Try them and use the one you like and suite your project!</b>
+    </p>
+    <p>
+        <a href="https://github.com/wilmoore/frontend-packagers">github.com/wilmoore/frontend-packagers</a>
+    </p>
+</section>
+
+<section>
+    <h3>Component vs Bower</h3>
+    <div class="comparison">
+        <table>
+            <colgroup>
+                <col style="width:50%;" />
+                <col style="width:50%;" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Component</th>
+                    <th>Bower</th>
+                </tr>
+                <tr>
+                    <td>August 2012</td>
+                    <td>September 2012</td>
+                </tr>
+                <tr>
+                    <td>800+ components</td>
+                    <td>1700+ components</td>
+                </tr>
+                <tr>
+                    <td>1500+ stars</td>
+                    <td>5100+ stars</td>
+                </tr>
+                <tr>
+                    <td>Github as registry</td>
+                    <td>Server as registry</td>
+                </tr>
+                <tr>
+                    <td>Uses Commonjs</td>
+                    <td>Nothing</td>
+                </tr>
+                <tr>
+                    <td>Builds stuff</td>
+                    <td>Nothing</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <h3>More reading</h3>
+    <p><a href="https://github.com/component/component">github.com/component/component</a></p>
+    <p><a href="http://tjholowaychuk.com/post/27984551477/components">Original component blog post</a></p>
+</section>
+
+
+<section>
+    <h2>Thanks</h2>
+    <p>
+    Visit <a href="http://jonnystromberg.com">jonnystromberg.com</a> •
+    Follow <a href="http://twitter.com/javve">@javve</a>
+    </p>
+</section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                mouseWheel: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: 'linear', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+
+        <!-- Everything below this point is unrelated to the slideshow -->
+
+        <div class="share-reveal" style="position: absolute; bottom: 10px; left: 50%; margin-left: -155px; z-index: 20;">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-text="What is Component? A introducation to the @component_js package manager by @javve presented at @sthlmjs" data-url="http://jonnystromberg.com/talks/component-package-manager/" data-count="small" data-related="javve"></a>
+
+            <iframe id="facebook-button" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fjonnystromberg.com%2Ftalks%2Fcomponent-package-manager%2F&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:95px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
+
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @javve</a>
+        </div>
+
+
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-8204597-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+
+    </body>
+</html>
