@@ -36,12 +36,7 @@
     .meta-date {
         font-size:22px;
         margin-bottom:20px;
-        .category {
-            color:$light;
-            a {
-                color:$link;
-            }
-        }
+
     }
     li pre {
         max-width:620px;
@@ -55,7 +50,6 @@
     }
     .box {
         ul {
-            font-family:$sans;
             margin-bottom:15px;
             padding-left:20px;
             li {
@@ -80,7 +74,6 @@
     }
     time {
         font-size:13px;
-        font-family:$sans;
     }
     article {
         margin-bottom:7px;

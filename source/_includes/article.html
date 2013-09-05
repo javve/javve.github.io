@@ -6,7 +6,6 @@
         </a></h1>
         {% unless page.meta == false %}
             <p class="meta-date">
-                
                 <span class="category">
                     Category {% include post/categories.html %}
                 </span>
@@ -14,15 +13,17 @@
         {% endunless %}
 
     {% else %}
-        <h1 class="entry-title">
-            {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
-            {% include post/date.html %}{{ time }}
-        </h1>
+        <div class="tagline">
+            <h1>
+                {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
+            </h1>
+            <h2>{% include post/date.html %}{{ time }}</h2>
+        </div>
     {% endif %}
 
 {% endunless %}
 
-<div class="entry-content box">
+<div class="entry-content container">
     {{ content }}
 
     {% include components/box_share.html %}

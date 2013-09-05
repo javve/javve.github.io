@@ -4,10 +4,10 @@ layout: default
 ---
 <div class="tagline">
     <h1>Blog</h1>
-    <h2>My Personal Thoughts About Stuff</h2>
+    <h2>Sometimes I write</h2>
 </div>
 <div id="blog-archives" class="blog-archives">
-    <div class="box">
+    <div class="container">
         {% for post in site.posts reverse %}
         {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
         {% unless year == this_year %}

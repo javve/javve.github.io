@@ -1,13 +1,6 @@
 $blockquote: $type-border !default;
 
-$serif: 'Enriqueta', Georgia, serif;
-$sans: 'PT Sans', 'Helvetica Neue', sans-serif;
-
 $mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-
-.sans { font-family: $sans; }
-.serif { font-family: $serif; }
-.mono { font-family: $mono; }
 
 strong {
     font-weight:bold;
