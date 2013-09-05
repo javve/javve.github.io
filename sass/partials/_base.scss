@@ -8,7 +8,7 @@ h1,h2,h3,h4,h5,h6,p {
 }
 h1, h2, h3 {
     margin-top: 7%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 h1 {
    font-size: 2.2em;
@@ -63,6 +63,12 @@ header {
     background-color:#1e272c;
     text-align:center;
     padding:80px 0 100px;
+    &.tagline-blog {
+        margin-bottom:50px;
+    }
+    .tagline-image {
+        margin-bottom:30px;
+    }
     a {
         color:#e2ff44;
     }
@@ -301,4 +307,59 @@ blockquote {
     background-color:#1e272c;
     text-align:center;
     padding:80px 0 100px;
+    color:#999;
+
+    a {
+        color:#e2ff44;
+    }
+    h1 {
+        font-weight:800;
+        //font-size:45px;
+        color:#fff;
+        text-shadow:none;
+        margin:0 0 5px;
+        a {
+            font-weight:400;
+        }
+    }
+    h2 {
+        color:#999;
+        //font-size:30px;
+        font-weight:400;
+        margin:0;
+    }
+    .me {
+        width:180px;
+        border-radius:50%;
+        margin-bottom:30px;
+    }
+}
+
+.width50 {
+    width:50%;
+}
+.width33 {
+    width:33%;
+}
+
+.sharing {
+    margin:0 0 50px;
+    padding:0;
+    li {
+        list-style-type:none;
+        display:inline-block;
+        overflow:hidden;
+        &.tweet {
+            width:100px;
+        }
+        &.facebook {
+            width:100px;
+        }
+        &.plusone {
+            width:80px;
+        }
+        &.linkedin {
+            width:65px;
+        }
+    }
 }

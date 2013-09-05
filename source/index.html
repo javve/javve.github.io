@@ -134,9 +134,6 @@ body_id: "home"
     </div>
 </div>
 
-<div class="about">
-    <div class="container">
-        <h2>About</h2>
-        <p>Seems like you reached the end</p>
-    </div>
-</div>
+{% unless index %}
+    {% include post/author.html %}
+{% endunless %}

@@ -1,22 +1,14 @@
-<div class="about-author">
-    <h3>About the author and discussions</h3>
+<div class="about about-author">
+    <div class="container">
+        {% unless index %}
+            <img src="/images/home/jonny.jpg" class="me">
+        {% endunless %}
 
-    <a href="/about"><img src="{{ root_url }}/images/graphics/jonny/jonny-2.jpg" class="profile-image" /></a>
-    <p class="first">
-        I'm <a href="/about">Jonny</a>. A Designer, Entrepreneur & JavaScript Hacker from Stockholm.
-        Currently designer at <a href="http://mynewsdesk.com">Mynewsdesk</a>.
-        Behind <a href="http://listjs.com">List.js</a>, <a href="http://teamtailor.com">Teamtailor</a>,
-        <a href="http://startuplocation.com/hack">Stockholm Startup Hack</a>,
-        <a href="http://silarapp.com">SilarApp</a> and
-        <a href="http://startuplocation.com">StartupLocation</a>.
-    </p>
-    {% if page.hackernews %}
-    <p>
-        If you want to comment, discuss, upvote or downvote this
-        post, <a href="{{ page.hackernews }}">Hacker News</a> is the place to be.
-    </p>
-    {% else %}
-    <p><em>Follow me at Twitter, do it!</em></p>
-    {% endif %}
-    <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        <h2>About Jonny</h2>
+        <p>
+
+        </p>
+        <p><em>Follow me at Twitter, do it!</em></p>
+        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+    </div>
 </div>

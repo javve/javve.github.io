@@ -6,7 +6,8 @@ hackernews: "http://news.ycombinator.com/item?id=3515850"
 categories: listjs
 ---
 
-{% img float-right default /images/projects/listjs/listjs-logo.jpg %}
+{% img pull-right width33 /images/projects/listjs/logo.png %}
+
 
 Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.
 
