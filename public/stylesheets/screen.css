@@ -1,4 +1,4 @@
-/*!
+/*
  * Bootstrap v3.0.0
  *
  * Copyright 2013 Twitter, Inc
@@ -7,7 +7,7 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
-/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
 aside,
 details,
@@ -6567,6 +6567,28 @@ blockquote p .icon-comment {
   width: 33%;
 }
 
+.sharing {
+  margin: 0 0 50px;
+  padding: 0;
+}
+.sharing li {
+  list-style-type: none;
+  display: inline-block;
+  overflow: hidden;
+}
+.sharing li.tweet {
+  width: 100px;
+}
+.sharing li.facebook {
+  width: 100px;
+}
+.sharing li.plusone {
+  width: 80px;
+}
+.sharing li.linkedin {
+  width: 65px;
+}
+
 /* non highlighted code colors */
 .highlight, html .gist .gist-file .gist-syntax .gist-highlight {
   border: 1px solid #05232b !important;
@@ -6579,7 +6601,7 @@ blockquote p .icon-comment {
   text-align: right;
   font-size: 1em;
   line-height: 1.45em;
-  background: #073642 url('/images/noise.png?1377769737') top left !important;
+  background: #073642 url('/images/noise.png?1378397548') top left !important;
   border-right: 1px solid #00232c !important;
   -webkit-box-shadow: #083e4b -1px 0 inset;
   box-shadow: #083e4b -1px 0 inset;
@@ -6619,7 +6641,7 @@ html .gist .gist-file .gist-meta {
   border: 1px solid #083e4b !important;
   color: #586e75;
   font-size: .7em !important;
-  background: #073642 url('/images/noise.png?1377769737') top left;
+  background: #073642 url('/images/noise.png?1378397548') top left;
   line-height: 1.5em;
 }
 html .gist .gist-file .gist-meta a {
@@ -6643,7 +6665,7 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 }
 
 pre {
-  background: whitesmoke url('/images/noise.png?1377769737') top left;
+  background: whitesmoke url('/images/noise.png?1378397548') top left;
   border-radius: .4em;
   border: 1px solid #05232b;
   line-height: 1.45em;
@@ -6685,7 +6707,7 @@ p pre code, li pre code {
   padding: .8em !important;
   overflow-x: auto;
   line-height: 1.45em;
-  background: #002b36 url('/images/noise.png?1377769737') top left !important;
+  background: #002b36 url('/images/noise.png?1378397548') top left !important;
   color: #93a1a1 !important;
   /* Comment */
   /* Comment.Multiline */
@@ -6984,7 +7006,7 @@ figure.code .highlight {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
-  background: #aaaaaa url('/images/code_bg.png?1377769710') top repeat-x;
+  background: #aaaaaa url('/images/code_bg.png?1378397548') top repeat-x;
   border: 1px solid #565656;
   border-top-color: #cbcbcb;
   border-left-color: #a5a5a5;
@@ -7002,44 +7024,6 @@ figure.code .highlight {
   padding-left: 3em;
 }
 
-.blog .entry-content {
-  margin-bottom: 20px;
-}
-.blog h1 {
-  font-size: 40px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-@media (max-width: 767px) {
-  .blog h1 {
-    font-size: 30px;
-    padding: 0 30px;
-  }
-  .blog .meta-date {
-    font-size: 20px;
-    padding: 0 30px;
-  }
-}
-.blog img.header-image {
-  width: 730px;
-  margin-left: -30px;
-  margin-right: -30px;
-  margin-top: -30px;
-  margin-bottom: 5px;
-}
-.blog img.default {
-  width: 280px;
-}
-.blog img.default.float-right {
-  margin-left: 20px;
-  margin-right: -30px;
-  margin-top: -30px;
-}
-.blog .meta-date {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
 .blog li pre {
   max-width: 620px;
 }
@@ -7047,32 +7031,20 @@ figure.code .highlight {
   max-width: 640px;
   overflow: hidden;
 }
-.blog .author {
-  clear: left;
-}
-.blog .box ul {
-  margin-bottom: 15px;
-  padding-left: 20px;
-}
-.blog .box ul li {
-  list-style-type: disc;
-  margin-bottom: 5px;
-}
 
-.blog-archives .box {
-  float: none;
-}
 .blog-archives h2 {
-  font-size: 28px;
+  margin-bottom: 3%;
 }
 .blog-archives h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-top: 4%;
+  margin-bottom: 0.5%;
 }
 .blog-archives time {
-  font-size: 13px;
+  font-size: 1em;
 }
 .blog-archives article {
-  margin-bottom: 7px;
+  border-top: solid 1px #eee;
+  padding-bottom: 4%;
 }
