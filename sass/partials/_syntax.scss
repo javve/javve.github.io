@@ -60,6 +60,7 @@ $pre-color: $base1 !default;
 .highlight, html .gist .gist-file .gist-syntax .gist-highlight {
   table td.code { width: 100%; }
   .line-numbers {
+    white-space: nowrap;
     text-align: right;
     font-size: 1em;
     line-height: 1.45em;
@@ -74,7 +75,7 @@ $pre-color: $base1 !default;
       @include box-shadow(lighten($base02, 2) -1px 0 inset);
       text-shadow: darken($base02, 10) 0 -1px;
     }
-    span { color: $base01 !important; }
+    span { color: $base01 !important; display:block; }
     padding: .8em !important;
     border-radius: 0;
   }
