@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>The List.js Paging Plugin - @javve</title>
+    <meta name="author" content="Jonny Strömberg">
+
+    
+    <meta name="description" content="The List.js Paging Plugin Jan 26th, 2012 The List.js paging plugin is bundled with the script and is located in /plugins/paging/list.paging.js and &hellip;">
+    
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    
+    <link rel="canonical" href="http://jonnystromberg.com/listjs-paging-plugin">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <script src="/javascripts/modernizr-2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <link href="http://feeds.feedburner.com/jonnystromberg" rel="alternate" title="@javve" type="application/atom+xml">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="//use.typekit.net/htf4iqk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body >
+    <header role="banner">
+        <nav role="navigation" class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="/blog/archives">
+                            Blog
+                        </a>
+                    </li>
+                    <li><a title="twitter.com/javve" href="http://twitter.com/javve"><i class="icon-twitter"></i> Twitter</a></li>
+                    <li><a title="github.com/javve" href="http://github.com/javve"><i class="icon-github"></i> Github</a></li>
+                    <li style="display:none;"><a title="facebook.com/javve" href="http://facebook.com/javve"><i class="icon-facebook"></i> Facebook</a></li>
+                    <li><a title="dribble.com/javve" href="http://dribbble.com/javve"><i class="icon-dribbble"></i> Dribbble</a></li>
+                    <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg"><i class="icon-linkedin"></i> Linkedin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+    
+        <div class="tagline tagline-blog">
+            <h1>
+                The List.js Paging Plugin
+            </h1>
+            <h2>
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time></h2>
+        </div>
+    
+
+
+
+
+<div class="entry-content container">
+    <p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/examples/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And the paging that gets created looks <em><strong>kinda</strong></em> like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;li&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=\&quot;</span><span class="err">\&quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;li&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=\&quot;</span><span class="err">\&quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;li&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>             ...
+</span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are som options available thought.</p>
+
+<ul>
+<li><p><strong>name</strong> <em>(String, default: &ldquo;paging&rdquo;)</em><br/>
+Default option for all plugins. Defines how to access the plugin from the list object <code>listObj.pluginName</code>.</p></li>
+<li><p><strong>pagingClass</strong> <em>(String, default: &ldquo;paging&rdquo;)</em><br/>
+The class that defines which <code>ul</code> that should contain the paging (must be inside the list container)</p></li>
+<li><p><strong>innerWindow</strong> <em>(Int, default: 2)</em><br/>
+How many pages should be visible on each side of the current page.<br/>
+<code>innerWindow: 2</code> &hellip; 3 4 <strong>5</strong> 6 7 &hellip;<br/>
+<code>innerWindow: 1</code> &hellip; 4 <strong>5</strong> 6 &hellip;</p></li>
+<li><p><strong>outerWindow</strong> <em>(Int, default: 0)</em><br/>
+How many pages should be visible on from the beginning and from the end of the paging.<br/>
+<code>outerWindow: 0</code> &hellip; 3 4 <strong>5</strong> 6 7&hellip;<br/>
+<code>outerWindow: 2</code> 1 2 &hellip; 4 5 <strong>6</strong> 7 8 &hellip; 11 12</p></li>
+<li><p><strong>left</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>outerWindow</code> but only from left.
+<code>outerWindow: 2</code> and <code>left: 1</code> 1 &hellip; 4 5 <strong>6</strong> 7 8 &hellip; 11 12</p></li>
+<li><p><strong>right</strong> <em>(Int, default: 0)</em><br/>
+Same as <code>left</code> but from right.</p></li>
+</ul>
+
+
+<p><strong>Notice</strong>: The number of items at each page are decided by the List.js own property <code>page</code>. To set this just add <code>page: Number</code> to the option object sent into the List.js constructor (as been done in both of the examples at this page).</p>
+
+<h2>Two pagings</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingTop&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingBottom&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script&gt;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingTopOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingTop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">outerWindow</span><span class="o">:</span> <span class="mi">2</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">pagingBottomOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;pagingBottom&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">right</span><span class="o">:</span> <span class="mi">4</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listOptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingTopOptions</span><span class="p">],</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="nx">pagingBottomOptions</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">listOptions</span><span class="p">);</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+    
+    <p>
+        If you want to comment, discuss, upvote or downvote this
+        post, <a href="http://news.ycombinator.com/item?id=3515855">Hacker News</a> is the place to be.
+    </p>
+    
+
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+    
+        
+            <a href="https://twitter.com/share" data-text="The List.js Paging Plugin (HN: http://news.ycombinator.com/item?id=3515855)" class="twitter-share-button">Tweet</a>
+        
+    
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
+</div>
+</div>
+<!-- 
+
+<span class="categories">
+  
+    listjs
+  
+</span>
+
+ -->
+
+
+    <div class="about about-author">
+    <div class="container">
+        
+            <img src="/images/home/jonny.jpg" class="me">
+        
+
+        <h2>About Jonny</h2>
+        <p>
+
+        </p>
+        <p><em>Follow me at Twitter, do it!</em></p>
+        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+    </div>
+</div>
+
+
+
+    
+
+
+    
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+    
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+    <script src="/javascripts/libs/flowtype.js" type="text/javascript"></script>
+    <script src="/javascripts/js.js" type="text/javascript"></script>
+
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8204597-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+    <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+
+</body>
+</html>

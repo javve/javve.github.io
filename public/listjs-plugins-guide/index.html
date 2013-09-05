@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>The List.js Plugin Guide - @javve</title>
+    <meta name="author" content="Jonny Strömberg">
+
+    
+    <meta name="description" content="The List.js Plugin Guide Jan 26th, 2012 Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to &hellip;">
+    
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    
+    <link rel="canonical" href="http://jonnystromberg.com/listjs-plugins-guide">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <script src="/javascripts/modernizr-2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <link href="http://feeds.feedburner.com/jonnystromberg" rel="alternate" title="@javve" type="application/atom+xml">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="//use.typekit.net/htf4iqk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body >
+    <header role="banner">
+        <nav role="navigation" class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="/blog/archives">
+                            Blog
+                        </a>
+                    </li>
+                    <li><a title="twitter.com/javve" href="http://twitter.com/javve"><i class="icon-twitter"></i> Twitter</a></li>
+                    <li><a title="github.com/javve" href="http://github.com/javve"><i class="icon-github"></i> Github</a></li>
+                    <li style="display:none;"><a title="facebook.com/javve" href="http://facebook.com/javve"><i class="icon-facebook"></i> Facebook</a></li>
+                    <li><a title="dribble.com/javve" href="http://dribbble.com/javve"><i class="icon-dribbble"></i> Dribbble</a></li>
+                    <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg"><i class="icon-linkedin"></i> Linkedin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+    
+        <div class="tagline tagline-blog">
+            <h1>
+                The List.js Plugin Guide
+            </h1>
+            <h2>
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time></h2>
+        </div>
+    
+
+
+
+
+<div class="entry-content container">
+    <p><img class="pull-right width33" src="/images/projects/listjs/logo.png"></p>
+
+<p>Version 0.2.0 introduced a new feature of List.js called plugins. This post will guide you through how to use and make plugins.</p>
+
+<p>Plugins are scripts that can be loaded at List.js initiation and then becomes accessible with <code>listObj.pluginName</code>.</p>
+
+<p>There are one plugin bundled with List.js and it is found in <code>/plugins/paging/list.paging.js</code> (and <code>/plugins/paging/list.paging.min.js</code>). Here is some code that shows how to load it.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it).</p>
+
+<p><strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example). This is useful when having multiple instances of the same plugin.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
+</span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span> <span class="p">],</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s1">&#39;paging&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;paging2&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">pagingClass</span><span class="o">:</span> <span class="s2">&quot;topPaging&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">innerWindow</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">right</span><span class="o">:</span> <span class="mi">2</span>
+</span><span class='line'>      <span class="p">]</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Read more about the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
+
+<h2>Make Your Own Plugin</h2>
+
+<p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>locals</code> that contains
+all hidden/private local variables of List.js, <code>options</code> contains the options shown in the example above.</p>
+
+<figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">locals</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// Do stuff!</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The plugin is run after the list is initiated. See the source code of the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
+
+<h3>Naming</h3>
+
+<p>All List.js plugins should be named <code>list.pluginName.js</code> or <code>list.pluginName.min.js</code>.</p>
+
+<h3>A Good Tip</h3>
+
+<p>Use <code>list.on('updated', yourFancyFunction);</code> to updated you plugin when the list have been updated.</p>
+
+<p>One other really useful method is <code>.update()</code> that updates the list and then triggers the above metioned event (be careful, do not make an infinit loop here).</p>
+
+<p>Remeber that you find all List &amp; Item methods in the <a href="https://github.com/javve/list/blob/master/README.md">documentation at Github</a>.</p>
+
+<h3>Pull requests or links wanted</h3>
+
+<p>If you&rsquo;ve made a nice, well written and useful plugin, I would be very happy if you <a href="http://github.com/javve/list">made a pull request</a> so I could bundle it with List.js, or sent me a link so I could add it to <a href="http://listjs.com">Listjs.com</a> and <a href="http://github.com/javve/list">Github</a>.</p>
+
+
+    
+    <p>
+        If you want to comment, discuss, upvote or downvote this
+        post, <a href="http://news.ycombinator.com/item?id=3515850">Hacker News</a> is the place to be.
+    </p>
+    
+
+    <div class="share">
+    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
+    <ul class="sharing">
+    <li class="tweet">
+    
+        
+            <a href="https://twitter.com/share" data-text="The List.js Plugin Guide (HN: http://news.ycombinator.com/item?id=3515850)" class="twitter-share-button">Tweet</a>
+        
+    
+    </li>
+    <li class="facebook">
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95" data-show-faces="false" data-font="arial"></div>
+    </li>
+    <li class="plusone">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+    <li class="linkedin">
+        <script type="IN/Share" data-counter="right"></script>
+    </li>
+</ul>
+</div>
+</div>
+<!-- 
+
+<span class="categories">
+  
+    listjs
+  
+</span>
+
+ -->
+
+
+    <div class="about about-author">
+    <div class="container">
+        
+            <img src="/images/home/jonny.jpg" class="me">
+        
+
+        <h2>About Jonny</h2>
+        <p>
+
+        </p>
+        <p><em>Follow me at Twitter, do it!</em></p>
+        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+    </div>
+</div>
+
+
+
+    
+
+
+    
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+    
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+    <script src="/javascripts/libs/flowtype.js" type="text/javascript"></script>
+    <script src="/javascripts/js.js" type="text/javascript"></script>
+
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8204597-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+    <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+
+</body>
+</html>
