@@ -35,7 +35,7 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
-<body >
+<body  id="blog" >
     <header role="banner">
         <nav role="navigation" class="navbar navbar-inverse">
             <div class="navbar-header">
@@ -49,8 +49,8 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/blog/archives">
+                    <li class="active" >
+                        <a href="/blog">
                             Blog
                         </a>
                     </li>
@@ -67,10 +67,11 @@
     
     
         <div class="tagline tagline-blog">
-            <h1>
-                List.js 0.2.0: Plugins and Paging
-            </h1>
-            <h2>
+            <div class="container">
+                <h1>
+                    List.js 0.2.0: Plugins and Paging
+                </h1>
+                <h2>
 
 
 
@@ -83,13 +84,15 @@
 
 
 <time datetime="2012-01-26T00:00:00+01:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time></h2>
+            </div>
         </div>
     
 
 
 
 
-<div class="entry-content container">
+<div class="blog-container container">
+
     <p><em><strong><a href="http://listjs.com">Go to Listjs.com</a> and download tha latest version!</strong></em>
 <img class="float-right default" src="/images/projects/listjs/listjs-logo.jpg"></p>
 
@@ -105,9 +108,8 @@
 
 <h2>Better options for initization of empty lists</h2>
 
-<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -139,10 +141,8 @@
 </span><span class='line'>
 </span><span class='line'>    <span class="kd">var</span> <span class="nx">hackerList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;hacker-list&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
 </span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'>
+<strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
 
 <h2>New initization options</h2>
 
@@ -169,11 +169,8 @@
 <ul>
 <li>Replaced <code>.addAsync(items)</code> with <code>.add(items, callback)</code>.</li>
 <li><strong>show()</strong>
-Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -191,12 +188,9 @@ Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.
 </span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Frank&quot;</span> <span class="p">}</span>
 </span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="o">&amp;</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Ester&quot;</span> <span class="p">}</span>
 </span><span class='line'><span class="p">];</span>
-</span><span class='line'>      
-</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
+</span><span class='line'>    <br/>
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">&ndash;&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></li>
 <li><strong>update()</strong>
 Updates the current state of the list. Meaning that if you for instance hides some items with <code>itemObj.hide()</code> method then you have to call <code>listObj.update()</code> if you want the paging to update.</li>
 <li><strong>on(event, callback)</strong><br/>
@@ -235,7 +229,6 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
     
 
     <div class="share">
-    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
     <li class="tweet">
     
@@ -256,15 +249,6 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
 </ul>
 </div>
 </div>
-<!-- 
-
-<span class="categories">
-  
-    listjs
-  
-</span>
-
- -->
 
 
     <div class="about about-author">
@@ -274,11 +258,21 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
         
 
         <h2>About Jonny</h2>
-        <p>
-
+        <p class="lead">
+            A swedish maker and product designer. I enjoy the full process of making web products. Some people
+            would call me a full hybrid.
         </p>
-        <p><em>Follow me at Twitter, do it!</em></p>
-        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        <p>
+            I spend my days with both design and programming as well as marketing and product strategy. During the last fifteen year I've
+            started project, founded and failed startups, almost earned two master degrees in engineering and met hundreds of inspiring friends.
+        </p>
+        <p>
+            When I'm not making web products, I like organising hackathons, parties and meetups.
+        </p>
+        <p>
+            <b>Follow me at Twitter, do it!</b>
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        </p>
     </div>
 </div>
 
@@ -321,6 +315,7 @@ Returns boolean. True if the item is visible. Visible items always matches, but 
 
 
 
+    <script src="/javascripts/libs/bootstrap.js" type="text/javascript"></script>
     <script src="/javascripts/libs/flowtype.js" type="text/javascript"></script>
     <script src="/javascripts/js.js" type="text/javascript"></script>
 

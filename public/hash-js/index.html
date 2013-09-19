@@ -51,7 +51,7 @@ to manipulate everything that is behind # in the url. &hellip;">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li>
-                        <a href="/blog/archives">
+                        <a href="/blog">
                             Blog
                         </a>
                     </li>
@@ -66,17 +66,18 @@ to manipulate everything that is behind # in the url. &hellip;">
     </header>
 
     <div class="tagline tagline-blog">
+    <div class="container">
+        
+        <div class="tagline-image">
+            <img  src="/images/posts/2012/hash-js/hash-js-logo-site.jpg" />
+        </div>
+        
 
-    
-    <div class="tagline-image">
-        <img  src="/images/posts/2012/hash-js/hash-js-logo-site.jpg" />
+        <h1>Hash.js - We Stand Behind #</h1>
     </div>
-    
-
-    <h1>Hash.js - We Stand Behind #</h1>
 </div>
 
-<div class="entry-content container">
+<div class="blog-container container">
 
 
     <p>Hash.js is a micro (0.5 KB) JavaScript lib that makes it easy
@@ -91,7 +92,7 @@ that&rsquo;s your usage situation, use the awesome <a href="https://github.com/b
 
 <p>Just include <code>hash.min.js</code> or <code>hash.js</code> at your site and then a <code>hash</code> object will become available.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -99,10 +100,9 @@ that&rsquo;s your usage situation, use the awesome <a href="https://github.com/b
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;hash.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;script&gt;</span>
-</span><span class='line'>    hash.add({foo: &quot;bar&quot; });        // Url becomes http://url.com#foo=bar
+</span><span class='line'>    hash.add({foo: &quot;bar&quot; });        // Url becomes <a href="http://url.com#foo=bar">http://url.com#foo=bar</a>
 </span><span class='line'><span class="nt">&lt;/scrtip&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Methods</h2>
 
@@ -112,18 +112,17 @@ Add parameter to hash</li>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">});</span>
-</span><span class='line'><span class="c1">// http://url.com#foo=bar</span>
+</span><span class='line'><span class="c1">// <a href="http://url.com#foo=bar">http://url.com#foo=bar</a></span>
 </span><span class='line'>
 </span><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="nx">car</span><span class="o">:</span> <span class="s2">&quot;dar&quot;</span><span class="p">,</span> <span class="nx">sar</span><span class="o">:</span> <span class="s2">&quot;par&quot;</span> <span class="p">});</span>
-</span><span class='line'><span class="c1">// http://url.com#foo=bar&amp;car=dar&amp;sar=par</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="c1">// <a href="http://url.com#foo=bar&amp;amp;car=dar&amp;amp;sar=par">http://url.com#foo=bar&amp;amp;car=dar&amp;amp;sar=par</a></span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <ul>
 <li><strong>hash.get(param)</strong> or <strong>hash.get()</strong>  <br/>
@@ -131,7 +130,7 @@ Returns value of paramter in hash. If <code>param</code> is <code>undefined</cod
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -141,8 +140,7 @@ Returns value of paramter in hash. If <code>param</code> is <code>undefined</cod
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">allValues</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </span><span class='line'><span class="c1">// allValues == { foo: &quot;bar&quot;, car: &quot;dar&quot;, sar: &quot;par&quot;}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <ul>
 <li><strong>hash.remove(param)</strong><br/>
@@ -150,12 +148,11 @@ Removes the value with name <code>param</code>.</li>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="c1">// http://url.com#car=dar&amp;sar=par</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="c1">// <a href="http://url.com#car=dar&amp;amp;sar=par">http://url.com#car=dar&amp;amp;sar=par</a></span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <ul>
 <li><strong>hash.clear()</strong><br/>
@@ -163,12 +160,11 @@ Clears entire hash.</li>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
-</span><span class='line'><span class="c1">// http://url.com#</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="c1">// <a href="http://url.com#">http://url.com#</a></span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Example</h2>
 
@@ -186,7 +182,6 @@ Clears entire hash.</li>
 
 
     <div class="share">
-    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
     <li class="tweet">
     
@@ -216,11 +211,21 @@ Clears entire hash.</li>
         
 
         <h2>About Jonny</h2>
-        <p>
-
+        <p class="lead">
+            A swedish maker and product designer. I enjoy the full process of making web products. Some people
+            would call me a full hybrid.
         </p>
-        <p><em>Follow me at Twitter, do it!</em></p>
-        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        <p>
+            I spend my days with both design and programming as well as marketing and product strategy. During the last fifteen year I've
+            started project, founded and failed startups, almost earned two master degrees in engineering and met hundreds of inspiring friends.
+        </p>
+        <p>
+            When I'm not making web products, I like organising hackathons, parties and meetups.
+        </p>
+        <p>
+            <b>Follow me at Twitter, do it!</b>
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        </p>
     </div>
 </div>
 
@@ -262,6 +267,7 @@ Clears entire hash.</li>
 
 
 
+    <script src="/javascripts/libs/bootstrap.js" type="text/javascript"></script>
     <script src="/javascripts/libs/flowtype.js" type="text/javascript"></script>
     <script src="/javascripts/js.js" type="text/javascript"></script>
 

@@ -22,9 +22,32 @@ h3 {
    font-size: 1.1em;
    line-height: 1em;
 }
-p {
+p, ol, ul {
     margin-bottom:2%;
     line-height: 1.45em;
+}
+li {
+    margin-bottom:1%;
+}
+figure.code {
+    margin-bottom:0;
+    table {
+        width:100%;
+    }
+    .gutter {
+        display:none;
+    }
+    .pre-code, html .gist .gist-file .gist-syntax .gist-highlight pre, .highlight code {
+        padding: 3% 6% !important;
+    }
+    @media (min-width: 768px) {
+        .pre-code, html .gist .gist-file .gist-syntax .gist-highlight pre, .highlight code {
+            padding: 3% 7% !important;
+        }
+    }
+}
+.container.code-container {
+    padding:0;
 }
 header {
     text-align:center;
@@ -40,14 +63,25 @@ header {
         }
     }
     .nav > li {
-        display:inline-block;
-        margin:0 15px;
+        display:block;
+        margin:0;
         a {
             @include transition(all .2s ease-in-out);
-            border-bottom:solid 3px #444;
-            padding-bottom: 11px;
+            border-bottom:solid 1px #444;
+            padding-bottom: 13px;
             &:hover {
                 border-bottom-color: #fff;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        .nav > li {
+            display:inline-block;
+            margin:0 15px;
+            a {
+                @include transition(all .2s ease-in-out);
+                border-bottom:solid 3px #444;
+                padding-bottom: 11px;
             }
         }
     }
@@ -64,7 +98,10 @@ header {
     text-align:center;
     padding:80px 0 100px;
     &.tagline-blog {
-        margin-bottom:50px;
+        padding:0;
+        .container {
+            padding: 5% 6%;
+        }
     }
     .tagline-image {
         margin-bottom:30px;
@@ -312,26 +349,23 @@ blockquote {
     a {
         color:#e2ff44;
     }
-    h1 {
-        font-weight:800;
-        //font-size:45px;
-        color:#fff;
-        text-shadow:none;
-        margin:0 0 5px;
-        a {
-            font-weight:400;
-        }
-    }
-    h2 {
-        color:#999;
-        //font-size:30px;
-        font-weight:400;
-        margin:0;
+    h2, b, .lead {
+        color:#ddd;
     }
     .me {
         width:180px;
         border-radius:50%;
-        margin-bottom:30px;
+    }
+    .container {
+        max-width:750px;
+    }
+    p {
+        text-align:left;
+    }
+    iframe {
+        top: 4px;
+        position: relative;
+        left: 4px;
     }
 }
 
@@ -362,4 +396,13 @@ blockquote {
             width:65px;
         }
     }
+}
+
+#blog {
+    //background-color:#f5f3f0;
+}
+
+.blog-container {
+    background-color: #fff;
+    padding: 3% 6%;
 }

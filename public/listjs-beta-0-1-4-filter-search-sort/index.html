@@ -35,7 +35,7 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
-<body >
+<body  id="blog" >
     <header role="banner">
         <nav role="navigation" class="navbar navbar-inverse">
             <div class="navbar-header">
@@ -49,8 +49,8 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/blog/archives">
+                    <li class="active" >
+                        <a href="/blog">
                             Blog
                         </a>
                     </li>
@@ -67,10 +67,11 @@
     
     
         <div class="tagline tagline-blog">
-            <h1>
-                List.js Beta 0.1.4: Filter, search and sort!
-            </h1>
-            <h2>
+            <div class="container">
+                <h1>
+                    List.js Beta 0.1.4: Filter, search and sort!
+                </h1>
+                <h2>
 
 
 
@@ -83,13 +84,15 @@
 
 
 <time datetime="2011-11-29T00:00:00+01:00" pubdate data-updated="true">Nov 29<span>th</span>, 2011</time></h2>
+            </div>
         </div>
     
 
 
 
 
-<div class="entry-content container">
+<div class="blog-container container">
+
     <p>Version 0.1.4 of List.js is now released and it contains one major update and one minor.</p>
 
 <p>The <strong>major</strong> one is that filters, search and sort now depend on each other. If you searches in a filtered list, the items hidden by the filter will stay hidden. The same goes if you have searched in a list and then filters the result.</p>
@@ -102,7 +105,6 @@
     
 
     <div class="share">
-    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
     <li class="tweet">
     
@@ -123,15 +125,6 @@
 </ul>
 </div>
 </div>
-<!-- 
-
-<span class="categories">
-  
-    listjs
-  
-</span>
-
- -->
 
 
     <div class="about about-author">
@@ -141,11 +134,21 @@
         
 
         <h2>About Jonny</h2>
-        <p>
-
+        <p class="lead">
+            A swedish maker and product designer. I enjoy the full process of making web products. Some people
+            would call me a full hybrid.
         </p>
-        <p><em>Follow me at Twitter, do it!</em></p>
-        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        <p>
+            I spend my days with both design and programming as well as marketing and product strategy. During the last fifteen year I've
+            started project, founded and failed startups, almost earned two master degrees in engineering and met hundreds of inspiring friends.
+        </p>
+        <p>
+            When I'm not making web products, I like organising hackathons, parties and meetups.
+        </p>
+        <p>
+            <b>Follow me at Twitter, do it!</b>
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        </p>
     </div>
 </div>
 
@@ -188,6 +191,7 @@
 
 
 
+    <script src="/javascripts/libs/bootstrap.js" type="text/javascript"></script>
     <script src="/javascripts/libs/flowtype.js" type="text/javascript"></script>
     <script src="/javascripts/js.js" type="text/javascript"></script>
 

@@ -14,17 +14,20 @@
 
     {% else %}
         <div class="tagline tagline-blog">
-            <h1>
-                {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
-            </h1>
-            <h2>{% include post/date.html %}{{ time }}</h2>
+            <div class="container">
+                <h1>
+                    {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
+                </h1>
+                <h2>{% include post/date.html %}{{ time }}</h2>
+            </div>
         </div>
     {% endif %}
 
 
 {% endunless %}
 
-<div class="entry-content container">
+<div class="blog-container container">
+
     {{ content }}
 
     {% if page.hackernews %}
@@ -36,7 +39,6 @@
 
     {% include components/box_share.html %}
 </div>
-<!-- {% include post/categories.html %} -->
 
 {% unless index %}
     {% include post/author.html %}

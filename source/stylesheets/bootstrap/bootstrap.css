@@ -318,7 +318,7 @@ body {
   font-size: 16px;
   line-height: 1.42857;
   color: #333333;
-  background-color: white;
+  background-color: #f3f5f7;
 }
 
 input,
@@ -368,7 +368,7 @@ img {
 .img-thumbnail, .thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: white;
+  background-color: #f3f5f7;
   border: 1px solid #dddddd;
   border-radius: 0;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1506,7 +1506,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: white;
+  background-color: #f3f5f7;
 }
 
 .table-condensed thead > tr > th,
@@ -3637,7 +3637,7 @@ input[type="button"].btn-block {
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: white;
+  background-color: #f3f5f7;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -3689,7 +3689,7 @@ input[type="button"].btn-block {
   margin-right: 0;
 }
 .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a {
-  border-bottom-color: white;
+  border-bottom-color: #f3f5f7;
 }
 
 .tabbable:before, .tabbable:after {

@@ -1,14 +1,16 @@
 {% unless page.no_header %}
 <div class="tagline">
-    <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-    {% if page.subtitle %}
-    <h2>{{ page.subtitle }}</h2>
-    {% endif %}
+    <div class="container">
+        <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+        {% if page.subtitle %}
+        <h2>{{ page.subtitle }}</h2>
+        {% endif %}
+    </div>
 </div>
 
 {% endunless %}
 
-<div class="entry-content box">
+<div class="blog-container container">
     {{ content }}
     {% include components/box_share.html %}
 </div>

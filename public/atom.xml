@@ -4,7 +4,7 @@
   <title><![CDATA[@javve]]></title>
   <link href="http://jonnystromberg.com/atom.xml" rel="self"/>
   <link href="http://jonnystromberg.com/"/>
-  <updated>2013-09-05T20:13:57+02:00</updated>
+  <updated>2013-09-19T15:57:31+02:00</updated>
   <id>http://jonnystromberg.com/</id>
   <author>
     <name><![CDATA[Jonny Strömberg]]></name>
@@ -12,69 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Xcode tips: Use default shortcut for changing windows.]]></title>
-    <link href="http://jonnystromberg.com/xcode-toggle-window-tips/"/>
-    <updated>2013-04-19T00:00:00+02:00</updated>
-    <id>http://jonnystromberg.com/xcode-toggle-window-tips</id>
-    <content type="html"><![CDATA[<p>Go to ´XCode > Preferences > Key Bindings<code>. Search for</code>Move focus to next area<code>then change it to OSX default binding</code>CMD + &lt;`.</p>
-
-<p>Notice that it conflicts with another setting, so you may want to change och disable that one.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Best Action Scenes Of All Time]]></title>
-    <link href="http://jonnystromberg.com/the-best-action-scenes-of-all-time/"/>
-    <updated>2013-01-17T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/the-best-action-scenes-of-all-time</id>
-    <content type="html"><![CDATA[<p>Equlibrium
-<a href="http://www.youtube.com/watch?v=6PX4UYN_a9I">http://www.youtube.com/watch?v=6PX4UYN_a9I</a>
-<a href="http://www.youtube.com/watch?v=UoDKXozA0M4">http://www.youtube.com/watch?v=UoDKXozA0M4</a></p>
-
-<p>Matrix
-<a href="http://www.youtube.com/watch?v=lbIpejeyAiA">http://www.youtube.com/watch?v=lbIpejeyAiA</a></p>
-
-<p>The Rock
-<a href="http://www.youtube.com/watch?v=oPdukhSNrW8">http://www.youtube.com/watch?v=oPdukhSNrW8</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An introduction to Mongoose.js]]></title>
-    <link href="http://jonnystromberg.com/mongoose-js/"/>
-    <updated>2013-01-17T00:00:00+01:00</updated>
-    <id>http://jonnystromberg.com/mongoose-js</id>
-    <content type="html"><![CDATA[<p>This tutorial will both show how set up Mongoose and how to structure your code in a good way.</p>
-
-<h3>Install Mongoose</h3>
-
-<p>&#8220;`</p>
-
-<h3>Basics</h3>
-
-<p>Documents &amp; Schemes &amp; Models</p>
-
-<h3>Sub-documents</h3>
-
-<p>Must be arrays</p>
-
-<h3>Plugins</h3>
-
-<p>Last mod etc
-<a href="http://mongoosejs.com/docs/plugins.html">http://mongoosejs.com/docs/plugins.html</a></p>
-
-<h2>Continue reading</h2>
-
-<ul>
-<li><a href="http://mongoosejs.com/">http://mongoosejs.com/</a></li>
-<li><a href="http://mongoosejs.com/docs/index.html">http://mongoosejs.com/docs/index.html</a></li>
-<li><a href="https://github.com/guille/mongoose-meetup-04-05/">https://github.com/guille/mongoose-meetup-04-05/</a></li>
-</ul>
-
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[List.js: Fuzzy Search Plugin]]></title>
@@ -88,7 +25,7 @@ create this Fuzzy Search plugin.</p>
 
 <p>The default search will conduct a time efficient search for an exact match in the content searched, while the fuzzy search will render results depending on if they are included anywhere in the content.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -102,10 +39,9 @@ create this Fuzzy Search plugin.</p>
 </span><span class='line'>    <span class="p">{</span> <span class="nx">character</span><span class="o">:</span> <span class="s2">&quot;Bernard Bernoulli&quot;</span><span class="p">,</span> <span class="nx">game</span><span class="o">:</span> <span class="s2">&quot;Maniac Mansion&quot;</span> <span class="p">}</span>
 </span><span class='line'><span class="p">];</span>
 </span><span class='line'>
-</span><span class='line'><span class="nx">list</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s1">&#39;gu thre&#39;</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="nx">none</span>
-</span><span class='line'><span class="nx">list</span><span class="p">.</span><span class="nx">fuzzySearch</span><span class="p">(</span><span class="s1">&#39;gu thre&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="mi">1</span> <span class="nx">item</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="nx">list</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s1">&#39;gu thre&#39;</span><span class="p">);</span> <span class="o">&ndash;&gt;</span> <span class="k">return</span> <span class="nx">none</span>
+</span><span class='line'><span class="nx">list</span><span class="p">.</span><span class="nx">fuzzySearch</span><span class="p">(</span><span class="s1">&#39;gu thre&#39;</span><span class="p">)</span> <span class="o">&ndash;&gt;</span> <span class="k">return</span> <span class="mi">1</span> <span class="nx">item</span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Live example</h2>
 
@@ -113,7 +49,7 @@ create this Fuzzy Search plugin.</p>
 
 <h2>Implementation</h2>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -148,7 +84,7 @@ create this Fuzzy Search plugin.</p>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;list-id&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;fuzzy-search&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>      /<em> A bunch of items </em>/
 </span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
 </span><span class='line'>
@@ -177,8 +113,7 @@ create this Fuzzy Search plugin.</p>
 </span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">fuzzySearch</span><span class="p">(</span><span class="s1">&#39;my search&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Options</h2>
 
@@ -250,7 +185,7 @@ that&rsquo;s your usage situation, use the awesome <a href="https://github.com/b
 
 <p>Just include <code>hash.min.js</code> or <code>hash.js</code> at your site and then a <code>hash</code> object will become available.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -258,10 +193,9 @@ that&rsquo;s your usage situation, use the awesome <a href="https://github.com/b
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;hash.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;script&gt;</span>
-</span><span class='line'>    hash.add({foo: &quot;bar&quot; });        // Url becomes http://url.com#foo=bar
+</span><span class='line'>    hash.add({foo: &quot;bar&quot; });        // Url becomes <a href="http://url.com#foo=bar">http://url.com#foo=bar</a>
 </span><span class='line'><span class="nt">&lt;/scrtip&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Methods</h2>
 
@@ -271,18 +205,17 @@ Add parameter to hash</li>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="nx">foo</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">});</span>
-</span><span class='line'><span class="c1">// http://url.com#foo=bar</span>
+</span><span class='line'><span class="c1">// <a href="http://url.com#foo=bar">http://url.com#foo=bar</a></span>
 </span><span class='line'>
 </span><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="nx">car</span><span class="o">:</span> <span class="s2">&quot;dar&quot;</span><span class="p">,</span> <span class="nx">sar</span><span class="o">:</span> <span class="s2">&quot;par&quot;</span> <span class="p">});</span>
-</span><span class='line'><span class="c1">// http://url.com#foo=bar&amp;car=dar&amp;sar=par</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="c1">// <a href="http://url.com#foo=bar&amp;amp;car=dar&amp;amp;sar=par">http://url.com#foo=bar&amp;amp;car=dar&amp;amp;sar=par</a></span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <ul>
 <li><strong>hash.get(param)</strong> or <strong>hash.get()</strong>  <br/>
@@ -290,7 +223,7 @@ Returns value of paramter in hash. If <code>param</code> is <code>undefined</cod
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -300,8 +233,7 @@ Returns value of paramter in hash. If <code>param</code> is <code>undefined</cod
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">allValues</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </span><span class='line'><span class="c1">// allValues == { foo: &quot;bar&quot;, car: &quot;dar&quot;, sar: &quot;par&quot;}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <ul>
 <li><strong>hash.remove(param)</strong><br/>
@@ -309,12 +241,11 @@ Removes the value with name <code>param</code>.</li>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="c1">// http://url.com#car=dar&amp;sar=par</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="c1">// <a href="http://url.com#car=dar&amp;amp;sar=par">http://url.com#car=dar&amp;amp;sar=par</a></span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <ul>
 <li><strong>hash.clear()</strong><br/>
@@ -322,12 +253,11 @@ Clears entire hash.</li>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hash</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
-</span><span class='line'><span class="c1">// http://url.com#</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span><span class='line'><span class="c1">// <a href="http://url.com#">http://url.com#</a></span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Example</h2>
 
@@ -393,16 +323,15 @@ Clears entire hash.</li>
 </ol>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">canvas</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;box2d-demo&quot;</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;960&quot;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&quot;480&quot;</span> <span class="nx">backgroundColor</span><span class="o">=</span><span class="s2">&quot;2A3038&quot;</span><span class="o">&gt;&lt;</span><span class="err">/canvas&gt;</span>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;box2d-web-2.1.a.3.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Basic demo structure</h2>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -448,8 +377,7 @@ Clears entire hash.</li>
 </span><span class='line'><span class="kd">var</span> <span class="nx">Shape</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">..</span> <span class="p">};</span>
 </span><span class='line'><span class="kd">var</span> <span class="nx">Circle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">..</span> <span class="p">};</span>
 </span><span class='line'><span class="kd">var</span> <span class="nx">Box</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">..</span> <span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Initiation</h2>
 
@@ -460,11 +388,8 @@ Clears entire hash.</li>
 <ul>
 <li>Set the <code>SCALE = 30</code>. Meaning that all pixel values are divide with 30 to get the size in meters. E.g. the canvas is <code>740 / 30 =  24.6 m</code>.</li>
 <li>Initiate the canvas area of which the demo will use.</li>
-<li>Call <code>box2d.create.world()</code> to setup the <code>world</code> object that &ldquo;is&rdquo; Box2D.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<li>Call <code>box2d.create.world()</code> to setup the <code>world</code> object that &ldquo;is&rdquo; Box2D.
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -472,10 +397,7 @@ Clears entire hash.</li>
 </span><span class='line'>  <span class="k">new</span> <span class="nx">b2Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>       <span class="c1">// gravity</span>
 </span><span class='line'>  <span class="p">,</span> <span class="kc">false</span>                  <span class="c1">// allow sleep</span>
 </span><span class='line'><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></li>
 <li>Create the default fixture object with <code>box2d.create.defaultFixture()</code> which will be used for all shapes (more about fixers later).</li>
 <li>Create walls, ground and roof by simply use the <code>add.box()</code> function to add boxes outside the visible area.</li>
 <li>Init callbacks, meaning the ones that are triggered when user clicks on the canvas (more about the mouse-related stuff later).</li>
@@ -485,9 +407,8 @@ Clears entire hash.</li>
 
 <h2>Adding shapes</h2>
 
-<p>When an user clicks on the <code>&lt;canvas&gt;</code> the function <code>add.random()</code> is called with calls <code>add.box()</code> or <code>add.circle()</code>. Here is the code for creating a <code>Circle</code>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>When an user clicks on the <code>&lt;canvas&gt;</code> the function <code>add.random()</code> is called with calls <code>add.box()</code> or <code>add.circle()</code>. Here is the code for creating a <code>Circle</code>.
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -495,10 +416,8 @@ Clears entire hash.</li>
 </span><span class='line'><span class="kd">var</span> <span class="nx">shape</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
 </span><span class='line'><span class="nx">shapes</span><span class="p">[</span><span class="nx">shape</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">shape</span><span class="p">;</span>
 </span><span class='line'><span class="nx">box2d</span><span class="p">.</span><span class="nx">addToWorld</span><span class="p">(</span><span class="nx">shape</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see it first creates a Circle object (that is used to  paint the object on the screen). Then it calls <code>box2d.addToWorld()</code> that adds the shape to Box2D. Next section explains how that function works.</p>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'>
+As you can see it first creates a Circle object (that is used to  paint the object on the screen). Then it calls <code>box2d.addToWorld()</code> that adds the shape to Box2D. Next section explains how that function works.</p>
 
 <h3>About Box2D Bodies and Fixtures</h3>
 
@@ -524,9 +443,8 @@ Clears entire hash.</li>
 </ul>
 
 
-<p>Here are the code that handles body and fixture-related stuff in this demo.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>Here are the code that handles body and fixture-related stuff in this demo.
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -628,14 +546,12 @@ Clears entire hash.</li>
 </span><span class='line'>    <span class="p">},</span>
 </span><span class='line'>    <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
 </span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>The loop</h2>
 
-<p>The loop is the center of each Box2D application (or other game etc). In this demo it has three steps.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>The loop is the center of each Box2D application (or other game etc). In this demo it has three steps.
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -699,10 +615,8 @@ Clears entire hash.</li>
 </span><span class='line'>        <span class="nx">needToDraw</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>First one thing: <code>requestAnimFrame()</code> is simply a helper function that makes animation smarter. <a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/">Read more about it here</a>.</p>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'>
+First one thing: <code>requestAnimFrame()</code> is simply a helper function that makes animation smarter. <a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/">Read more about it here</a>.</p>
 
 <ol>
 <li>The first step <code>loop.step();</code> tells the Box2D world-object to take one step, and it is here where all the magic happens (moving, collision detection etc).</li>
@@ -715,7 +629,7 @@ Clears entire hash.</li>
 
 <p>Drawing shapes/object on the screen is done with regular canvas-methods etc. Both <code>Circle</code>and <code>Box</code> have their own <code>.draw()</code> method. I will not explain these in detail, but they basically get the position from the <code>world</code> object and then uses it to paint itself on the <code>canvas</code> with help of the <code>ctx</code>. Here it the <code>.draw()</code> method from <code>Box</code>.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -731,20 +645,19 @@ Clears entire hash.</li>
 <span class='line-number'>14</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">this</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 </span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
-</span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o"><em></span> <span class="nx">SCALE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o"></em></span> <span class="nx">SCALE</span><span class="p">);</span>
 </span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">angle</span><span class="p">);</span>
-</span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="o">&ndash;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span> <span class="o"><em></span> <span class="nx">SCALE</span><span class="p">,</span> <span class="o">&ndash;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span> <span class="o"></em></span> <span class="nx">SCALE</span><span class="p">);</span>
 </span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span>
 </span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span>
-</span><span class='line'>        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">,</span>
-</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">SCALE</span><span class="p">,</span>
-</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">*</span> <span class="nx">SCALE</span>
+</span><span class='line'>        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">&ndash;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o"><em></span> <span class="nx">SCALE</span><span class="p">,</span>
+</span><span class='line'>        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">&ndash;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o"></em></span> <span class="nx">SCALE</span><span class="p">,</span>
+</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o"><em></span> <span class="nx">SCALE</span><span class="p">,</span>
+</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o"></em></span> <span class="nx">SCALE</span>
 </span><span class='line'>    <span class="p">);</span>
 </span><span class='line'>    <span class="nx">ctx</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
 </span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <h2>Wrapping up</h2>
 
@@ -785,7 +698,7 @@ Clears entire hash.</li>
 
 <p>There are one plugin bundled with List.js and it is found in <code>/plugins/paging/list.paging.js</code> (and <code>/plugins/paging/list.paging.min.js</code>). Here is some code that shows how to load it.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -794,6 +707,7 @@ Clears entire hash.</li>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
+<span class='line-number'>10</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
 </span><span class='line'>  <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span> <span class="p">],</span>
 </span><span class='line'>  <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -802,15 +716,15 @@ Clears entire hash.</li>
 </span><span class='line'>  <span class="p">]</span>
 </span><span class='line'><span class="p">};</span>
 </span><span class='line'>
+</span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <p>It is also possible to add options and load multiple instances of tha same plugins (if the plugin itself allows it).</p>
 
 <p><strong>Notice</strong>: If the property <code>name</code> is added in the plugin option parameter does the plugin become accessible through <code>listObj.namePropertyValue</code> (<code>listObj.paging2</code> in this example). This is useful when having multiple instances of the same plugin.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -842,8 +756,7 @@ Clears entire hash.</li>
 </span><span class='line'><span class="p">};</span>
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <p>Read more about the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
 
@@ -852,14 +765,13 @@ Clears entire hash.</li>
 <p>This is everything that is needed to make you own plugin. Notice  the two parameters: <code>locals</code> that contains
 all hidden/private local variables of List.js, <code>options</code> contains the options shown in the example above.</p>
 
-<figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span>list.yourPluginName.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">List</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">yourPluginName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">locals</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>  <span class="c1">// Do stuff!</span>
 </span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <p>The plugin is run after the list is initiated. See the source code of the <a href="http://jonnystromberg.com/listjs-paging-plugin/">paging plugin here</a>.</p>
 
@@ -888,7 +800,7 @@ all hidden/private local variables of List.js, <code>options</code> contains the
     <id>http://jonnystromberg.com/listjs-paging-plugin</id>
     <content type="html"><![CDATA[<p>The List.js paging plugin is bundled with the script and is located in <code>/plugins/paging/list.paging.js</code> and <a href="http://listjs.com/examples/paging.html">click here</a> if you want to see it in action. To use the plugin just include the .js file at your page and do like this:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -908,7 +820,7 @@ all hidden/private local variables of List.js, <code>options</code> contains the
 <span class='line-number'>18</span>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>      /<em> A bunch of items </em>/
 </span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
@@ -924,12 +836,11 @@ all hidden/private local variables of List.js, <code>options</code> contains the
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <p>And the paging that gets created looks <em><strong>kinda</strong></em> like this:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -953,28 +864,27 @@ all hidden/private local variables of List.js, <code>options</code> contains the
 <span class='line-number'>22</span>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>      /<em> A bunch of items </em>/
 </span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paging&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>     <span class="nt">&lt;li&gt;</span>
 </span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=\&quot;</span><span class="err">\&quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=&amp;quot;</span><span class="err">&amp;quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
 </span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
 </span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
 </span><span class='line'>     <span class="nt">&lt;li&gt;</span>
 </span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=\&quot;</span><span class="err">\&quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:function Z(){Z=&amp;quot;</span><span class="err">&amp;quot;}</span><span class="na">Z</span><span class="err">()&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
 </span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
 </span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
 </span><span class='line'>     <span class="nt">&lt;li&gt;</span>
 </span><span class='line'>         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>             ...
+</span><span class='line'>             &hellip;
 </span><span class='line'>           <span class="nt">&lt;/div&gt;</span>
 </span><span class='line'>       <span class="nt">&lt;/li&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 
 <p>There are som options available thought.</p>
 
@@ -1003,7 +913,7 @@ Same as <code>left</code> but from right.</p></li>
 
 <h2>Two pagings</h2>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p></div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1038,7 +948,7 @@ Same as <code>left</code> but from right.</p></li>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;listId&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingTop&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      /* A bunch of items */
+</span><span class='line'>      /<em> A bunch of items </em>/
 </span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pagingBottom&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
@@ -1067,8 +977,7 @@ Same as <code>left</code> but from right.</p></li>
 </span><span class='line'>
 </span><span class='line'><span class="kd">var</span> <span class="nx">listObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listId&#39;</span><span class="p">,</span> <span class="nx">listOptions</span><span class="p">);</span>
 </span><span class='line'><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></p>
 ]]></content>
   </entry>
   
@@ -1092,9 +1001,8 @@ Same as <code>left</code> but from right.</p></li>
 
 <h2>Better options for initization of empty lists</h2>
 
-<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>A new option for initiating empty lists have been added. Now you can use a html-string in the <code>item</code> options. Example shown here:
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1126,10 +1034,8 @@ Same as <code>left</code> but from right.</p></li>
 </span><span class='line'>
 </span><span class='line'>    <span class="kd">var</span> <span class="nx">hackerList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;hacker-list&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">values</span><span class="p">);</span>
 </span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'>
+<strong>Notice</strong>: this do not work with <code>&lt;tr&gt;</code>.</p>
 
 <h2>New initization options</h2>
 
@@ -1156,11 +1062,8 @@ Same as <code>left</code> but from right.</p></li>
 <ul>
 <li>Replaced <code>.addAsync(items)</code> with <code>.add(items, callback)</code>.</li>
 <li><strong>show()</strong>
-Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.
+</div><div class='code-container container'><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1178,12 +1081,9 @@ Shows <code>page</code> number of items from <code>i</code>. Use for paging etc.
 </span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Frank&quot;</span> <span class="p">}</span>
 </span><span class='line'>  <span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="o">&amp;</span><span class="p">,</span> <span class="nx">name</span> <span class="s2">&quot;Ester&quot;</span> <span class="p">}</span>
 </span><span class='line'><span class="p">];</span>
-</span><span class='line'>      
-</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">-&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
+</span><span class='line'>    <br/>
+</span><span class='line'><span class="nx">listObj</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">&ndash;&gt;</span> <span class="nx">Display</span> <span class="nx">item</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure></div><div class='container blog-container'></li>
 <li><strong>update()</strong>
 Updates the current state of the list. Meaning that if you for instance hides some items with <code>itemObj.hide()</code> method then you have to call <code>listObj.update()</code> if you want the paging to update.</li>
 <li><strong>on(event, callback)</strong><br/>

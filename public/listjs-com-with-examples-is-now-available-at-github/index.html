@@ -36,7 +36,7 @@ The reason &hellip;">
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
-<body >
+<body  id="blog" >
     <header role="banner">
         <nav role="navigation" class="navbar navbar-inverse">
             <div class="navbar-header">
@@ -50,8 +50,8 @@ The reason &hellip;">
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/blog/archives">
+                    <li class="active" >
+                        <a href="/blog">
                             Blog
                         </a>
                     </li>
@@ -68,10 +68,11 @@ The reason &hellip;">
     
     
         <div class="tagline tagline-blog">
-            <h1>
-                Listjs.com with examples is now available at GitHub
-            </h1>
-            <h2>
+            <div class="container">
+                <h1>
+                    Listjs.com with examples is now available at GitHub
+                </h1>
+                <h2>
 
 
 
@@ -84,13 +85,15 @@ The reason &hellip;">
 
 
 <time datetime="2011-10-25T00:00:00+02:00" pubdate data-updated="true">Oct 25<span>th</span>, 2011</time></h2>
+            </div>
         </div>
     
 
 
 
 
-<div class="entry-content container">
+<div class="blog-container container">
+
     <p>Tonight I added the <a href="http://listjs.com/">Listjs.com website</a> to List.js Github repository.
 The reason for this is simply that its a more convenient structure
 for myself and there will also be easier to download the List.js
@@ -104,7 +107,6 @@ promis you, its worth waiting for.</p>
     
 
     <div class="share">
-    <p><em>“Those who share get to meet Steve”</em> Book of Jobs 13:37</p>
     <ul class="sharing">
     <li class="tweet">
     
@@ -125,15 +127,6 @@ promis you, its worth waiting for.</p>
 </ul>
 </div>
 </div>
-<!-- 
-
-<span class="categories">
-  
-    listjs
-  
-</span>
-
- -->
 
 
     <div class="about about-author">
@@ -143,11 +136,21 @@ promis you, its worth waiting for.</p>
         
 
         <h2>About Jonny</h2>
-        <p>
-
+        <p class="lead">
+            A swedish maker and product designer. I enjoy the full process of making web products. Some people
+            would call me a full hybrid.
         </p>
-        <p><em>Follow me at Twitter, do it!</em></p>
-        <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        <p>
+            I spend my days with both design and programming as well as marketing and product strategy. During the last fifteen year I've
+            started project, founded and failed startups, almost earned two master degrees in engineering and met hundreds of inspiring friends.
+        </p>
+        <p>
+            When I'm not making web products, I like organising hackathons, parties and meetups.
+        </p>
+        <p>
+            <b>Follow me at Twitter, do it!</b>
+            <a href="https://twitter.com/javve" class="twitter-follow-button" data-width="70" data-show-count="false" data-show-screen-name="false">Follow @javve</a>
+        </p>
     </div>
 </div>
 
@@ -190,6 +193,7 @@ promis you, its worth waiting for.</p>
 
 
 
+    <script src="/javascripts/libs/bootstrap.js" type="text/javascript"></script>
     <script src="/javascripts/libs/flowtype.js" type="text/javascript"></script>
     <script src="/javascripts/js.js" type="text/javascript"></script>
 
