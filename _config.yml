@@ -1,5 +1,9 @@
 name: Your New Jekyll Site
 pygments: true
+permalink: none
+sass:
+  syntax: scss
+  style: compressed
 exclude:
  - unicorn.rb
  - README.md
