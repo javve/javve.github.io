@@ -1,17 +1,12 @@
 ---
-layout: article
+layout: post
 title: "Box2D JaveScript Tutorial"
 subtitle: "Uncovering The Magic Behind SilarApp.com"
 date: 2012-02-07
 hackernews: "http://news.ycombinator.com/item?id=3562244"
-categories: box2d-javascript
 ---
 
-<div class="full-width full-width-top">
-    <canvas id="box2d-demo" width="760" height="380" style="max-width: 100%; background-color:#2A3038;"></canvas>
-</div>
-<script src="/tutorials/box2d-web/box2d-web-2.1.a.3.js"></script>
-<script src="/tutorials/box2d-web/box2d-web-demo.js"></script>
+{% include /posts/box2d-javascript-tutorial/example.html %}
 
 This is tutorial is written as a compliment to my [@Sthlmjs](http://twitter.com/sthlmjs) presentation at 7 February 2012. The presentation was called **"Box2D-web - Uncovering The Magic Behind SilarApp"** and refers to the [SilarApp project](/projects/silarapp) that I work in together with [@himynameisjonas](http://twitter.com/himynameisjonas) and [@ingmr](http://twitter.com/ingmr).
 
@@ -27,7 +22,7 @@ I will go through the demo step by step in order of execution.
 ## Good things to know
 * Box2d does **not** uses pixels, it measures MKS (meters, kilograms, and seconds). This could be a bit weird but no worries! [Read more here](http://blog.zincroe.com/2009/05/units-in-box2d/).
 * Box2d only handles convex elements. It is however possible to put together multiple element to create concaves.  
-![](/tutorials/box2d-web/convex.png)
+![](/assets/posts/box2d-javascript-tutorial/convex.png)
 * Box2D is built to optimally handle dynamic (moving) objects that are 0.1-10 meters, and static (not moving) that are up to 50 meters (yeah, no particle simulations).
 * Box2D **only** handles that physics, it does not handles drawing objects. This means that we have to paint the `<canvas>` ourselves (see the **Loop** section). **Notice**: Box2D however provides a debugging feature where it can draw the objects itself, search for `debug` in the demo source to see how to use it.
 

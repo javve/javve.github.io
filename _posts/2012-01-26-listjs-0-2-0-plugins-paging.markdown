@@ -8,7 +8,7 @@ categories: listjs
 ---
 
 _**[Go to Listjs.com](http://listjs.com) and download tha latest version!**_
-<img class="float-right" src="/images/projects/listjs/listjs-logo.jpg">
+<img class="float-right" src="/images/projects/listjs/logo.png">
 
 This is a release many have been waiting for! Beta 0.2.0 includes several large improvments and I will go through them one by one.  
 

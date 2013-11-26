@@ -7,7 +7,7 @@ hackernews: "http://news.ycombinator.com/item?id=3883035"
 categories: listjs
 ---
 
-<img class="float-right default" src="/images/projects/listjs/listjs-logo.jpg">
+<img class="float-right default" src="/images/projects/listjs/logo.png">
 
 
 ## Major changes
