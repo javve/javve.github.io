@@ -3,7 +3,7 @@ pygments: true
 permalink: none
 sass:
   syntax: scss
-  style: compressed
+  style: expanded
 exclude:
  - unicorn.rb
  - README.md
