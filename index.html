@@ -1,15 +1,45 @@
 ---
 layout: default
-title: "Jonny Strömberg @javve - A full stack designer, engineer and wannabe speaker."
+title: "Jonny Strömberg @javve - A swedish full stack designer and engineer"
 description: "The guy have no talent, just one and a half decade of rock solid passion."
 body_id: "home"
 ---
 
+<header>
+    <div class="container">
+        <nav role="navigation" class="navbar navbar-inverse">
+            <div class="navbar-header" style="display:none;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li{% if page.body_id == "home" %} class="active" {% endif %}><a href="{{ root_url }}/">Home</a></li>
+                    <li{% if page.body_id == "blog" %} class="active" {% endif %}>
+                        <a href="{{ root_url }}/blog">
+                            Blog
+                        </a>
+                    </li>
+                    <li><a title="twitter.com/javve" href="http://twitter.com/javve"><i class="icon-twitter"></i> Twitter</a></li>
+                    <li><a title="github.com/javve" href="http://github.com/javve"><i class="icon-github"></i> Github</a></li>
+                    <li style="display:none;"><a title="facebook.com/javve" href="http://facebook.com/javve"><i class="icon-facebook"></i> Facebook</a></li>
+                    <li><a title="dribble.com/javve" href="http://dribbble.com/javve"><i class="icon-dribbble"></i> Dribbble</a></li>
+                    <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg"><i class="icon-linkedin"></i> Linkedin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
 
 <div class="tagline">
-    <img src="/images/home/jonny.jpg" class="me">
+    <img src="/images/logo.png">
     <h1>Jonny Strömberg <a href="http://twitter.com">@javve</a></h1>
-    <h2>A full stack designer, engineer and wannabe speaker.</h2>
+    <h2>A swedish full stack designer and engineer</h2>
 </div>
 
 <div class="intro">
@@ -43,7 +73,7 @@ body_id: "home"
     </div>
 </div>
 
-<div class="container">
+<div class="quote">
     <blockquote cite="http://twitter.com/javve">
         <p>I’m not creative, I’m just a pragmatic doer with good taste. &nbsp;<i class="icon-comment"></i></p>
     </blockquote>
@@ -106,9 +136,9 @@ body_id: "home"
     </div>
 </div>
 
-<div class="container">
+<div class="quote">
     <blockquote cite="http://twitter.com/javve">
-        <p>No talent, just one and a half decade of rock solid passion. &nbsp;<i class="icon-comment"></i></p>
+        <p>No talent, just one and a half decade of rock solid passion.<i class="icon-comment"></i></p>
     </blockquote>
 </div>
 
@@ -151,3 +181,5 @@ body_id: "home"
         </p>
     </div>
 </div>
+
+{% include author.html %}
