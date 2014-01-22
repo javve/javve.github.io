@@ -1,6 +1,6 @@
 name: Your New Jekyll Site
 pygments: true
-permalink: none
+permalink: /:categories/:title
 sass:
   syntax: scss
   style: expanded

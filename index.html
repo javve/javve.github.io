@@ -5,37 +5,6 @@ description: "The guy have no talent, just one and a half decade of rock solid p
 body_id: "home"
 ---
 
-<header>
-    <div class="container">
-        <nav role="navigation" class="navbar navbar-inverse">
-            <div class="navbar-header" style="display:none;">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li{% if page.body_id == "home" %} class="active" {% endif %}><a href="{{ root_url }}/">Home</a></li>
-                    <li{% if page.body_id == "blog" %} class="active" {% endif %}>
-                        <a href="{{ root_url }}/blog">
-                            Blog
-                        </a>
-                    </li>
-                    <li><a title="twitter.com/javve" href="http://twitter.com/javve"><i class="icon-twitter"></i> Twitter</a></li>
-                    <li><a title="github.com/javve" href="http://github.com/javve"><i class="icon-github"></i> Github</a></li>
-                    <li style="display:none;"><a title="facebook.com/javve" href="http://facebook.com/javve"><i class="icon-facebook"></i> Facebook</a></li>
-                    <li><a title="dribble.com/javve" href="http://dribbble.com/javve"><i class="icon-dribbble"></i> Dribbble</a></li>
-                    <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg"><i class="icon-linkedin"></i> Linkedin</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-
-
 <div class="tagline">
     <img src="/images/logo.png">
     <h1>Jonny Strömberg <a href="http://twitter.com">@javve</a></h1>
@@ -75,7 +44,7 @@ body_id: "home"
 
 <div class="quote">
     <blockquote cite="http://twitter.com/javve">
-        <p>I’m not creative, I’m just a pragmatic doer with good taste. &nbsp;<i class="icon-comment"></i></p>
+        <p>I’m not creative, I’m just a pragmatic doer with good taste.</p>
     </blockquote>
 </div>
 
@@ -138,7 +107,7 @@ body_id: "home"
 
 <div class="quote">
     <blockquote cite="http://twitter.com/javve">
-        <p>No talent, just one and a half decade of rock solid passion.<i class="icon-comment"></i></p>
+        <p>No talent, just one and a half decade of rock solid passion.</p>
     </blockquote>
 </div>
 
@@ -173,7 +142,7 @@ body_id: "home"
         <p class="lead">I spent almost two years as the only designer at Mynewsdesk. We were a product team consisting of a dussin developers and two project leaders.</p>
         <p>
             Mynewsdesk is a PR service from Sweden with 100+ employees, 5000+ paying customers, 45 000+ free customers and millions of visitors. I started when the company had been in operations for eight years
-            witout a full time designer. There for did a lot of my time go to setting design guidelines and update the visual profile of the entire site.
+            without a full time designer. There for did a lot of my time go to setting design guidelines and update the visual profile of the entire site.
         </p>
         <p class="more">
             <a href="http://www.mynewsdesk.com"><i class="icon-link"></i> mynewsdesk.com</a>  &nbsp; • &nbsp;
@@ -181,5 +150,3 @@ body_id: "home"
         </p>
     </div>
 </div>
-
-{% include author.html %}

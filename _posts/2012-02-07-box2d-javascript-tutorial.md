@@ -10,8 +10,6 @@ hackernews: "http://news.ycombinator.com/item?id=3562244"
 
 This is tutorial is written as a compliment to my [@Sthlmjs](http://twitter.com/sthlmjs) presentation at 7 February 2012. The presentation was called **"Box2D-web - Uncovering The Magic Behind SilarApp"** and refers to the [SilarApp project](/projects/silarapp) that I work in together with [@himynameisjonas](http://twitter.com/himynameisjonas) and [@ingmr](http://twitter.com/ingmr).
 
-[<img class="float-right image-right" src="/images/posts/2012/box2d-web/silarapp.jpg">](http://silarapp.com)
-
 The tutorial explains how to the demo above was made and you can find the source at [Github.com/javve/box2d-javascript](http://github.com/javve/box2d-javascript). I **strongly** encourages you to download the source and look at it while reading this tutorial.
 
 I will go through the demo step by step in order of execution.
