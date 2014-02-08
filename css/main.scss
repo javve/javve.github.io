@@ -83,26 +83,16 @@ li {
 header {
   background-color:#000a00;
   border-bottom:solid 1px #212121;
-  text-align:center;
+  text-align:right;
   font-family:$sans-serif;
 
-  .navbar {
-    margin-bottom:0;
-    border-bottom:0;
-    text-align:right;
-  }
-  .navbar-nav {
-    float:none;
+  .nav {
+    margin:0;
+    padding:0;
     & > li {
-      float:none;
       font-size: 15px;
       font-size: 1.5rem;
-    }
-  }
-  .nav {
-    margin-bottom:0;
-    & > li {
-      display:block;
+      display:inline-block;
       margin:0;
       padding:10px 0 10px 20px;
       a {
@@ -114,17 +104,6 @@ header {
         }
       }
     }
-  }
-  @media (min-width: 768px) {
-    .nav > li {
-      display:inline-block;
-    }
-  }
-  .navbar-inverse .navbar-nav > .active > a,
-  .navbar-inverse .navbar-nav > .active > a:hover,
-  .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color:transparent;
-    border-bottom-color:#fff !important;
   }
 }
 
