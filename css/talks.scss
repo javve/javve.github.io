@@ -1,0 +1,45 @@
+@import "bootstrap/mixins";
+@import "mixins";
+
+.container-talks {
+  margin-bottom:100px;
+  padding-top:50px;
+
+  h1 {
+    margin-bottom:-15px;
+  }
+
+  & > p:first-of-type {
+    font-size:28px;
+    font-size:2.8rem;
+  }
+
+  blockquote {
+    &:before {
+      content: "\"";
+      position: absolute;
+      left: -54px;
+      top: -10px;
+      font-size: 110px;
+      line-height: 100px;
+      font-variant: normal;
+      color: #ddd;
+    }
+    position:relative;
+    font-style:italic;
+    color:#999;
+  }
+}
+
+.cover {
+  height:400px;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.talk-tagline {
+  font-size:14px;
+  font-size:1.4rem;
+  text-transform:uppercase;
+  margin:20px 0 -40px;
+}

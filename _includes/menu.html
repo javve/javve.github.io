@@ -11,17 +11,13 @@
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li{% if page.body_id == "home" %} class="active" {% endif %}><a href="{{ root_url }}/">Home</a></li>
-          <li{% if page.body_id == "blog" %} class="active" {% endif %}>
-            <a href="{{ root_url }}/blog.html">
-              Blog
-            </a>
-          </li>
-          <li><a title="twitter.com/javve" href="http://twitter.com/javve"><i class="icon-twitter"></i> Twitter</a></li>
-          <li><a title="github.com/javve" href="http://github.com/javve"><i class="icon-github"></i> Github</a></li>
-          <li style="display:none;"><a title="facebook.com/javve" href="http://facebook.com/javve"><i class="icon-facebook"></i> Facebook</a></li>
-          <li><a title="dribble.com/javve" href="http://dribbble.com/javve"><i class="icon-dribbble"></i> Dribbble</a></li>
-          <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg"><i class="icon-linkedin"></i> Linkedin</a></li>
+          {% if page.body_id == "blog" %}<li><a href="{{ root_url }}/">Home</a></li>{% endif %}
+          {% if page.body_id == "home" %}<li><a href="{{ root_url }}/blog">Blog</a></li>{% endif %}
+          <li><a title="twitter.com/javve" href="http://twitter.com/javve"><i class="fa fa-twitter"></i></a></li>
+          <li><a title="github.com/javve" href="http://github.com/javve"><i class="fa fa-github"></i></a></li>
+          <li style="display:none;"><a title="facebook.com/javve" href="http://facebook.com/javve"><i class="fa fa-facebook"></i></a></li>
+          <li><a title="dribble.com/javve" href="http://dribbble.com/javve"><i class="fa fa-dribbble"></i></a></li>
+          <li><a title="linkedin.com/in/jonnystromberg" href="http://www.linkedin.com/in/jonnystromberg"><i class="fa fa-linkedin"></i></a></li>
       </ul>
       </div>
     </nav>

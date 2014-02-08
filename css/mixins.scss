@@ -1,0 +1,27 @@
+$sans-serif:"proxima-nova", "Helvetica neue", Arial, sans-serif;
+
+@mixin noise($opacity: 0.98) {
+  opacity:$opacity;
+}
+@mixin text-width {
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@mixin smaller-font {
+  font-size: 18px;
+  font-size: 1.8rem;
+  @media (max-width: 575px) {
+    font-size: 13px;
+    font-size: 1.3rem;
+  }
+}
+@mixin larger-font {
+  font-size: 22px;
+  font-size: 2.2rem;
+  @media (max-width: 575px) {
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+}

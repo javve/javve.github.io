@@ -1,0 +1,267 @@
+@import "bootstrap/mixins";
+@import "mixins";
+
+.tagline {
+  @include noise(.95);
+  background:#1e272c no-repeat;
+  background-image:url(/images/home/stars.jpg);
+  background-size:cover;
+  text-align:center;
+  padding:13% 0;
+
+  .tagline-logo {
+    max-width:95%;
+  }
+  a {
+    color:#e2ff44;
+  }
+  h1 {
+    font-weight:800;
+    //font-size:45px;
+    color:#fff;
+    text-shadow:none;
+    margin:0;
+    display:none;
+    a {
+      font-weight:400;
+    }
+  }
+  h2 {
+    color:#999;
+    //font-size:30px;
+    font-weight:400;
+    margin:0;
+    display:none;
+  }
+}
+
+.intro {
+  @include noise(.96);
+  @include gradient-vertical(#5ba6d3, #4994c1);
+  box-shadow: inset 0 1px rgba(255,255,255,0.4);
+  padding: 100px 0 60px;
+  color:#fff;
+  text-shadow:1px 1px rgba(0,0,0,.1);
+  text-align:center;
+  p {
+    @include smaller-font;
+  }
+  a {
+    color:#e2ff44;
+  }
+  .intro-project {
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-size:178px;
+    padding:100px 40px 0;
+    margin-bottom:40px;
+  }
+  .confetti {
+    background-image:url(/images/home/icons/confetti.png);
+  }
+  .nordicjs {
+    background-image:url(/images/home/icons/nordicjs.png);
+  }
+  .silarapp {
+    background-image:url(/images/home/icons/silarapp.png);
+  }
+  .sthlmstartuphack {
+    background-image:url(/images/home/icons/sthlmstartuphack.png);
+  }
+  .startuplocation {
+    background-image:url(/images/home/icons/startuplocation.png);
+  }
+  .listjs {
+    background-image:url(/images/home/icons/listjs.png);
+  }
+  .sthlmjs {
+    background-image:url(/images/home/icons/sthlmjs.png);
+  }
+  .mynewsdesk {
+    background-image:url(/images/home/icons/mynewsdesk.png);
+  }
+}
+
+.quote {
+  //@include noise(.97);
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+  background-color:#fff;
+  blockquote {
+    @include text-width;
+    text-align:center;
+    border-left:none;
+    padding:100px 0;
+    margin:0 auto;
+    p {
+      display:inline-block;
+      margin-left:auto;
+      margin-right:auto;
+      font-size:1.5em;
+      color:#6e6e6e;
+      text-shadow:1px 1px #fff;
+      position:relative;
+      margin:0;
+      .icon-comment {
+        position: absolute;
+        left: 40%;
+        opacity: 0.07;
+        font-size: 45px;
+        font-size: 4.5rem;
+        top: -50px;
+      }
+    }
+  }
+}
+.project {
+  padding:100px 0;
+  text-align:center;
+  h2 {
+    //font-size:45px;
+  }
+  p {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 750px;
+    text-align:left;
+    @include smaller-font;
+    &.lead {
+      @include larger-font;
+    }
+    &:last-child {
+      margin-bottom:0;
+    }
+    &.more {
+      text-align:center;
+      @include smaller-font;
+      font-weight: bold;
+      [class^="icon-"], [class*=" icon-"] {
+        font-size:80%;
+      }
+    }
+  }
+  img {
+    max-width:100%;
+  }
+  &.listjs {
+    background:url(/images/projects/listjs/bg.jpg) repeat;
+    h2 {
+      color:#fff;
+    }
+    p {
+      color:#b3b3b3;
+      &.more {
+        color: #777;
+      }
+      &.lead {
+        color:#eee;
+      }
+    }
+    a {
+      color:#eee;
+      &:hover {
+        color:#fff;
+      }
+    }
+  }
+  &.silarapp {
+    background:#111 url(/images/projects/silarapp/bg.jpg) repeat;
+    .silarapp-container {
+      @include box-sizing(border-box);
+      background-color:#fff;
+      padding:7%;
+    }
+    img {
+      margin-bottom:10%;
+    }
+    h2 {
+      color:#6a3838;
+    }
+    p {
+      //max-width: 710px;
+      color:#7d7d77;
+      &.more {
+        color: #7d7d77;
+      }
+    }
+    a {
+      color:#6a95dc;
+      &:hover {
+        color:#7fabf4;
+      }
+    }
+  }
+  &.textcloud {
+    background:url(/images/projects/textcloud/bg.jpg) repeat;
+    img {
+      margin-bottom:10%;
+    }
+    h2 {
+      color:#fff;
+    }
+    p {
+      //max-width: 750px;
+      color:#eaebeb;
+      &.more {
+        color: #fff;
+      }
+      &.lead {
+        color:#fff;
+      }
+    }
+    a {
+      color:#fff;
+      font-weight:bold;
+      &:hover {
+        color:#eee;
+      }
+    }
+  }
+  &.startuplocation {
+    box-shadow:inset 0 0 3px rgba(0, 0, 0, 0.3);
+    background:url(/images/projects/startuplocation/screen.jpg) repeat;
+    .startuplocation-logo {
+      @include gradient-vertical(#3c86d4, #2b74c2);
+      padding:10%;
+      box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.7);
+      border-radius:3px 3px 0 0;
+    }
+    .startuplocation-container {
+      background-color:#fff;
+      margin:0 auto;
+      box-shadow:0 0 20px rgba(0,0,0,0.4);
+      border-radius:3px;
+      display:inline-block;
+    }
+    .startuplocation-content {
+      padding:5% 10%;
+    }
+    h2 {
+      color:#222;
+    }
+    p {
+      //max-width: 710px;
+      color:#666;
+      &.more {
+        color: #aaa;
+      }
+      &.lead {
+        color:#222;
+      }
+    }
+    a {
+      color:#337cca;
+      &:hover {
+        color:#eee;
+      }
+    }
+  }
+  &.mynewsdesk {
+    background-color:#fbf9f9;
+    img {
+      margin-bottom:10%;
+      &:last-child {
+        margin-bottom:0;
+      }
+    }
+  }
+}
