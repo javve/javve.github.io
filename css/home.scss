@@ -142,6 +142,49 @@
   img {
     max-width:100%;
   }
+  &.confetti {
+    background:url(/images/projects/confetti/bg.jpg) repeat #318ac5;
+    background-size:cover;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.3), 0 0 20px #318ac5;
+    h2 {
+      color:#fff;
+      margin-bottom:35px;
+    }
+    p {
+      color:#eee;
+      &.lead {
+        color:#fff;
+      }
+    }
+    a {
+      color:#e2ff44;
+      &:hover {
+        color:darken(#e2ff44, 15%);
+      }
+    }
+  }
+  &.nordicjs {
+    background:url(/images/projects/nordicjs/bg.jpg) repeat #4A4235;
+    background-size:cover;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.3), 0 0 20px #4A4235;
+
+    h2 {
+      color:#fff;
+      margin-bottom:35px;
+    }
+    p {
+      color:#eee;
+      &.lead {
+        color:#fff;
+      }
+    }
+    a {
+      color:#fff;
+      &:hover {
+        color:#eee;
+      }
+    }
+  }
   &.listjs {
     background:url(/images/projects/listjs/bg.jpg) repeat;
     h2 {
