@@ -129,6 +129,10 @@ header {
   }
   p {
     text-align:left;
+    @include smaller-font;
+  }
+  .lead {
+    @include larger-font;
   }
   iframe {
     top: 4px;

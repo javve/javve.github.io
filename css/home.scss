@@ -144,7 +144,7 @@
     }
     &.more {
       text-align:center;
-      @include smaller-font;
+      @include larger-font;
       font-weight: bold;
       [class^="icon-"], [class*=" icon-"] {
         font-size:80%;
