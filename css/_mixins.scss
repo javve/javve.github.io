@@ -1,8 +1,5 @@
-$sans-serif:"proxima-nova", "Helvetica neue", Arial, sans-serif;
+$sans-serif: 'Roboto', Arial, sans-serif;
 
-@mixin noise($opacity: 0.98) {
-  opacity:$opacity;
-}
 @mixin text-width {
   max-width:700px;
   margin-left:auto;

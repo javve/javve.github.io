@@ -5,3 +5,5 @@ More info at [jonasforsberg.se/2012/07/22/jekyll-heroku-unicorn](http://jonasfor
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/himynameisjonas/jekyll-heroku-unicorn/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+Utveckling:
+jekyll build --watch

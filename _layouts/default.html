@@ -6,15 +6,8 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
 
-    <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-    <script type="text/javascript" src="//use.typekit.net/rww8ngz.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="stylesheet" href="/css/style.css">
 
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:url" content="http://jonnystromberg.com{{ page.url }}" />
@@ -40,15 +33,18 @@
 
     </script>
 
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet' type='text/css'>
+
   </head>
   <body id="{{ page.body_id }}">
-
-    {% include menu.html %}
 
     {{ content }}
 
     {% include author.html %}
 
+    <script src="/assets/javascripts/jquery-1.11.2.min.js"></script>
+    <script src="/assets/javascripts/scripts.js"></script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
   </body>
