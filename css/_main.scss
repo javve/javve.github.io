@@ -1,6 +1,12 @@
 html {
-  font-size:62.5%;
+  font-size: 62.5%;
 }
+
+html, body, input, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 body {
   @include larger-font;
@@ -11,7 +17,6 @@ body {
   margin:0;
 }
 body#home {
-  @include smaller-font;
   background-color:#fff;
   min-height:100%;
 }

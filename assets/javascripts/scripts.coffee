@@ -19,76 +19,75 @@ window.jonny.preloadImages = ->
       $elem.removeClass 'image-loading'
       $elem.addClass 'image-ready'
 
-window.jonny.activateOnScrolls = ->
-  $activate = $('.activate-on-scroll')
-  $activateEarly = $('.activate-on-scroll-early')
-  $projects = $('.project')
+window.jonny.activateOnScroll = (scrollPos) ->
+  $activateOnScroll = $('.activate-on-scroll')
+  $activateOnScreen = $('.activate-on-screen')
 
+  # console.log scrollPos
   if isMobile
-    $activate.each (i, elem) ->
+    $activateOnScroll.each (i, elem) ->
       $(elem).addClass 'active'
-    $activateEarly.each (i, elem) ->
+    $activateOnScreen.each (i, elem) ->
       $(elem).addClass 'active'
     window.jonny.activateOnScroll = ->
       return
   else
     windowHeight = $(window).height()
-    window.jonny.activateOnScroll = (scrollPos) ->
-      $activate.each (i, elem) ->
-        $elem = $(elem)
-        pos = Math.round($elem.offset().top) - windowHeight * 0.7
-        if scrollPos > pos
-          $elem.removeClass 'activate-on-scroll'
-          $elem.addClass 'active'
+    $activateOnScroll.each (i, elem) ->
+      $elem = $(elem)
+      pos = Math.round($elem.offset().top) - windowHeight * 0.5
+      # console.log scrollPos, pos
+      if scrollPos > pos
+        $elem.removeClass 'activate-on-scroll'
+        $elem.addClass 'active'
 
-      $activateEarly.each (i, elem) ->
-        $elem = $(elem)
-        pos = Math.round($elem.offset().top) - windowHeight * 0.9
-        if scrollPos > pos
-          $elem.removeClass 'activate-on-scroll'
-          $elem.addClass 'active'
-          $activate = $('.activate-on-scroll')
+    $activateOnScreen.each (i, elem) ->
+      $elem = $(elem)
+      pos = Math.round($elem.offset().top) - windowHeight * 0.9
+      if scrollPos > pos
+        $elem.addClass 'active'
 
-      $projects.each (i, elem) ->
-        $elem = $(elem)
-        pos = Math.round($elem.offset().top) - windowHeight * 0.7
-        if scrollPos > pos && scrollPos < (pos + $elem.height())
-          $elem.removeClass 'activate-on-scroll'
-          $elem.addClass 'active'
+
+    # $projects.each (i, elem) ->
+    #   $elem = $(elem)
+    #   pos = Math.round($elem.offset().top) - windowHeight * 0.7
+    #   if scrollPos > pos && scrollPos < (pos + $elem.height())
+    #     $elem.removeClass 'activate-on-scroll'
+    #     $elem.addClass 'active'
 
 # Paralax
-  # Cross-browser way to get the current scroll position
-  getScrollPosition = ->
-    if document.documentElement.scrollTop == 0
-      document.body.scrollTop
-    else
-      document.documentElement.scrollTop
+# Cross-browser way to get the current scroll position
+getScrollPosition = ->
+  if document.documentElement.scrollTop == 0
+    document.body.scrollTop
+  else
+    document.documentElement.scrollTop
 
-$project = $('.header-content')
-$projectBg = $('.header-background')
-windowHeight = window.screen.availHeight
-opacity = 1
-oldScrollPos = 0
-
-paralax = ->
-  scrollPos = getScrollPosition()
-  if scrollPos < windowHeight and scrollPos != oldScrollPos
-    $project.each (i, el) ->
-      opacity = 1 - ((scrollPos - (.15 * windowHeight)) / (0.85 * windowHeight))
-      oldScrollPos = scrollPos
-      offset = scrollPos / 5
-      s = headBg.style
-      transform = 'translateY(' + offset + 'px' + ') translateZ(0)'
-      s.webkitTransform = transform
-      s.MozTransform = transform
-      #cap first letter
-      s.msTransform = transform
-      s.OTransform = transform
-      #cap first letter
-      s.transform = transform
+# $project = $('.header-content')
+# $projectBg = $('.header-background')
+# windowHeight = window.screen.availHeight
+# opacity = 1
+# oldScrollPos = 0
+#
+# # paralax = ->
+# #   scrollPos = getScrollPosition()
+# #   if scrollPos < windowHeight and scrollPos != oldScrollPos
+# #     $project.each (i, el) ->
+# #       opacity = 1 - ((scrollPos - (.15 * windowHeight)) / (0.85 * windowHeight))
+# #       oldScrollPos = scrollPos
+# #       offset = scrollPos / 5
+# #       s = headBg.style
+# #       transform = 'translateY(' + offset + 'px' + ') translateZ(0)'
+# #       s.webkitTransform = transform
+# #       s.MozTransform = transform
+# #       #cap first letter
+# #       s.msTransform = transform
+# #       s.OTransform = transform
+# #       #cap first letter
+# #       s.transform = transform
 
 $ ->
-  window.jonny.activateOnScrolls()
+  window.jonny.activateOnScroll()
   window.jonny.preloadImages()
 
 window.jonny = window.jonny || {}
@@ -101,7 +100,7 @@ window.requestAnimFrame = do ->
 render = ->
   scrollPos = $(document).scrollTop()
   jonny.activateOnScroll scrollPos
-  paralax()
+  #paralax()
   return
 
 `$( document ).ready( function () {

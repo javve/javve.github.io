@@ -38,6 +38,7 @@
     top: 50%;
     transform: translate(0, -50%);
     padding:0 50px;
+    box-sizing: border-box;
   }
 
   h1 {
@@ -55,6 +56,15 @@
     font-size:20px;
     font-weight:300;
     margin:0;
+  }
+  .head-links {
+    ul {
+      @include font-size(14);
+      float:left;
+      width:33%;
+      margin:0;
+      padding:0;
+    }
   }
 }
 .friends {
@@ -142,26 +152,33 @@
   position:relative;
   background-color:#111;
   h2 {
-    color:#fff;
-    font-size:100px;
+    margin-top:0;
+    color:#111;
+    font-size:23px;
     text-align: left;
   }
   p {
+    font-size:1.4rem;
     text-align:left;
-    @include smaller-font;
-    color:rgba(255,255,255,.8);
-    &.lead {
-      @include larger-font;
-    }
+    color:#444;
+    margin-bottom:0;
     &:last-child {
       margin-bottom:0;
     }
-    &.role {
-      border-top: solid 1px rgba(255,255,255,0.2);
-      padding: 5px 0;
-      font-size: 15px;
-      font-size: 1.5rem;
-      color:rgba(255,255,255,.6);
+  }
+  .role {
+    @include font-size(11);
+    border-top: solid 1px rgba(0, 0, 0, 0.08);
+    padding: 11px 0 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    .role-title {
+      font-weight:500;
+      color:#666;
+    }
+    .role-description {
+      font-weight:700;
+      color:#111;
     }
   }
   .container {
@@ -177,7 +194,11 @@
     bottom:50px;
     left:50px;
     color:#fff;
-    max-width: 700px;
+    max-width: 430px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.5);
+    padding: 33px;
   }
   .project-filter {
     position:absolute;
@@ -191,13 +212,11 @@
     background-image: -moz-linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
     background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
     background-image: linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
+    display:none;
   }
   .project-background-image {
-    transition:all .4s ease-in-out;
-    transform:scale(1.4);
     background-size:cover;
     background-position:center;
-    opacity:0;
     position:absolute;
     left:0;
     top:0;
@@ -205,9 +224,25 @@
     right:0;
     margin:auto;
     z-index:1;
-    &.image-ready {
+  }
+
+  // Animation
+  .project-info {
+    transition:all .4s .4s ease-in-out;
+    transform:translateY(20%) scale(0.8);
+    opacity: 0;
+    &.active {
+      transform:translateY(0);
+      opacity: 1;
+    }
+  }
+  .project-background-image {
+    transition:all .4s ease-in-out;
+    transform:scale(1.05);
+    opacity: 0;
+    &.active.image-ready {
       opacity:1;
-      transform:scale(1.1);
+      transform:scale(1);
     }
   }
   // &.confetti {

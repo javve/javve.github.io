@@ -1,5 +1,69 @@
 $sans-serif: 'Roboto', Arial, sans-serif;
 
+$break-small: 400px;
+$break-medium: 650px;
+$break-semi-large: 1200px;
+$break-large: 1550px;
+$break-extra-large: 1700px;
+
+$break-tall: 960px;
+$break-medium-tall: 680px;
+
+@mixin appearance ($value) {
+  -webkit-appearance: $value;
+  -moz-appearance:    $value;
+  appearance:         $value;
+}
+
+@mixin font-weight($grade: normal) {
+  $weight: 400;
+  @if $grade == semi {
+    $weight: 600;
+  } @else if $grade == bold {
+    $weight: 700;
+  } @else if $grade == black {
+    $weight: 900;
+  } @else if $grade == light {
+    $weight: 300;
+  }
+
+  font-weight: $weight;
+}
+
+@mixin font-size($size: 20) {
+  font-size: #{$size}px;
+  font-size: #{$size/10}rem;
+}
+@mixin font($size: 20, $weight: normal) {
+  @include font-size($size);
+  @include font-weight($weight);
+}
+
+
+@mixin screens($type) {
+  @if($type == small) {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+  @if($type == medium) {
+    @media only screen and (min-width: $break-medium) { @content; }
+  }
+  @if($type == semi-large) {
+    @media only screen and (min-width: $break-semi-large) { @content; }
+  }
+  @if($type == large) {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @if($type == extra-large) {
+    @media only screen and (min-width: $break-extra-large) { @content; }
+  }
+  @if($type == medium-tall){
+    @media only screen and (min-height: $break-medium-tall) { @content; }
+  }
+  @if($type == tall) {
+    @media only screen and (min-height: $break-tall) { @content; }
+  }
+}
+
 @mixin text-width {
   max-width:700px;
   margin-left:auto;
@@ -21,4 +85,32 @@ $sans-serif: 'Roboto', Arial, sans-serif;
     font-size: 15px;
     font-size: 1.5rem;
   }
+}
+
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin clearfix-2 {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
