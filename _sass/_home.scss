@@ -37,25 +37,45 @@
     left: 50%;
     top: 50%;
     transform: translate(0, -50%);
-    padding:0 50px;
+    padding:0 10% 0 0;
     box-sizing: border-box;
   }
 
-  h1 {
+  .head-headline {
     font-weight:800;
     font-size:55px;
     color:#222;
     text-shadow:none;
-    margin:0;
+    margin:0 0 10px;
+    background: url(/images/home/wave.png) no-repeat right top;
+    background-size: auto 90%;
+    display: inline-block;
+    padding-right:70px;
     a {
       font-weight:400;
     }
   }
-  h2 {
+  .head-tagline {
     color:#555;
     font-size:20px;
     font-weight:300;
-    margin:0;
+    margin:0 0 20px;
+    line-height:1.4;
+    a {
+      transition: all .2s ease-in-out;
+      color:#111;
+      text-decoration: none;
+      border-bottom: solid 1px #ccc;
+      &:hover {
+        border-bottom: solid 1px #000;
+        color:#000;
+      }
+    }
+  }
+  .head-social {
+    @extend .head-tagline;
+    font-size:13px;
+    font-weight: 400;
   }
   .head-links {
     ul {
@@ -257,12 +277,12 @@
   // &.hackaway-2 {
   //   background-image:url(/images/home/hackaway-2.jpg);
   // }
-  &.hybridconf {
-    background-image:url(/images/home/hybridconf.jpg);
-  }
-  &.sthlmstartuphack {
-    background-image:url(/images/home/sthlmstartuphack.jpg);
-  }
+  // &.hybridconf {
+  //   background-image:url(/images/home/hybridconf.jpg);
+  // }
+  // &.sthlmstartuphack {
+  //   background-image:url(/images/home/sthlmstartuphack.jpg);
+  // }
   &.silarapp {
     //background-image:url(/images/projects/silarapp.jpg);
   }
