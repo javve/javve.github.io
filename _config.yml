@@ -1,14 +1,13 @@
 name: Your New Jekyll Site
-highlighter: pygments
 permalink: /:categories/:title
 sass:
   syntax: scss
   style: expanded
+  sass_dir: _sass
+gems:
+ - jekyll-coffeescript
 exclude:
- - unicorn.rb
  - README.md
- - Procfile
  - Gemfile
  - Gemfile.lock
- - config.ru
  - vendor
