@@ -19,8 +19,8 @@
   }
 }
 .head {
-  height:100vh;
-  background-color:#fff;
+  height:95vh;
+  background-color:#f6eff7;
   .head-image-container {
     height:100%;
     width:50%;
@@ -228,13 +228,13 @@
 
   // Animation
   .project-info {
-    transition:all .4s .4s ease-in-out;
-    transform:translateY(20%) scale(0.8);
-    opacity: 0;
-    &.active {
-      transform:translateY(0);
-      opacity: 1;
-    }
+    // transition:all .4s .4s ease-in-out;
+    // transform:translateY(20%) scale(0.8);
+    // opacity: 0;
+    // &.active {
+    //   transform:translateY(0);
+    //   opacity: 1;
+    // }
   }
   .project-background-image {
     transition:all .4s ease-in-out;
