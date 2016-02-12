@@ -1,56 +1,71 @@
 @import "mixins";
 
-.image-fade {
-  transition:all .4s ease-in-out;
-  transform:scale(1.4);
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  right:0;
-  margin:auto;
-
-  &.image-ready {
-    opacity:1;
-    transform:scale(1.1);
-  }
-}
 .head {
-  height:95vh;
   background-color:#f6eff7;
+  @include screens(semi-large) {
+    height:95vh;
+  }
   .head-image-container {
-    height:100%;
-    width:50%;
-    float:left;
     overflow: hidden;
     position: relative;
+    width:100%;
+    padding-top:60%;
+    @include screens(semi-large) {
+      height:100%;
+      width:50%;
+      float:left;
+      padding-top:0;
+    }
   }
   .head-image {
+    transition:all .4s ease-in-out;
+    transform:scale(1.4);
+    background-position:center;
+    opacity:0;
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    background-size:contain;
+    @include screens(semi-large) {
+      background-size:cover;
+    }
+
+    &.image-ready {
+      opacity:1;
+      transform:scale(1.1);
+    }
   }
 
   .head-content {
-    width:50%;
-    position:absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(0, -50%);
-    padding:0 10% 0 0;
     box-sizing: border-box;
+    padding:50px;
+    @include screens(semi-large) {
+      width:50%;
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(0, -50%);
+      padding:0 10% 0 0;
+    }
   }
 
   .head-headline {
     font-weight:800;
-    font-size:55px;
+    font-size:35px;
     color:#222;
     text-shadow:none;
     margin:0 0 10px;
     background: url(/images/home/wave.png) no-repeat right top;
     background-size: auto 90%;
     display: inline-block;
-    padding-right:70px;
+    padding-right:50px;
+    @include screens(semi-large) {
+      font-size:55px;
+      padding-right:70px;
+    }
     a {
       font-weight:400;
     }
@@ -97,9 +112,13 @@
     padding-top:100%;
     display:block;
     float:left;
-    width: 20%;
+    width: 25%;
     padding-top:20%;
     margin-top:-20%;
+
+    @include screens(semi-large) {
+      width: 20%;
+    }
   }
   .friends-description {
     background-color:#F73838;
@@ -113,6 +132,10 @@
       font-size:22px;
       font-weight:500;
     }
+    display:none;
+    @include screens(semi-large) {
+      display:block;
+    }
   }
   .friend {
     position:relative;
@@ -122,19 +145,31 @@
     z-index:1;
     &.martina {
       background-image:url(/images/home/martina.jpg);
-      margin-left:20%;
+      margin-left:0%;
+      @include screens(semi-large) {
+        margin-left:20%;
+      }
     }
     &.johannes {
       background-image:url(/images/home/johannes.jpg);
-      margin-left:40%;
+      margin-left:25%;
+      @include screens(semi-large) {
+        margin-left:40%;
+      }
     }
     &.ted {
       background-image:url(/images/home/ted.jpg);
-      margin-left:60%;
+      margin-left:50%;
+      @include screens(semi-large) {
+        margin-left:60%;
+      }
     }
     &.joakim {
       background-image:url(/images/home/joakim.jpg);
-      margin-left:80%;
+      margin-left:75%;
+      @include screens(semi-large) {
+        margin-left:80%;
+      }
     }
     .friend-content {
       transition:all .4s ease-in-out;
@@ -148,13 +183,15 @@
       font-size:22px;
       font-weight:500;
     }
-    &:hover {
-      transform:scale(1.02);
-      box-shadow: 0 4px 20px rgba(0,0,0,.3);
-      z-index:100;
-      .friend-content {
-        opacity:1;
-        transform:translate(0, -50%);
+    @include screens(semi-large) {
+      &:hover {
+        transform:scale(1.02);
+        box-shadow: 0 4px 20px rgba(0,0,0,.3);
+        z-index:100;
+        .friend-content {
+          opacity:1;
+          transform:translate(0, -50%);
+        }
       }
     }
   }
@@ -162,15 +199,17 @@
 
 .project {
   box-sizing: border-box;
-  padding:30vh 0 10em;
+  padding:0;
   text-align:center;
   max-width: 100%;
-  height:56vw;
-  background-size:cover;
-  background-position:center;
   overflow: hidden;
   position:relative;
   background-color:#111;
+  padding-top:60vh;
+  @include screens(semi-large) {
+    height:56vw;
+    padding:30vh 0 10em;
+  }
   h2 {
     margin-top:0;
     color:#111;
@@ -202,23 +241,28 @@
     }
   }
   .container {
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    right:0;
-    z-index:3;
+    @include screens(semi-large) {
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      right:0;
+      z-index:3;
+    }
   }
   .project-info {
-    position: absolute;
-    bottom:50px;
-    left:50px;
     color:#fff;
-    max-width: 430px;
+
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 4px rgba(0,0,0,.5);
     padding: 33px;
+    @include screens(semi-large) {
+      position: absolute;
+      bottom:50px;
+      left:50px;
+      max-width: 430px;
+    }
   }
   .project-filter {
     position:absolute;
@@ -240,10 +284,14 @@
     position:absolute;
     left:0;
     top:0;
-    bottom:0;
     right:0;
     margin:auto;
     z-index:1;
+    height: 60vh;
+    @include screens(semi-large) {
+      bottom:0;
+      height:auto;
+    }
   }
 
   // Animation
