@@ -41,7 +41,7 @@
 
   .head-content {
     box-sizing: border-box;
-    padding:50px;
+    padding:30px;
     @include screens(semi-large) {
       width:50%;
       position:absolute;
