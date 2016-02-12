@@ -306,7 +306,9 @@
   }
   .project-background-image {
     transition:all .4s ease-in-out;
-    transform:scale(1.05);
+    @include screens(semi-large) {
+      transform:scale(1.05);
+    }
     opacity: 0;
     &.active.image-ready {
       opacity:1;
