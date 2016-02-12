@@ -205,7 +205,7 @@
   overflow: hidden;
   position:relative;
   background-color:#111;
-  padding-top:60vh;
+  padding-top:60vw;
   @include screens(semi-large) {
     height:56vw;
     padding:30vh 0 10em;
@@ -287,7 +287,7 @@
     right:0;
     margin:auto;
     z-index:1;
-    height: 60vh;
+    height: 60vw;
     @include screens(semi-large) {
       bottom:0;
       height:auto;
