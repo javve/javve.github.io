@@ -1,0 +1,35 @@
+#design {
+  background-color:#f6eff7;
+  padding:30px;
+
+  .design-content {
+    margin:auto;
+    max-width:450px;
+    text-align: center;
+    background-color: #fff;
+    padding:30px;
+  }
+  .design-headline {
+    margin:0 0 20px;
+    font-size: 40px;
+  }
+  .design-tagline {
+    margin:0 0 20px;
+    font-size:16px;
+  }
+  .design-follow {
+
+  }
+  .design-feedback {
+    background-color:#00C776;
+    color:#fff;
+    display: inline-block;
+    padding:12px 25px;
+    line-height: 1;
+    font-size:20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight:600;
+    margin-bottom:20px;
+  }
+}
