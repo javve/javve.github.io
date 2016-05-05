@@ -2,8 +2,10 @@
 
 .head {
   background-color:#f6eff7;
+  text-align: center;
   @include screens(semi-large) {
     height:95vh;
+    text-align: left;
   }
   .head-image-container {
     overflow: hidden;
@@ -121,7 +123,7 @@
     }
   }
   .friends-description {
-    background-color:#F73838;
+    background-color:#111;
     color:#fff;
     .friend-content {
       position:absolute;
@@ -207,14 +209,17 @@
   background-color:#111;
   padding-top:60vw;
   @include screens(semi-large) {
-    height:56vw;
+    height:100vh;
     padding:30vh 0 10em;
   }
   h2 {
     margin-top:0;
     color:#111;
-    font-size:23px;
-    text-align: left;
+    text-align: center;
+    font-size:25px;
+    @include screens(semi-large) {
+      font-size:35px;
+    }
   }
   p {
     font-size:1.4rem;
@@ -254,29 +259,16 @@
     color:#fff;
 
     background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     padding: 33px;
     @include screens(semi-large) {
       position: absolute;
       bottom:50px;
-      left:50px;
+      left:0;
+      right:0;
+      margin:auto;
       max-width: 430px;
     }
-  }
-  .project-filter {
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    right:0;
-    margin:auto;
-    z-index:2;
-    background-image: -ms-linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
-    background-image: -moz-linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
-    background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
-    background-image: linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 0.01) 50%, hsla(0, 0%, 0%, 0.7) 70%, hsla(0, 0%, 0%, 1.0));
-    display:none;
   }
   .project-background-image {
     background-size:cover;
@@ -314,26 +306,5 @@
       opacity:1;
       transform:scale(1);
     }
-  }
-  // &.confetti {
-  //   background-image:url(/images/home/confetti.jpg);
-  // }
-  // &.nordicjs {
-  //   background-image:url(/images/home/nordicjs.jpg);
-  // }
-  // &.hackaway-1 {
-  //   background-image:url(/images/home/hackaway-1.jpg);
-  // }
-  // &.hackaway-2 {
-  //   background-image:url(/images/home/hackaway-2.jpg);
-  // }
-  // &.hybridconf {
-  //   background-image:url(/images/home/hybridconf.jpg);
-  // }
-  // &.sthlmstartuphack {
-  //   background-image:url(/images/home/sthlmstartuphack.jpg);
-  // }
-  &.silarapp {
-    //background-image:url(/images/projects/silarapp.jpg);
   }
 }

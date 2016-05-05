@@ -1,6 +1,8 @@
 ---
 ---
 
+{% include javascripts/slideshow.coffee %}
+
 window.jonny = window.jonny || {}
 window.jonny.activateOnScroll = ->
 window.isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
@@ -47,14 +49,6 @@ window.jonny.activateOnScroll = (scrollPos) ->
       if scrollPos > pos
         $elem.addClass 'active'
 
-
-    # $projects.each (i, elem) ->
-    #   $elem = $(elem)
-    #   pos = Math.round($elem.offset().top) - windowHeight * 0.7
-    #   if scrollPos > pos && scrollPos < (pos + $elem.height())
-    #     $elem.removeClass 'activate-on-scroll'
-    #     $elem.addClass 'active'
-
 # Paralax
 # Cross-browser way to get the current scroll position
 getScrollPosition = ->
@@ -62,29 +56,6 @@ getScrollPosition = ->
     document.body.scrollTop
   else
     document.documentElement.scrollTop
-
-# $project = $('.header-content')
-# $projectBg = $('.header-background')
-# windowHeight = window.screen.availHeight
-# opacity = 1
-# oldScrollPos = 0
-#
-# # paralax = ->
-# #   scrollPos = getScrollPosition()
-# #   if scrollPos < windowHeight and scrollPos != oldScrollPos
-# #     $project.each (i, el) ->
-# #       opacity = 1 - ((scrollPos - (.15 * windowHeight)) / (0.85 * windowHeight))
-# #       oldScrollPos = scrollPos
-# #       offset = scrollPos / 5
-# #       s = headBg.style
-# #       transform = 'translateY(' + offset + 'px' + ') translateZ(0)'
-# #       s.webkitTransform = transform
-# #       s.MozTransform = transform
-# #       #cap first letter
-# #       s.msTransform = transform
-# #       s.OTransform = transform
-# #       #cap first letter
-# #       s.transform = transform
 
 $ ->
   window.jonny.activateOnScroll()
