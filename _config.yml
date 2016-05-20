@@ -6,6 +6,7 @@ sass:
   sass_dir: _sass
 gems:
  - jekyll-coffeescript
+ - jekyll-redirect-from
 exclude:
  - README.md
  - Gemfile
