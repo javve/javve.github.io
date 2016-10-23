@@ -2,7 +2,7 @@
   $form-height: 50px;
   background-color: $black;
   color:#fff;
-  padding:80px;
+  padding:80px 20px;
   text-align: center;
   .newsletter-content {
     max-width: $content-width;
@@ -27,13 +27,13 @@
     display: inline-block;
     max-width: 400px;
     width: 100%;
+    box-shadow: 10px 10px 50px rgba(0,0,0,.5);
   }
   .newsletter-email {
     @include font-size($font-small);
     background: #fff;
     border: none;
     padding: 0 15px;
-    box-shadow: 10px 10px 50px;
     height:$form-height;
     line-height: $form-height;
     width: 100%;
@@ -46,15 +46,20 @@
   }
   .newsletter-submit {
     @include font-size($font-small);
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
     background-color: #65c364;
     border: none;
     height: $form-height;
+    line-height: $form-height;
     padding: 0 20px;
     color: #fff;
     font-weight: 600;
+    width:100%;
+    @include screens(semi-large) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+      width: auto;
+    }
   }
 }
