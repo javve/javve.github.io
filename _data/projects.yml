@@ -1,0 +1,171 @@
+  - name: Confetti
+    slug: confetti
+    logo: /images/projects/confetti/confetti-logo.png
+    description: >
+      It should be easy and fun to create a beautiful site
+      for your event and that is why Martina, Johannes and I founded Confetti in 2014.
+    posts:
+      - slug: confetti-team
+        image: /images/home/confetti-3.jpg
+      - slug: confetti-company
+        image: /images/home/confetti2.jpg
+  - name: Festen
+    slug: festen
+    logo: /images/projects/festen/festen-logo.png
+    description: >
+      Each year we organize a huge party for the Stockholm tech community, we
+      call it Festen.
+    posts:
+      - name: 2014
+        slug: festen-2014
+        image: /images/home/festen-2014-small.jpg
+        more:
+          event: https://www.facebook.com/events/713671795354992/
+          video: https://vimeo.com/109233987
+          images: https://www.facebook.com/704481116239635/photos/?tab=album&album_id=827121900642222
+        description: >
+          The first year Festen took place at Trädgården and it became a huge success.
+      - name: 2015
+        slug: festen-2015
+        image: /images/home/festen-2015-small.jpg
+        more:
+          event: https://www.facebook.com/events/157368384597241/
+          video:
+          images: https://www.facebook.com/getconfetti/photos/?tab=album&album_id=1005318646155879
+        description: >
+          We followed the success from first year by doing the event at Trädgården again.
+      - name: 2016
+        slug: festen-2016
+        image: /images/home/festen-2016-small.jpg
+        more:
+          event: https://www.facebook.com/events/664990266987974/
+          video: https://www.facebook.com/getconfetti/videos/1226844230669985/
+          images: https://www.facebook.com/getconfetti/photos/?tab=album&album_id=1213903565297385
+        description: >
+          The third year we moved the event to Nobelberget and doubled the number
+          of visitors to almost 3000.
+
+  - name: Nordic.js
+    slug: nordicjs
+    logo: /images/projects/nordicjs/nordicjs-logo.png?2
+    description: >
+      Each year me, Martina & Johannes organize Nordic.js, an international JavaScript
+      conference in Stockholm with attendees and speakers from all over the world.
+    posts:
+      - name: 2014
+        slug: nordicjs-2014
+        image: /images/home/nordicjs-2014.jpg
+        more:
+          event: http://2014.nordicjs.com
+          video: https://www.youtube.com/watch?v=T4wfFdHqI_s
+          images: https://www.facebook.com/281891161935664/photos/?tab=album&album_id=336970389761074
+        description: >
+          The first year we hosted Nordic.js we manage to gather
+          550 attendees and 14 international speakers. The event took place at
+          <a href="http://www.artipelag.se/en/">Artipelag</a> in the Stockholm archipelago.
+      - name: 2015
+        slug: nordicjs-2015
+        image: /images/home/nordicjs-2015.jpg
+        more:
+          event: https://2015.nordicjs.com
+          video: https://www.youtube.com/watch?v=0cIWYc862UI
+          images: https://www.facebook.com/281891161935664/photos/?tab=album&album_id=422546851203427
+        description: >
+          The second edition of Nordic.js took place at Södra teatern in Stockholm.
+          We had 14 international speakers, an epic laser ping pong party, a knife
+          thrower and a bunch of other awesome things happening.
+      - name: 2016
+        slug: nordicjs-2016
+        image: /images/home/nordicjs-2016.jpg
+        more:
+          event: https://nordicjs.com
+          video: https://www.youtube.com/watch?v=pEeQMt89DsM
+          images: https://www.facebook.com/nordicjs/photos/?tab=album&album_id=533749393416505
+        description: >
+          The third edition took place at Münchenbryggeriet and we had over 900 atteendees.
+
+  - name: Hackathons
+    slug: hackathons
+    posts:
+      - name: NatureHack
+        slug: hackaway-3
+        image: /images/home/naturehack.jpg
+        more:
+          event: http://naturehack.confetti.events/
+          images: https://www.facebook.com/Hackaway-225655250971618/photos/?tab=album&album_id=451553808381760
+        description: >
+          On behalf of two goverment agencys in New Zealand
+          (<a href="http://www.landcareresearch.co.nz/home">Landcare Research</a> and
+          <a href="http://www.callaghaninnovation.govt.nz/">Callaghan Innovation</a>)
+          Martina and I did a weekend hackathon with focus on nature.
+        role:
+          title: Co-organiser
+          date: 2015-11
+      - name: Hackaway 2
+        slug: hackaway-2
+        image: /images/home/hackaway-2.jpg
+        more:
+          event: http://www.hackaway.com
+          video: https://vimeo.com/112917976
+          images: https://www.facebook.com/Hackaway-225655250971618/photos/?tab=album&album_id=288956067974869
+        description: >
+          Hackaway is a weekend hackathon for creatives, designers and coders,
+          ready to take on the challenge of building and launching new web
+          services and apps. Second edition took place at Gotland and we did it
+          in collaboration with <a href="http://sr.se">Swedish Radio</a>.
+        role:
+          title: Co-organiser
+          date: 2014-10-03 → 2014-10-05
+      - name: Hackaway 1
+        slug: hackaway-1
+        image: /images/home/hackaway-1.jpg
+        more:
+          event: http://www.hackaway.com/1/
+          video: https://vimeo.com/105587761
+        description: >
+          Hackaway is a weekend hackathon for creatives, designers and coders,
+          ready to take on the challenge of building and launching new web
+          services and apps. The first edition took place at an island in the Stockholm
+          archipelago and we did it in collaboration with
+          <a href="http://www.schibsted.com/">Schibsted</a> and <a href="http://www.aftonbladet.se/">Aftonbladet</a>.
+        role:
+          title: Co-organiser
+          date: 2014-04-11 → 2014-04-13
+      - name: STHLM Startup Hack
+        slug: sthlmstartuphack-2014
+        image: /images/home/sthlmstartuphack.jpg
+        description: >
+          STHLM Startup Hack is a day for developers, designers and innovators
+          living in Stockholm to meet and build things together.
+        role:
+          title: Co-organiser
+          date: 2012-05 & 2013-05
+
+  - name: Speaking
+    slug: speaking
+    description: >
+      I regularly speak at events about design, startups, open source and
+      how to organize tech <a href="https://medium.com/@javve/how-to-create-a-tech-event-where-everyone-feels-welcome-e657a54c44e4">events where everyone feels welcome</a>.
+      Need a speaker? Drop me a mail at <a href="mailto:jonny@confetti.events">jonny@confetti.events</a>.
+    posts:
+      - name: How to organize events where everyone feel welcome
+        slug: hybridconf
+        image: /images/home/talk-welcome.jpg
+        description: >
+          I've organized a lot of tech events and I've always been passionate
+          to make everyone feel welcome. In this presention I share my best
+          tips, much based on my experience from <a href="http://hackaway.com">Hackaway</a>.
+      - name: Running a design driven startup
+        slug: design-driven
+        image: /images/home/talk-design-driven.jpg
+        description: >
+          Confetti is not the only event platform out there but it's by many
+          considered the most beautiful and easy to use. In this presentation
+          I talk about how we think about design and what we learnt since starting
+          our company.
+      - name: The Confetti story
+        slug: confetti-story
+        image: /images/home/talk-confetti.jpg
+        description: >
+          Confetti has a pretty unique story. We chose early to bootstrap the company
+          and we did so by talking dogfooding to the next level.

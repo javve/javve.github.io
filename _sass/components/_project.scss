@@ -1,0 +1,145 @@
+.project {
+  transition: opacity .3s ease-in-out;
+  @include screens(semi-large) {}
+  margin:auto;
+  text-align: center;
+
+  & {
+    color:rgba(0,0,0,0.5);
+    font-weight: 400;
+  }
+  a {
+    transition: all .2s ease-in-out;
+    font-weight: 400;
+    color:rgba(0,0,0,0.7);
+    text-decoration: none;
+
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+    &:hover {
+      color:rgba(0,0,0,1);
+      border-bottom: solid 1px rgba(0,0,0,0.7);
+    }
+  }
+
+  .project-title {
+    color:rgba(0,0,0,0.8);
+    font-weight: 900;
+    font-size: 30px;
+    font-size: 3rem;
+    margin:0 0 30px;
+    @include screens(semi-large) {
+      font-size: 70px;
+      font-size: 7rem;
+    }
+  }
+  .project-logo-container {
+    max-width: 395px;
+    height:100px;
+    position: relative;
+    overflow: hidden;
+    text-indent: -10000px;
+    margin:auto auto 30px;
+  }
+  .project-logo {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+  }
+  .project-description {
+    //color:#fff;
+    //color:rgba(255,255,255,.8);
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    @include screens(semi-large) {
+      font-size: 22px;
+      font-size: 2.2rem;
+    }
+  }
+  .project-content {
+    max-width:550px;
+    margin:auto;
+    padding:20px;
+    z-index:$z-project-content;
+    position: relative;
+  }
+
+  &.confetti .project-content-container{
+    background-color:#00C2DB;
+    background-color:#F73FAE;
+    background-color:#1F1F1F;
+    background-color:hsl(291, 30%, 93%);
+  }
+  &.festen .project-content-container{
+    background-color:#F73FAE;
+    background-color:hsl(291, 30%, 95%);
+  }
+  &.nordicjs .project-content-container{
+    background-color:#1F1F1F;
+    background-color:hsl(291, 30%, 93%);
+  }
+  &.hackathons .project-content-container{
+    background-color:#4A9480;
+    background-color:hsl(291, 30%, 95%);
+    .project-title {
+      font-family: monospace;
+    }
+  }
+  &.nordicjs .project-content-container{
+    background-color:#1F1F1F;
+    background-color:hsl(291, 30%, 93%);
+  }
+  .project-read-mode {
+    transition: all .2s ease-in-out;
+    background-color:#fff;
+    padding:15px 30px;
+    color:#111;
+    border:none;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    &:after {
+      content:" ➜";
+      font-weight: normal;
+      font-size:80%;
+    }
+    &:hover {
+      transform:scale(0.98);
+      box-shadow: 0 6px 20px rgba(0,0,0,.2);
+    }
+  }
+  .project-content-container {
+    position:relative;
+    z-index:$z-project-content-container;
+    padding: 80px 0;
+  }
+  .project-background-image {
+    transition:all .4s ease-in-out;
+    background-size:cover;
+    background-position:center;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    margin:auto;
+    z-index:$z-project-background-image;
+    opacity: 0;
+    @include screens(semi-large) {
+      bottom:0;
+      height:auto;
+      transform:scale(1.05);
+    }
+    &.active.image-ready {
+      opacity:0; //0.02;
+      transform:scale(1);
+    }
+  }
+}

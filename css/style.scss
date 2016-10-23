@@ -2,11 +2,14 @@
 ---
 
 @import "normalize";
+@import "config";
 @import "mixins";
 @import "main";
 @import "home";
 @import "blog";
 @import "talks";
 @import "feedback";
-@import "components/slideshow";
 @import "syntax";
+
+@import "components/slideshow";
+@import "components/project";

@@ -144,7 +144,7 @@
     transition:all .2s ease-in-out;
     background-size:cover;
     background-position:center;
-    z-index:1;
+    z-index: $z-friend;
     &.martina {
       background-image:url(/images/home/martina.jpg);
       margin-left:0%;
@@ -189,122 +189,12 @@
       &:hover {
         transform:scale(1.02);
         box-shadow: 0 4px 20px rgba(0,0,0,.3);
-        z-index:100;
+        z-index:$z-friend-hover;
         .friend-content {
           opacity:1;
           transform:translate(0, -50%);
         }
       }
-    }
-  }
-}
-
-.project {
-  box-sizing: border-box;
-  padding:0;
-  text-align:center;
-  max-width: 100%;
-  overflow: hidden;
-  position:relative;
-  background-color:#111;
-  padding-top:60vw;
-  @include screens(semi-large) {
-    height:100vh;
-    padding:30vh 0 10em;
-  }
-  h2 {
-    margin-top:0;
-    color:#111;
-    text-align: center;
-    font-size:25px;
-    @include screens(semi-large) {
-      font-size:35px;
-    }
-  }
-  p {
-    font-size:1.4rem;
-    text-align:left;
-    color:#444;
-    margin-bottom:0;
-    &:last-child {
-      margin-bottom:0;
-    }
-  }
-  .role {
-    @include font-size(11);
-    border-top: solid 1px rgba(0, 0, 0, 0.08);
-    padding: 11px 0 0;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    .role-title {
-      font-weight:500;
-      color:#666;
-    }
-    .role-description {
-      font-weight:700;
-      color:#111;
-    }
-  }
-  .container {
-    @include screens(semi-large) {
-      position:absolute;
-      left:0;
-      top:0;
-      bottom:0;
-      right:0;
-      z-index:3;
-    }
-  }
-  .project-info {
-    color:#fff;
-
-    background-color: #fff;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    padding: 33px;
-    @include screens(semi-large) {
-      position: absolute;
-      bottom:50px;
-      left:0;
-      right:0;
-      margin:auto;
-      max-width: 430px;
-    }
-  }
-  .project-background-image {
-    background-size:cover;
-    background-position:center;
-    position:absolute;
-    left:0;
-    top:0;
-    right:0;
-    margin:auto;
-    z-index:1;
-    height: 60vw;
-    @include screens(semi-large) {
-      bottom:0;
-      height:auto;
-    }
-  }
-
-  // Animation
-  .project-info {
-    // transition:all .4s .4s ease-in-out;
-    // transform:translateY(20%) scale(0.8);
-    // opacity: 0;
-    // &.active {
-    //   transform:translateY(0);
-    //   opacity: 1;
-    // }
-  }
-  .project-background-image {
-    transition:all .4s ease-in-out;
-    @include screens(semi-large) {
-      transform:scale(1.05);
-    }
-    opacity: 0;
-    &.active.image-ready {
-      opacity:1;
-      transform:scale(1);
     }
   }
 }

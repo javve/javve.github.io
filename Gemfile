@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
-gem 'github-pages'
-gem 'jekyll-coffeescript'
+gem 'github-pages', group: :jekyll_plugins
+
+gem 'guard'
+gem 'guard-livereload'

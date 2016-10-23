@@ -15,6 +15,9 @@ body {
   line-height: 1.4;
   color:#333;
   margin:0;
+  &.disable-scroll {
+    overflow: hidden;
+  }
 }
 body#home {
   background-color:#fff;
