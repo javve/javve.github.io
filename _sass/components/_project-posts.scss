@@ -30,7 +30,7 @@
     right:0;
     bottom:0;
     margin:auto;
-    z-index:$z-slide-background-image;
+    z-index:$z-post-image;
     opacity: 0;
     @include screens(semi-large) {
       transform:scale(1.05);

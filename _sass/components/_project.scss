@@ -82,15 +82,12 @@
     background-color:hsl(291, 30%, 95%);
   }
   &.nordicjs .project-content-container{
-    background-color:#1F1F1F;
+    background-color:$black;
     background-color:hsl(291, 30%, 93%);
   }
   &.hackathons .project-content-container{
     background-color:#4A9480;
     background-color:hsl(291, 30%, 95%);
-    .project-title {
-      font-family: monospace;
-    }
   }
   &.nordicjs .project-content-container{
     background-color:#1F1F1F;
@@ -120,26 +117,5 @@
     position:relative;
     z-index:$z-project-content-container;
     padding: 80px 0;
-  }
-  .project-background-image {
-    transition:all .4s ease-in-out;
-    background-size:cover;
-    background-position:center;
-    position:absolute;
-    left:0;
-    top:0;
-    right:0;
-    margin:auto;
-    z-index:$z-project-background-image;
-    opacity: 0;
-    @include screens(semi-large) {
-      bottom:0;
-      height:auto;
-      transform:scale(1.05);
-    }
-    &.active.image-ready {
-      opacity:0; //0.02;
-      transform:scale(1);
-    }
   }
 }
