@@ -3,7 +3,8 @@
     logo: /images/projects/confetti/confetti-logo.png
     description: >
       It should be easy and fun to create a beautiful site
-      for your event and that is why Martina, Johannes and I founded Confetti in 2014.
+      for your event and that is why Martina, Johannes and I founded
+      <a target="_blank" href="http://confetti.events">Confetti</a> in 2014.
     posts:
       - slug: confetti-team
         image: /images/home/confetti-3.jpg

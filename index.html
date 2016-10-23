@@ -15,11 +15,11 @@ og_image: "http://javve.github.io/images/share-image.png"
       We also run a business called <a href="#confetti">Confetti</a> and <a href="#speaking">speak</a> at events.
     </h2>
     <h3 class="head-social">
-      <a href="https://twitter.com/javve">Twitter</a> &nbsp; &nbsp;
-      <a href="https://github.com/javve">GitHub</a> &nbsp; &nbsp;
-      <a href="https://facebook.com/javve">Facebook</a> &nbsp; &nbsp;
-      <a href="https://instagram.com/javvve">Instagram</a> &nbsp; &nbsp;
-      <a href="https://se.linkedin.com/in/jonnystromberg">Linkedin</a>
+      <a target="_blank" href="https://twitter.com/javve">Twitter</a> &nbsp; &nbsp;
+      <a target="_blank" href="https://github.com/javve">GitHub</a> &nbsp; &nbsp;
+      <a target="_blank" href="https://facebook.com/javve">Facebook</a> &nbsp; &nbsp;
+      <a target="_blank" href="https://instagram.com/javvve">Instagram</a> &nbsp; &nbsp;
+      <a target="_blank" href="https://se.linkedin.com/in/jonnystromberg">Linkedin</a>
     </h3>
   </div>
   <div class="head-image-container">
@@ -29,10 +29,10 @@ og_image: "http://javve.github.io/images/share-image.png"
 
 <div class="friends">
   <div class="friends-description"><span class="friend-content">Co-organizers<br />Friends<br />❤</span></div>
-  <a class="friend martina" href="https://twitter.com/martinaelm"><span class="friend-content">Martina Elm</span></a>
-  <a class="friend johannes" href="https://twitter.com/jede"><span class="friend-content">Johannes Edelstam</span></a>
-  <a class="friend joakim" href="https://twitter.com/kalasjocke"><span class="friend-content">Joakim Ekberg</span></a>
-  <a class="friend ted" href="https://twitter.com/tedvalentin"><span class="friend-content">Ted Valentin</span></a>
+  <a target="_blank" class="friend martina" href="https://twitter.com/martinaelm"><span class="friend-content">Martina target="_blank" Elm</span></a>
+  <a target="_blank" class="friend johannes" href="https://twitter.com/jede"><span class="friend-content">Johannes Edelstam</span></a>
+  <a target="_blank" class="friend joakim" href="https://twitter.com/kalasjocke"><span class="friend-content">Joakim Ekberg</span></a>
+  <a target="_blank" class="friend ted" href="https://twitter.com/tedvalentin"><span class="friend-content">Ted Valentin</span></a>
 </div>
 
 
@@ -45,11 +45,6 @@ og_image: "http://javve.github.io/images/share-image.png"
           {% if project.logo %} <div class="project-logo" style="background-image:url({{project.logo}})"></div>{% endif %}
         </h1>
         <p class="project-description">{{project.description}}</p>
-        <ul class="">
-          {% for slide in project.slides %}
-            <li><a href="#" data-slide-link="{{slide.slug}}">{{slide.name}}</a></li>
-          {% endfor %}
-        </ul>
       </div>
       <div class="posts">
         {% for post in project.posts %}
@@ -62,9 +57,9 @@ og_image: "http://javve.github.io/images/share-image.png"
             <p class="post-description">{{ post.description }}</p>
             {% if post.more %}
             <p class="post-links">
-              {% if post.more.event %}<a href="{{post.more.event}}" class="post-links-event">Site</a>{% endif %}
-              {% if post.more.images %}<a href="{{post.more.images}}" class="post-links-event">Images</a>{% endif %}
-              {% if post.more.video %}<a href="{{post.more.video}}" class="post-links-event">Video</a>{% endif %}
+              {% if post.more.event %}<a target="_blank" href="{{post.more.event}}" class="post-links-event">Site</a>{% endif %}
+              {% if post.more.images %}<a target="_blank" href="{{post.more.images}}" class="post-links-event">Images</a>{% endif %}
+              {% if post.more.video %}<a target="_blank" href="{{post.more.video}}" class="post-links-event">Video</a>{% endif %}
             </p>
             {% endif %}
           </div>
