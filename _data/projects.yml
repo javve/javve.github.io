@@ -67,7 +67,7 @@
         slug: nordicjs-2015
         image: /images/home/nordicjs-2015.jpg
         more:
-          event: https://2015.nordicjs.com
+          event: http://2015.nordicjs.com
           video: https://www.youtube.com/watch?v=0cIWYc862UI
           images: https://www.facebook.com/281891161935664/photos/?tab=album&album_id=422546851203427
         description: >
@@ -78,7 +78,7 @@
         slug: nordicjs-2016
         image: /images/home/nordicjs-2016.jpg
         more:
-          event: https://nordicjs.com
+          event: http://nordicjs.com
           video: https://www.youtube.com/watch?v=pEeQMt89DsM
           images: https://www.facebook.com/nordicjs/photos/?tab=album&album_id=533749393416505
         description: >
