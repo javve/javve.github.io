@@ -45,6 +45,7 @@
     }
   }
   .newsletter-submit {
+    transition: all .2s ease-in-out;
     @include font-size($font-small);
     background-color: #65c364;
     border: none;
@@ -60,6 +61,10 @@
       top: 0;
       z-index: 2;
       width: auto;
+      &:hover {
+        box-shadow: 0 4px 40px rgba(0,0,0,.5);
+        transform: scale(1.1);
+      }
     }
   }
 }

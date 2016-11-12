@@ -55,7 +55,7 @@
     font-size:30px;
     color:#eee;
     text-shadow:none;
-    margin:0 0 10px;
+    margin:0 0 15px;
     background: url(/images/home/wave.png) no-repeat right top;
     background-size: auto 90%;
     display: inline-block;
@@ -72,7 +72,7 @@
     color:#aaa;
     font-size:16px;
     font-weight:500;
-    margin:0 0 20px;
+    margin:0 0 30px;
     line-height:1.4;
     @include screens(semi-large) {
       font-size:26px;
@@ -90,7 +90,7 @@
   }
   .head-social {
     @extend .head-tagline;
-    font-size:13px;
+    font-size:16px;
     font-weight: 400;
   }
   .head-links {
