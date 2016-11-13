@@ -13,7 +13,7 @@ og_image: "http://javve.github.io/images/share-image.png"
       <h1 class="head-headline">HELLO! I'm Jonny</h1>
       <h2 class="head-tagline">
         I’m a designer and engineer. Together with my friends I
-        organize events like <a href="#nordicjs-2015">Nordic.js</a> and <a href="#hackaway-2">Hackaway</a>.
+        organize events like <a href="#nordicjs">Nordic.js</a> and <a href="#hackathons">Hackaway</a>.
         We also run a business called <a href="#confetti">Confetti</a> and <a href="#speaking">speak</a> at events.
       </h2>
       <h3 class="head-social">
@@ -45,6 +45,7 @@ og_image: "http://javve.github.io/images/share-image.png"
     <div class="project-content-container">
       <div class="project-content">
         <h1 class="project-title {% if project.logo %} project-logo-container{% endif %}">
+          <a id="{{project.slug}}"></a>
           {{project.name}}
           {% if project.logo %} <div class="project-logo" style="background-image:url({{project.logo}})"></div>{% endif %}
         </h1>
@@ -57,7 +58,7 @@ og_image: "http://javve.github.io/images/share-image.png"
             <div class="post-image activate-on-screen" data-image="{{ post.image }}"></div>
           </div>
           <div class="post-info">
-            <h2 class="post-title">{{ post.name }}</h2>
+            <h2 class="post-title"><a id="{{post.slug}}"></a>{{ post.name }}</h2>
             <p class="post-description">{{ post.description }}</p>
             {% if post.more %}
             <p class="post-links">
