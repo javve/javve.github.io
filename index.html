@@ -7,23 +7,26 @@ og_image: "http://javve.github.io/images/share-image.png"
 ---
 
 <div class="head">
-  <div class="head-content">
-    <h1 class="head-headline">HELLO! I'm Jonny</h1>
-    <h2 class="head-tagline">
-      I’m a designer and engineer. Together with my friends I
-      organize events like <a href="#nordicjs-2015">Nordic.js</a> and <a href="#hackaway-2">Hackaway</a>.
-      We also run a business called <a href="#confetti">Confetti</a> and <a href="#speaking">speak</a> at events.
-    </h2>
-    <h3 class="head-social">
-      <a target="_blank" href="https://twitter.com/javve">Twitter</a> &nbsp; &nbsp; &nbsp;
-      <a target="_blank" href="https://github.com/javve">GitHub</a> &nbsp; &nbsp; &nbsp;
-      <a target="_blank" href="https://facebook.com/javve">Facebook</a> &nbsp; &nbsp; &nbsp;
-      <a target="_blank" href="https://instagram.com/javvve">Instagram</a> &nbsp; &nbsp; &nbsp;
-      <a target="_blank" href="https://se.linkedin.com/in/jonnystromberg">Linkedin</a>
-    </h3>
-  </div>
-  <div class="head-image-container">
-    <div class="head-image image-fade" data-image="/images/home/head.jpg"></div>
+  {% include javve-menu.html %}
+  <div class="head-content-container">
+    <div class="head-content">
+      <h1 class="head-headline">HELLO! I'm Jonny</h1>
+      <h2 class="head-tagline">
+        I’m a designer and engineer. Together with my friends I
+        organize events like <a href="#nordicjs-2015">Nordic.js</a> and <a href="#hackaway-2">Hackaway</a>.
+        We also run a business called <a href="#confetti">Confetti</a> and <a href="#speaking">speak</a> at events.
+      </h2>
+      <h3 class="head-social">
+        <a target="_blank" href="https://twitter.com/javve">Twitter</a> &nbsp; &nbsp; &nbsp;
+        <a target="_blank" href="https://github.com/javve">GitHub</a> &nbsp; &nbsp; &nbsp;
+        <a target="_blank" href="https://facebook.com/javve">Facebook</a> &nbsp; &nbsp; &nbsp;
+        <a target="_blank" href="https://instagram.com/javvve">Instagram</a> &nbsp; &nbsp; &nbsp;
+        <a target="_blank" href="https://se.linkedin.com/in/jonnystromberg">Linkedin</a>
+      </h3>
+    </div>
+    <div class="head-image-container">
+      <div class="head-image image-fade" data-image="/images/home/head.jpg"></div>
+    </div>
   </div>
 </div>
 
@@ -71,3 +74,5 @@ og_image: "http://javve.github.io/images/share-image.png"
 
   </div>
 {% endfor %}
+
+{% include newsletter.html %}

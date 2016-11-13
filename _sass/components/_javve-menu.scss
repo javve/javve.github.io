@@ -1,0 +1,65 @@
+.javve-menu {
+  display: none;
+  @include screens(semi-large) {
+    display: block;
+  }
+  position: relative;
+  z-index: 1000;
+  font-size:18px;
+  .javve-menu-contet {
+    max-width: 750px;
+    text-align: center;
+    overflow: hidden;
+    margin:0 auto;
+    padding:0;
+    line-height:60px;
+    border-bottom: solid 1px rgba(255,255,255,.1);
+  }
+  .javve-menu-home {
+    float:left;
+    display:inline-block;
+    color:#fff;
+    font-weight: 900;
+  }
+  .javve-menu-newsletter {
+    float:right;
+    display:inline-block;
+    color:#FFFA48;
+    font-weight: 900;
+  }
+  .javve-menu-items {
+    margin:0;
+    padding:0;
+    display:inline-block;
+    font-weight: 600;
+  }
+  .javve-menu-item {
+    display:inline-block;
+    padding:0 20px;
+    & > a {
+      transition: color .2s ease-in-out;
+      color:rgba(255,255,255,.5);
+      position: relative;
+      &:hover {
+        color:rgba(255,255,255,.8);
+      }
+    }
+    &.javve-menu-coming-soon {
+      & > a {
+        color:rgba(255,255,255,.2);
+      }
+      sup {
+        color:#FFFA48;
+        font-size:9px;
+        position: absolute;
+        right: -23px;
+        top: 16px;
+        transform: rotateZ(-8deg);
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size:18px;
+  }
+}

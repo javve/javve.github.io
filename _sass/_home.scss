@@ -5,12 +5,21 @@
   text-align: center;
   position: relative;
   @include screens(semi-large) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height:100vh;
   }
-
+  .head-content-container {
+    @include screens(semi-large) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      right:0;
+      margin:auto;
+    }
+  }
   .head-image-container {
     overflow: hidden;
     position:absolute;
