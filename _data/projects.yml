@@ -53,17 +53,15 @@
       Each year Martina, Johannes & I organize Nordic.js, an international JavaScript
       conference in Stockholm with attendees and speakers from all over the world.
     posts:
-      - name: 2014
-        slug: nordicjs-2014
-        image: /images/home/nordicjs-2014.jpg
+      - name: 2016
+        slug: nordicjs-2016
+        image: /images/home/nordicjs-2016.jpg
         more:
-          event: http://2014.nordicjs.com
-          video: https://www.youtube.com/watch?v=T4wfFdHqI_s
-          images: https://www.facebook.com/281891161935664/photos/?tab=album&album_id=336970389761074
+          event: http://nordicjs.com
+          video: https://www.youtube.com/watch?v=pEeQMt89DsM
+          images: https://www.facebook.com/nordicjs/photos/?tab=album&album_id=533749393416505
         description: >
-          The first year we hosted Nordic.js we manage to gather
-          550 attendees and 14 international speakers. The event took place at
-          <a href="http://www.artipelag.se/en/">Artipelag</a> in the Stockholm archipelago.
+          The third edition took place at Münchenbryggeriet and we had over 900 atteendees.
       - name: 2015
         slug: nordicjs-2015
         image: /images/home/nordicjs-2015.jpg
@@ -75,15 +73,17 @@
           The second edition of Nordic.js took place at Södra teatern in Stockholm.
           We had 14 international speakers, an epic laser ping pong party, a knife
           thrower and a bunch of other awesome things happening.
-      - name: 2016
-        slug: nordicjs-2016
-        image: /images/home/nordicjs-2016.jpg
+      - name: 2014
+        slug: nordicjs-2014
+        image: /images/home/nordicjs-2014.jpg
         more:
-          event: http://nordicjs.com
-          video: https://www.youtube.com/watch?v=pEeQMt89DsM
-          images: https://www.facebook.com/nordicjs/photos/?tab=album&album_id=533749393416505
+          event: http://2014.nordicjs.com
+          video: https://www.youtube.com/watch?v=T4wfFdHqI_s
+          images: https://www.facebook.com/281891161935664/photos/?tab=album&album_id=336970389761074
         description: >
-          The third edition took place at Münchenbryggeriet and we had over 900 atteendees.
+          The first year we hosted Nordic.js we manage to gather
+          550 attendees and 14 international speakers. The event took place at
+          <a href="http://www.artipelag.se/en/">Artipelag</a> in the Stockholm archipelago.
 
   - name: Hackathons
     slug: hackathons
