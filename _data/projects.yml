@@ -17,24 +17,6 @@
       Each year we organize a huge party for the Stockholm tech community, we
       call it Festen.
     posts:
-      - name: 2014
-        slug: festen-2014
-        image: /images/home/festen-2014-small.jpg
-        more:
-          event: https://www.facebook.com/events/713671795354992/
-          video: https://vimeo.com/109233987
-          images: https://www.facebook.com/704481116239635/photos/?tab=album&album_id=827121900642222
-        description: >
-          The first year Festen took place at Trädgården and it became a huge success.
-      - name: 2015
-        slug: festen-2015
-        image: /images/home/festen-2015-small.jpg
-        more:
-          event: https://www.facebook.com/events/157368384597241/
-          video:
-          images: https://www.facebook.com/getconfetti/photos/?tab=album&album_id=1005318646155879
-        description: >
-          We followed the success from first year by doing the event at Trädgården again.
       - name: 2016
         slug: festen-2016
         image: /images/home/festen-2016-small.jpg
@@ -45,6 +27,24 @@
         description: >
           The third year we moved the event to Nobelberget and doubled the number
           of visitors to almost 3000.
+      - name: 2015
+        slug: festen-2015
+        image: /images/home/festen-2015-small.jpg
+        more:
+          event: https://www.facebook.com/events/157368384597241/
+          video:
+          images: https://www.facebook.com/getconfetti/photos/?tab=album&album_id=1005318646155879
+        description: >
+          We followed the success from first year by doing the event at Trädgården again.
+      - name: 2014
+        slug: festen-2014
+        image: /images/home/festen-2014-small.jpg
+        more:
+          event: https://www.facebook.com/events/713671795354992/
+          video: https://vimeo.com/109233987
+          images: https://www.facebook.com/704481116239635/photos/?tab=album&album_id=827121900642222
+        description: >
+          The first year Festen took place at Trädgården and it became a huge success.
 
   - name: Nordic.js
     slug: nordicjs
