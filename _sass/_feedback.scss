@@ -17,10 +17,8 @@
     margin:0 0 20px;
     font-size:16px;
   }
-  .feedback-follow {
-
-  }
-  .feedback-feedback {
+  .feedback-feedback,
+  .feedback-link {
     background-color:#00C776;
     color:#fff;
     display: inline-block;
@@ -32,17 +30,8 @@
     font-weight:600;
     margin-bottom:20px;
   }
-  .feedback-confetti {
-    background-color:#00C2DB;
-    color:#fff;
-    display: inline-block;
-    padding:9px 16px;
-    line-height: 1;
-    font-size:14px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight:600;
-    margin-bottom:20px;
+  .feedback-link {
+    background-color:#1b95e0;
   }
 
 }
