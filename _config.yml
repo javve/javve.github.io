@@ -13,4 +13,5 @@ exclude:
  - Gemfile.lock
  - vendor
 
+permalink: pretty
 livereload: true
