@@ -87,9 +87,26 @@
 
   - name: Hackathons
     slug: hackathons
+    description: >
+      I've co-organized some of the most well-known hackathons in Sweden plus
+      a hackathon for two goverment agencys in New Zealand.
     posts:
-      - name: NatureHack
+      - name: Hackaway 3
         slug: hackaway-3
+        image: /images/home/hackaway-3.jpg
+        more:
+          event: http://www.hackaway.com/
+          images: https://www.facebook.com/pg/Hackaways/photos/?tab=album&album_id=644944075709398
+        description: >
+          Hackaway is a weekend hackathon for creatives, designers and coders,
+          ready to take on the challenge of building and launching new web
+          services and apps. Thrid edition took place at Käringön and we did it
+          in collaboration with Nobina Technology, Drive Sweden, Ericsson & Trafiklab.
+        role:
+          title: Co-organiser
+          date: 2017-01
+      - name: NatureHack
+        slug: naturehack
         image: /images/home/naturehack.jpg
         more:
           event: http://naturehack.confetti.events/
@@ -141,6 +158,34 @@
         role:
           title: Co-organiser
           date: 2012-05 & 2013-05
+
+  - name: Meetups
+    slug: meetups
+    description: >
+      I'm co-organizer of two of the biggest meetup groups in Sweden. One for
+      developers and one for designers.
+    posts:
+      - name: Sthlm.js
+        slug: sthlm-js
+        image: /images/home/sthlm-js.jpg
+        more:
+          event: http://sthlmjs.com/
+        description: >
+          Sthlm.js is a meetup with over 3000 members founded 2011. We meet
+          about once a month.
+        role:
+          title: Co-organiser
+          date: 2013-01 → Now
+      - name: Designers i Stockholm
+        slug: disto
+        image: /images/home/disto.jpg
+        more:
+          event: https://www.meetup.com/Designers-i-Stockholm
+        description: >
+          A community for creatives in Stockholm.
+        role:
+          title: Co-organiser
+          date: 2017-01-01 → Now
 
   - name: Speaking
     slug: speaking
