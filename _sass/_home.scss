@@ -113,26 +113,29 @@
   }
 }
 .friends {
+  $friend-width: 16.666%;
   background-color:transparent;
   position: relative;
+  overflow: hidden;
   z-index: 10;
-  margin-left:15px;
-  margin-right:15px;
+  margin-top:-10%;
+  @include screens(semi-large) {
+    margin-left:15px;
+    margin-right:15px;
+  }
   .friends-description,
   .friend {
-    position:absolute;
-    top:0;
+    position: relative;
     z-index: 10;
     width: 20%;
-    padding-top:100%;
     display:block;
     float:left;
-    width: 25%;
-    padding-top:20%;
-    margin-top:-10%;
+    width: $friend-width * 2;
+    padding-top: $friend-width * 2;
 
     @include screens(semi-large) {
-      width: 20%;
+      width: $friend-width;
+      padding-top:$friend-width;
     }
   }
   .friends-description {
@@ -144,12 +147,14 @@
       width:100%;
       text-align:center;
       transform:translate(0, -50%);
-      font-size:22px;
       font-weight:500;
-    }
-    display:none;
-    @include screens(semi-large) {
-      display:block;
+      font-size:12px;
+      @include screens(medium) {
+        font-size:16px;
+      }
+      @include screens(large) {
+        font-size:20px;
+      }
     }
   }
   .friend {
@@ -159,30 +164,37 @@
     z-index: $z-friend;
     &.martina {
       background-image:url(/images/home/martina.jpg);
-      margin-left:0%;
+      /*margin-left:0%;*/
       @include screens(semi-large) {
-        margin-left:20%;
+        /*margin-left:$friend-width;*/
       }
     }
     &.johannes {
       background-image:url(/images/home/johannes.jpg);
-      margin-left:25%;
+      /*margin-left:25%;*/
       @include screens(semi-large) {
-        margin-left:40%;
+        /*margin-left:$friend-width * 2;*/
       }
     }
     &.ted {
       background-image:url(/images/home/ted.jpg);
-      margin-left:50%;
+      /*margin-left:50%;*/
       @include screens(semi-large) {
-        margin-left:60%;
+        /*margin-left:$friend-width * 3;*/
       }
     }
     &.joakim {
       background-image:url(/images/home/joakim.jpg);
-      margin-left:75%;
+      /*margin-left:75%;*/
       @include screens(semi-large) {
-        margin-left:80%;
+        /*margin-left:$friend-width * 4;*/
+      }
+    }
+    &.unn {
+      background-image:url(/images/home/unn.jpg);
+      /*margin-left:75%;*/
+      @include screens(semi-large) {
+        /*margin-left:$friend-width * 5;*/
       }
     }
     .friend-content {
