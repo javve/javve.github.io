@@ -17,6 +17,27 @@
       Each year we organize a huge party for the Stockholm tech community, we
       call it Festen.
     posts:
+      - name: 2019
+        slug: festen-2019
+        image: /images/home/festen-2019-small.jpg
+        more:
+          images: https://www.facebook.com/media/set/?vanity=nordicjs&set=a.1569860989805335
+        description: >
+          The sixth year took place at Magasin 9 in Frihamnen.
+      - name: 2018
+        slug: festen-2018
+        image: /images/home/festen-2018-small.jpg
+        more:
+          images: https://www.facebook.com/media/set/?vanity=getconfetti&set=a.1978180885536312
+        description: >
+          The fifth year was the last one at Nobelberget.
+      - name: 2017
+        slug: festen-2017
+        image: /images/home/festen-2017-small.jpg
+        more:
+          images: https://www.facebook.com/media/set/?vanity=getconfetti&set=a.1572240019463736
+        description: >
+          The forth year we stayed at Nobelberget.
       - name: 2016
         slug: festen-2016
         image: /images/home/festen-2016-small.jpg
